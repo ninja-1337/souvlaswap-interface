@@ -5,8 +5,9 @@ import { network } from 'app/config/wallets'
 import { NetworkContextName } from 'app/constants'
 import useEagerConnect from 'app/hooks/useEagerConnect'
 import useInactiveListener from 'app/hooks/useInactiveListener'
+import useNetworkOrchistrator from 'app/hooks/useNetworkOrchistrator'
 import dynamic from 'next/dynamic'
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
 import Loader from '../Loader'
 
@@ -14,7 +15,7 @@ const GnosisManagerNoSSR = dynamic(() => import('./GnosisManager'), {
   ssr: false,
 })
 
-export default function Web3ReactManager({ children }: { children: JSX.Element }) {
+export const Web3ReactManager: FC = ({ children }) => {
   const { i18n } = useLingui()
   const { active } = useWeb3React()
   const { active: networkActive, error: networkError, activate: activateNetwork } = useWeb3React(NetworkContextName)
@@ -22,11 +23,19 @@ export default function Web3ReactManager({ children }: { children: JSX.Element }
   // try to eagerly connect to an injected provider, if it exists and has granted access already
   const triedEager = useEagerConnect()
 
+  useNetworkOrchistrator()
+
   // after eagerly trying injected, if the network connect ever isn't active or in an error state, activate itd
   useEffect(() => {
-    if (triedEager && !networkActive && !networkError && !active) {
-      activateNetwork(network)
+    const activate = async () => {
+      if (triedEager && !networkActive && !networkError && !active) {
+        const Cookies = (await import('js-cookie')).default
+        console.log('CHANGE CHAIN TO ' + Number(Cookies.get('chain-id')))
+        network.changeChainId(Number(Cookies.get('chain-id')))
+        activateNetwork(network)
+      }
     }
+    activate()
   }, [triedEager, networkActive, networkError, activateNetwork, active])
 
   // when there's no account connected, react to logins (broadly speaking) on the injected provider, if it exists
@@ -76,3 +85,5 @@ export default function Web3ReactManager({ children }: { children: JSX.Element }
     </>
   )
 }
+
+export default Web3ReactManager
