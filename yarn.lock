@@ -2809,22 +2809,22 @@
     magic-string "^0.25.0"
     string.prototype.matchall "^4.0.6"
 
-"@sushiswap/bentobox-sdk@1.0.0-canary.53":
-  version "1.0.0-canary.53"
-  resolved "https://registry.yarnpkg.com/@sushiswap/bentobox-sdk/-/bentobox-sdk-1.0.0-canary.53.tgz#3b690e67d5fdeb80fdec4e69f6be682c3a4eb2f5"
-  integrity sha512-Soq8lUerbnmn3NeiKuONVElW5B/xtca+hGnj0U/1DsAH6AcUFHicvYj4sVLWhzia+cDOePS97fnzGqVAsUUoGQ==
+"@sushiswap/bentobox-sdk@1.0.0-canary.60":
+  version "1.0.0-canary.60"
+  resolved "https://registry.yarnpkg.com/@sushiswap/bentobox-sdk/-/bentobox-sdk-1.0.0-canary.60.tgz#4780df31e0806970e009c826a4abb0aa2881afbb"
+  integrity sha512-qSBlk44uVrQ4s+u9ZWPydb9uHGSdrnW4u7idlOeLrEj7D+kgmHcWECNZvp2/UdJ/xVd9/EWlkg8YVDKCsdKN3g==
   dependencies:
-    "@sushiswap/core-sdk" "1.0.0-canary.68"
+    "@sushiswap/core-sdk" "1.0.0-canary.75"
 
 "@sushiswap/chainlink-whitelist@0.2.8":
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/@sushiswap/chainlink-whitelist/-/chainlink-whitelist-0.2.8.tgz#832dc80963b890a2eb02aaaf11ea8b57b2b7dde0"
   integrity sha512-YhhGfF/smND4jUdVWuTr3e9Np08zLyxrOfbQ6GkAhmrld4lWBs2sk4TV6oWSBWPbuUb3A2mw203uCnbMHpSoXw==
 
-"@sushiswap/core-sdk@1.0.0-canary.68":
-  version "1.0.0-canary.68"
-  resolved "https://registry.yarnpkg.com/@sushiswap/core-sdk/-/core-sdk-1.0.0-canary.68.tgz#41c01204492d3054ad5fd84764e679cc5ed5eeda"
-  integrity sha512-VWYoBhFK80v1Y/ZJ64vOHIg7t59RxK72tW9Oh2SA8iBvfceK3hCRFbc4F1YLSLu+o64MUNe/19HX2sWCYotr4A==
+"@sushiswap/core-sdk@1.0.0-canary.75":
+  version "1.0.0-canary.75"
+  resolved "https://registry.yarnpkg.com/@sushiswap/core-sdk/-/core-sdk-1.0.0-canary.75.tgz#75d852504ddee2499035a71f27931c7a9896ced0"
+  integrity sha512-IRueQoOaxX9wB1c5jgE/ueh66/VS/v8MSjnJINtC+7hJ0YfTe8TKa1J11Y1qYczjulJ3/P0GOkTG2XzttR3SHw==
   dependencies:
     "@ethersproject/address" "^5.4.0"
     "@ethersproject/bignumber" "^5.4.0"
@@ -2842,31 +2842,31 @@
   resolved "https://registry.yarnpkg.com/@sushiswap/core/-/core-2.0.0-canary.1.tgz#91c938668282d463e4fce6e0cf4d320ce5f3768f"
   integrity sha512-6YFT4EKgm0XgfwCBsKx5HrDtRI6EvhZHipjBKegdTV0b2zKuXnmdyZ+RwPCr0mCKq2pKB0qIiqCxfbgXYDlLCQ==
 
-"@sushiswap/default-token-list@24.17.0":
-  version "24.17.0"
-  resolved "https://registry.yarnpkg.com/@sushiswap/default-token-list/-/default-token-list-24.17.0.tgz#01fe985d4fafc5c9e5a9825564cd5d6f1c7d6b72"
-  integrity sha512-64yiaq0UeXAmxHep/KMFPbvQF31b/XVKk2g/qKsOPxHfKefcwnalW48+5Pu4MJc8DACt3fNWiauHGtmkcOU2Wg==
+"@sushiswap/default-token-list@24.21.0":
+  version "24.21.0"
+  resolved "https://registry.yarnpkg.com/@sushiswap/default-token-list/-/default-token-list-24.21.0.tgz#b5411478c81dc1cb0126cad9ffb9ef19c6ebfb87"
+  integrity sha512-zK0mfkm5fTUOQDiqgryRfTkP8MQMPj34VS6DHkVWR/sxlW2Fnpzo/z+us82I7nTQcKYCxZqkGMQrbzAwzVAzYg==
   dependencies:
     raise-version "^0.5.0"
 
-"@sushiswap/kashi-sdk@1.0.0-canary.44":
-  version "1.0.0-canary.44"
-  resolved "https://registry.yarnpkg.com/@sushiswap/kashi-sdk/-/kashi-sdk-1.0.0-canary.44.tgz#d251cf0994c0aa0f68dd6e77de7d3f5e086dc70b"
-  integrity sha512-gu+KWAT1puk+II5/loGTReTYrqiAQ0TSHU//P1M/Usjfzxg6joPyQ4t29c66RYREIF/A4ZJ+knD5LixwHcIBrQ==
+"@sushiswap/kashi-sdk@1.0.0-canary.51":
+  version "1.0.0-canary.51"
+  resolved "https://registry.yarnpkg.com/@sushiswap/kashi-sdk/-/kashi-sdk-1.0.0-canary.51.tgz#12427f85b9944b9b3aa3d712e9eca10961a2a294"
+  integrity sha512-PK5Zs4XL6ZsfxCFcemSNpm1tNH0irp9FX+dTtJuyYImLp8tvqG0ew1xdP+iUcV/7+q+mag/pbLBsNxdjrz3YgA==
   dependencies:
     "@ethersproject/abi" "^5.4.0"
     "@ethersproject/contracts" "^5.4.0"
-    "@sushiswap/bentobox-sdk" "1.0.0-canary.53"
+    "@sushiswap/bentobox-sdk" "1.0.0-canary.60"
 
 "@sushiswap/limit-order-pair-list@0.2.15":
   version "0.2.15"
   resolved "https://registry.yarnpkg.com/@sushiswap/limit-order-pair-list/-/limit-order-pair-list-0.2.15.tgz#43601d45205664c4e24229f56815bc71550c8824"
   integrity sha512-G9w7oHw507tIVZzvewvcT5+RQcYOYA9YDc45dIhw8S3T4MrFDFhgbK4u00lNt8qI8+tu1nsoH7GWamA8xCk86Q==
 
-"@sushiswap/limit-order-sdk@1.0.0-canary.54":
-  version "1.0.0-canary.54"
-  resolved "https://registry.yarnpkg.com/@sushiswap/limit-order-sdk/-/limit-order-sdk-1.0.0-canary.54.tgz#bd1fd81caef0e24826e2f9563a9c770cc01935d3"
-  integrity sha512-Lua+XRhunihhl7jdk+pMsh9v9ChA6zRU7PbEGqcsWjQuulwPAz5NgK1Fl7ZIgZw8Tcw2ovYAIUziyYotnNB5ZQ==
+"@sushiswap/limit-order-sdk@1.0.0-canary.61":
+  version "1.0.0-canary.61"
+  resolved "https://registry.yarnpkg.com/@sushiswap/limit-order-sdk/-/limit-order-sdk-1.0.0-canary.61.tgz#b1f71a61e8a27ee4172ef963cec8b22d6f166d06"
+  integrity sha512-Hlt2oVTw03sIF+dGMJS4XnYoYddJCKAghulhE8QKUbA0uXAtM9L7+z4eJkOfY6ENDt7CCdEhI2qAqdBWQ8Pzmw==
   dependencies:
     "@ethersproject/abi" "^5.4.0"
     "@ethersproject/abstract-signer" "^5.4.0"
@@ -2875,19 +2875,19 @@
     "@ethersproject/experimental" "^5.4.0"
     "@ethersproject/signing-key" "^5.4.0"
     "@ethersproject/transactions" "^5.4.0"
-    "@sushiswap/core-sdk" "1.0.0-canary.68"
+    "@sushiswap/core-sdk" "1.0.0-canary.75"
     eip-712 "^0.4.0"
     isomorphic-unfetch "^3.0.0"
 
-"@sushiswap/miso-sdk@1.0.0-canary.43":
-  version "1.0.0-canary.43"
-  resolved "https://registry.yarnpkg.com/@sushiswap/miso-sdk/-/miso-sdk-1.0.0-canary.43.tgz#b9d59ff526e5c9a64cd1d9c96be786d4ae8e8b2f"
-  integrity sha512-g4SGvQ487DQRRAgC+PsS5FnOK/9hKU3jM997WV/PDzk5KtOVB7F54Usn2v5bn5zHgqOO7x6XVfdFWF6m9jb+rA==
+"@sushiswap/miso-sdk@1.0.0-canary.50":
+  version "1.0.0-canary.50"
+  resolved "https://registry.yarnpkg.com/@sushiswap/miso-sdk/-/miso-sdk-1.0.0-canary.50.tgz#1ffd90b4ac792b29986de989957f586ba9ad4388"
+  integrity sha512-lQmh7gB9/QDtv7Y8sV5+ceHnfNKzyYCCk06g2m30MKTJwY4tGz612COqpBY4CKcPbIC2jZsGhuYPgcVm+dCeyg==
 
-"@sushiswap/miso@1.0.0-canary.40":
-  version "1.0.0-canary.40"
-  resolved "https://registry.yarnpkg.com/@sushiswap/miso/-/miso-1.0.0-canary.40.tgz#9bc94823c5711c81f64cb4081a95da0ba435139e"
-  integrity sha512-nO+S8TIIP4VkXgC0vdXVAqr+DqOpAe4V1eltCvsIi84fWwFs3f9Kdk2rC6QLxLpMfOGlD/I8/MdQ0mf+DfHFHg==
+"@sushiswap/miso@1.0.0-canary.42":
+  version "1.0.0-canary.42"
+  resolved "https://registry.yarnpkg.com/@sushiswap/miso/-/miso-1.0.0-canary.42.tgz#b40aa96f2eb529b5c03a687cb731217450f57777"
+  integrity sha512-7eC5lrNoJ6xAPPU83HycBItL6IQ9KqvxBK6hiwhHOGIZPze9MmWIPi1P7IGRzeXjlEldwkP6CrcvlSiZ+xE7CA==
 
 "@sushiswap/sdk@^5.0.0-canary.109":
   version "5.0.0-canary.116"
@@ -2916,23 +2916,23 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@sushiswap/tines@1.0.0-canary.51":
-  version "1.0.0-canary.51"
-  resolved "https://registry.yarnpkg.com/@sushiswap/tines/-/tines-1.0.0-canary.51.tgz#97927437c053abaabb86ba5c98ceacc3e2f2f4cd"
-  integrity sha512-RfbdKRpF6t3O8LGTT84v2SSeInYDHPTa/d+QrjKcIQowQYNSAkOYxW9LN8SC5PJBhmoosoDNC9HDGXjiW7UySg==
+"@sushiswap/tines@1.0.0-canary.58":
+  version "1.0.0-canary.58"
+  resolved "https://registry.yarnpkg.com/@sushiswap/tines/-/tines-1.0.0-canary.58.tgz#8a83d9e2c135ba11789193da9e18d71940332bda"
+  integrity sha512-C+kMwFkiq86LOX1HEf6GpCVzb0yi1aQggiTvIefEWPwLXix7Vteziif0cCzQk7v/KthENf8ckPOf7Y9LIpUoyA==
   dependencies:
     "@ethersproject/bignumber" "^5.4.0"
-    "@sushiswap/core-sdk" "1.0.0-canary.68"
+    "@sushiswap/core-sdk" "1.0.0-canary.75"
 
-"@sushiswap/trident-sdk@1.0.0-canary.78":
-  version "1.0.0-canary.78"
-  resolved "https://registry.yarnpkg.com/@sushiswap/trident-sdk/-/trident-sdk-1.0.0-canary.78.tgz#d5419d9c1894f6c853ccbba570dfd75d45d3f9a6"
-  integrity sha512-jeU+lQOjPyZaa0Xc+nPar08Q8hCRCuSARR0mJsXY5bsPSE8ONJFh2NxVlbPgJyg7N4irKYWRC0ub5FYGygh1pA==
+"@sushiswap/trident-sdk@1.0.0-canary.85":
+  version "1.0.0-canary.85"
+  resolved "https://registry.yarnpkg.com/@sushiswap/trident-sdk/-/trident-sdk-1.0.0-canary.85.tgz#1e88c657f862a5783c3d52aa2eb497ea8a23d713"
+  integrity sha512-niV7XXKA+6nfEKz2UaWpXS0XjabdErjrHEImre1cCmRdTuEVU6XulQtjo9BRraPP4rXeF3VkWXpX5oG7wrPtfQ==
   dependencies:
     "@ethersproject/abi" "^5.4.0"
     "@ethersproject/bignumber" "^5.4.0"
-    "@sushiswap/core-sdk" "1.0.0-canary.68"
-    "@sushiswap/tines" "1.0.0-canary.51"
+    "@sushiswap/core-sdk" "1.0.0-canary.75"
+    "@sushiswap/tines" "1.0.0-canary.58"
     "@sushiswap/trident" "1.0.0-canary.30"
     tiny-invariant "^1.1.0"
 
