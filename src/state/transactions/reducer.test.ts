@@ -1,5 +1,5 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { createStore, Store } from 'redux'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import { addTransaction, checkedTransaction, clearAllTransactions, finalizeTransaction } from './actions'
 import reducer, { initialState, TransactionState } from './reducer'

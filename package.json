@@ -188,6 +188,7 @@
     "redux-persist": "^6.0.0",
     "serve": "^12.0.0",
     "sharp": "^0.29.0",
+    "souvlaswap-core-sdk": "^1.1.8",
     "start-server-and-test": "1.14.0",
     "swr": "^1.1.2",
     "tailwindcss": "^3.0.1",
@@ -213,6 +214,6 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "gtgsdk": "github:ninja-1337/sdk"
+    "gtgsdk": "github:ninja-1337/sdk#canary"
   }
 }

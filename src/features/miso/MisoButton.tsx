@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount, NativeCurrency, Token } from '@sushiswap/core-sdk'
 import LoadingCircle from 'app/animation/loading-circle.json'
 import Button from 'app/components/Button'
 import { Auction } from 'app/features/miso/context/Auction'
@@ -8,6 +7,7 @@ import { AuctionStatus } from 'app/features/miso/context/types'
 import { ApprovalState, useApproveCallback } from 'app/hooks'
 import Lottie from 'lottie-react'
 import React, { FC } from 'react'
+import { CurrencyAmount, NativeCurrency, Token } from 'souvlaswap-core-sdk'
 
 interface MisoButtonProps {
   auction: Auction

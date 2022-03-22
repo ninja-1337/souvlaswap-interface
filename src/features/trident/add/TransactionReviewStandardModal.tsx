@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import ListPanel from 'app/components/ListPanel'
 import HeadlessUIModal from 'app/components/Modal/HeadlessUIModal'
@@ -12,6 +11,7 @@ import { useAddLiquidityExecute } from 'app/features/trident/add/useAddLiquidity
 import { usePoolContext } from 'app/features/trident/PoolContext'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { FC, useCallback } from 'react'
+import { CurrencyAmount } from 'souvlaswap-core-sdk'
 
 import DepositSubmittedModalContent from './DepositSubmittedModalContent'
 

@@ -1,7 +1,6 @@
 import { ExternalLinkIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency } from '@sushiswap/core-sdk'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import ExternalLink from 'app/components/ExternalLink'
 import HeadlessUiModal from 'app/components/Modal/HeadlessUIModal'
@@ -11,6 +10,7 @@ import { getExplorerLink } from 'app/functions/explorer'
 import { useUnsupportedTokens } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC, useState } from 'react'
+import { Currency } from 'souvlaswap-core-sdk'
 
 interface UnsupportedCurrencyFooter {
   currencies: (Currency | undefined)[]
@@ -75,7 +75,7 @@ const UnsupportedCurrencyFooter: FC<UnsupportedCurrencyFooter> = ({ currencies }
         onClick={() => setShowDetails(true)}
         variant="xs"
         weight={700}
-        className="text-blue/80 hover:text-blue text-center"
+        className="text-center text-blue/80 hover:text-blue"
       >
         {i18n._(t`What does this mean?`)}
       </Typography>

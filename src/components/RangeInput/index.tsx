@@ -1,7 +1,7 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency } from '@sushiswap/core-sdk'
 import { FC } from 'react'
+import { Currency } from 'souvlaswap-core-sdk'
 
 import { classNames } from '../../functions'
 import { Input as NumericalInput } from '../Input/Numeric'
@@ -34,7 +34,7 @@ const RangeInput: FC<RangeInputProps> = ({ value, label, color = 'blue', onChang
       >
         {label}
       </Typography>
-      <div className=" bg-dark-900 border-t border-l border-r border-dark-700">
+      <div className="border-t border-l border-r bg-dark-900 border-dark-700">
         <NumericalInput
           value={value}
           onUserInput={onChange}

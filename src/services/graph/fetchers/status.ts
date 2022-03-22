@@ -1,6 +1,6 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { GRAPH_HOST } from 'app/services/graph/constants'
 import { request } from 'graphql-request'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 // @ts-ignore TYPE NEEDS FIXING
 export const status = async (chainId = ChainId.ETHEREUM, subgraphName) =>

@@ -1,9 +1,9 @@
 import { getAddress } from '@ethersproject/address'
-import { ChainId, CurrencyAmount, Token } from '@sushiswap/core-sdk'
 import { useAllTokens } from 'app/hooks/Tokens'
 import { useBoringHelperContract, useDashboardContract, useQuickSwapFactoryContract } from 'app/hooks/useContract'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { ChainId, CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 
 import LPToken from './LPToken'
 

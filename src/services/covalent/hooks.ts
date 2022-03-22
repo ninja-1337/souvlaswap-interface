@@ -1,4 +1,3 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import {
   getBlock,
   getBlockHeights,
@@ -17,6 +16,7 @@ import {
   getTransaction,
   getTransfers,
 } from 'app/services/covalent/fetchers'
+import { ChainId } from 'souvlaswap-core-sdk'
 import useSWR from 'swr'
 
 // CLASS A

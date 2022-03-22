@@ -2,7 +2,6 @@ import { getAddress } from '@ethersproject/address'
 import { Signature } from '@ethersproject/bytes'
 import { AddressZero } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, CurrencyAmount } from '@sushiswap/core-sdk'
 import { LimitOrder, STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
 import useLimitOrders from 'app/features/legacy/limit-order/useLimitOrders'
 import { calculateGasMargin, ZERO } from 'app/functions'
@@ -14,6 +13,7 @@ import { clear, setLimitOrderAttemptingTxn, setLimitOrderBentoPermit } from 'app
 import { OrderExpiration } from 'app/state/limit-order/reducer'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback } from 'react'
+import { Currency, CurrencyAmount } from 'souvlaswap-core-sdk'
 
 const getEndTime = (orderExpiration: OrderExpiration | string): number => {
   switch (orderExpiration) {

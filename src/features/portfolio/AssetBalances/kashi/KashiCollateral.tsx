@@ -1,11 +1,11 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount } from '@sushiswap/core-sdk'
 import { Fraction } from 'app/entities'
 import { KashiMarket } from 'app/features/kashi/types'
 import { useKashiPositions } from 'app/features/portfolio/AssetBalances/kashi/hooks'
 import { CategorySum } from 'app/features/portfolio/CategorySum'
 import React from 'react'
+import { Currency, CurrencyAmount } from 'souvlaswap-core-sdk'
 
 export interface CollateralData {
   collateral: CurrencyAmount<Currency>

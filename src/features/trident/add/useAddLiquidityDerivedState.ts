@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, ZERO } from '@sushiswap/core-sdk'
 import { PoolState } from '@sushiswap/trident-sdk'
 import {
   selectAddNormalInput,
@@ -15,6 +14,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
+import { Currency, CurrencyAmount, ZERO } from 'souvlaswap-core-sdk'
 
 import { useDependentAssetInputs } from '../useDependentAssetInputs'
 

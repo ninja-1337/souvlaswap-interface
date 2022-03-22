@@ -1,5 +1,4 @@
 import { Interface } from '@ethersproject/abi'
-import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@sushiswap/core-sdk'
 import ERC20_ABI from 'app/constants/abis/erc20.json'
 import { isAddress } from 'app/functions/validate'
 import { useAllTokens } from 'app/hooks/Tokens'
@@ -7,6 +6,7 @@ import { useMulticall2Contract } from 'app/hooks/useContract'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useMultipleContractSingleData, useSingleContractMultipleData } from 'app/state/multicall/hooks'
 import { useMemo } from 'react'
+import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from 'souvlaswap-core-sdk'
 
 import { TokenBalancesMap } from './types'
 

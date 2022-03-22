@@ -1,7 +1,6 @@
 import { parseUnits } from '@ethersproject/units'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount, JSBI } from '@sushiswap/core-sdk'
 import LoadingCircle from 'app/animation/loading-circle.json'
 import HeadlessUIModal from 'app/components/Modal/HeadlessUIModal'
 import Typography from 'app/components/Typography'
@@ -14,6 +13,7 @@ import { getExplorerLink, shortenString } from 'app/functions'
 import { useActiveWeb3React } from 'app/services/web3'
 import Lottie from 'lottie-react'
 import React, { FC, useCallback, useEffect, useState } from 'react'
+import { CurrencyAmount, JSBI } from 'souvlaswap-core-sdk'
 
 interface AuctionCreationModalProps {
   open: boolean
@@ -85,7 +85,7 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
 
   const paymentCurrencyLink = !data.paymentCurrency.isNative ? (
     <a
-      className="text-purple font-normal text-xs"
+      className="text-xs font-normal text-purple"
       target="_blank"
       rel="noreferrer"
       href={data.paymentCurrency ? getExplorerLink(chainId, data.paymentCurrency.wrapped.address, 'address') : ''}
@@ -106,19 +106,19 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
             subheader={i18n._(t`Please review your entered details thoroughly.`)}
           />
           <HeadlessUIModal.Content>
-            <div className="grid grid-cols-2 items-center">
-              <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+            <div className="grid items-center grid-cols-2">
+              <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                 {i18n._(t`Auction Type`)}
               </Typography>
-              <Typography weight={700} variant="sm" className="text-high-emphesis py-2 border-b border-dark-700">
+              <Typography weight={700} variant="sm" className="py-2 border-b text-high-emphesis border-dark-700">
                 {templateIdToLabel(data.auctionType)}
               </Typography>
               {data.pointListAddress && (
                 <>
-                  <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+                  <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                     {i18n._(t`Permission list`)}
                   </Typography>
-                  <Typography weight={700} variant="sm" className="text-purple py-2 border-b border-dark-700">
+                  <Typography weight={700} variant="sm" className="py-2 border-b text-purple border-dark-700">
                     <a
                       target="_blank"
                       rel="noreferrer"
@@ -129,7 +129,7 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
                   </Typography>
                 </>
               )}
-              <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+              <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                 {i18n._(t`Token Amount`)}
               </Typography>
               <Typography
@@ -139,7 +139,7 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
               >
                 {data.tokenAmount.toSignificant(6)}{' '}
                 <a
-                  className="text-purple font-normal text-xs"
+                  className="text-xs font-normal text-purple"
                   target="_blank"
                   rel="noreferrer"
                   href={getExplorerLink(chainId, data.tokenAmount.currency.address, 'address')}
@@ -150,7 +150,7 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
 
               {data.auctionType === AuctionTemplate.DUTCH_AUCTION && (
                 <>
-                  <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+                  <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                     {i18n._(t`Starting Price`)}
                   </Typography>
                   <Typography
@@ -168,7 +168,7 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
                       .toSignificant(6)}{' '}
                     {paymentCurrencyLink}
                   </Typography>
-                  <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+                  <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                     {i18n._(t`Ending Price`)}
                   </Typography>
                   <Typography
@@ -190,7 +190,7 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
               )}
               {data.auctionType === AuctionTemplate.BATCH_AUCTION && (
                 <>
-                  <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+                  <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                     {i18n._(t`Minimum Raised`)}
                   </Typography>
                   <Typography
@@ -204,7 +204,7 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
               )}
               {data.auctionType === AuctionTemplate.CROWDSALE && (
                 <>
-                  <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+                  <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                     {i18n._(t`Fixed Price`)}
                   </Typography>
                   <Typography
@@ -224,10 +224,10 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
                   </Typography>
                 </>
               )}
-              <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+              <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                 {i18n._(t`Start Date`)}
               </Typography>
-              <Typography weight={700} variant="sm" className="text-high-emphesis py-2 border-b border-dark-700">
+              <Typography weight={700} variant="sm" className="py-2 border-b text-high-emphesis border-dark-700">
                 {data.startDate.toLocaleString('en-uS', {
                   year: 'numeric',
                   month: 'long',
@@ -238,10 +238,10 @@ const AuctionCreationModal: FC<AuctionCreationModalProps> = ({ open, onDismiss: 
                 })}{' '}
                 UTC
               </Typography>
-              <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+              <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                 {i18n._(t`End Date`)}
               </Typography>
-              <Typography weight={700} variant="sm" className="text-high-emphesis py-2 border-b border-dark-700">
+              <Typography weight={700} variant="sm" className="py-2 border-b text-high-emphesis border-dark-700">
                 {data.endDate.toLocaleString('en-uS', {
                   year: 'numeric',
                   month: 'long',

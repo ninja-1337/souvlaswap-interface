@@ -2,12 +2,12 @@ import { Block } from '@ethersproject/abstract-provider'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Zero } from '@ethersproject/constants'
 import { Formatter } from '@ethersproject/providers'
-import { ChainId } from '@sushiswap/core-sdk'
 import useDebounce from 'app/hooks/useDebounce'
 import useIsWindowVisible from 'app/hooks/useIsWindowVisible'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import { updateBlockNumber, updateBlockTimestamp, updateChainId } from './actions'
 

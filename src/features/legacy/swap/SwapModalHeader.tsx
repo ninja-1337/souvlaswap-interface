@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Percent, TradeType, ZERO } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import HeadlessUiModal from 'app/components/Modal/HeadlessUIModal'
@@ -10,6 +9,7 @@ import { useUSDCValue } from 'app/hooks/useUSDCPrice'
 import { TradeUnion } from 'app/types'
 import React, { FC } from 'react'
 import { ArrowDown } from 'react-feather'
+import { Percent, TradeType, ZERO } from 'souvlaswap-core-sdk'
 
 interface SwapModalHeader {
   trade?: TradeUnion
@@ -115,7 +115,7 @@ const SwapModalHeader: FC<SwapModalHeader> = ({
           </div>
         </HeadlessUiModal.BorderedContent>
       )}
-      <div className="justify-start text-sm text-center text-secondary py-2">
+      <div className="justify-start py-2 text-sm text-center text-secondary">
         {trade?.tradeType === TradeType.EXACT_INPUT ? (
           <Typography variant="xs" className="text-secondary">
             {i18n._(t`Output is estimated. You will receive at least`)}{' '}

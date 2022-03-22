@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/core-sdk'
 import HeadlessUiModal from 'app/components/Modal/HeadlessUIModal'
 import Typography from 'app/components/Typography'
 import { NETWORK_ICON, NETWORK_LABEL } from 'app/config/networks'
@@ -11,6 +10,7 @@ import { useModalOpen, useNetworkModalToggle } from 'app/state/application/hooks
 // @ts-ignore TYPE NEEDS FIXING
 import Image from 'next/image'
 import React, { FC } from 'react'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 export const SUPPORTED_NETWORKS: {
   [key: number]: {

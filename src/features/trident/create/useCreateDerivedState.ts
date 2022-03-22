@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Price, ZERO } from '@sushiswap/core-sdk'
 import { PoolState } from '@sushiswap/trident-sdk'
 import { selectBalancesCurrency } from 'app/features/portfolio/portfolioSlice'
 import {
@@ -20,6 +19,7 @@ import { useBentoMasterContractAllowed } from 'app/state/bentobox/hooks'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { useCallback, useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
+import { Currency, CurrencyAmount, Price, ZERO } from 'souvlaswap-core-sdk'
 
 type UseBalancesSelectedCurrency = () => Currency | undefined
 export const useBalancesSelectedCurrency: UseBalancesSelectedCurrency = () => {

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ChainId } from '@sushiswap/core-sdk'
 import { Web3ReactContextInterface } from '@web3-react/core/dist/types'
 import { AppState } from 'app/state'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 export interface Web3ReactContext {
   chainId?: ChainId

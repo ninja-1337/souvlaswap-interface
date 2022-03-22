@@ -1,7 +1,6 @@
 import { ExclamationIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Percent } from '@sushiswap/core-sdk'
 import { DEFAULT_DEADLINE_FROM_NOW } from 'app/constants'
 import { classNames } from 'app/functions'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
@@ -15,6 +14,7 @@ import {
 } from 'app/state/slippage/slippageSlice'
 import { useUserTransactionTTL } from 'app/state/user/hooks'
 import React, { FC, useState } from 'react'
+import { Percent } from 'souvlaswap-core-sdk'
 
 import Button from '../Button'
 import QuestionHelper from '../QuestionHelper'

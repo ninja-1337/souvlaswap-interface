@@ -1,10 +1,10 @@
-import { CurrencyAmount, Token } from '@sushiswap/core-sdk'
 import { ApprovalState } from 'app/hooks/useApproveCallback'
 import useBentoMasterApproveCallback, { BentoMasterApproveCallback } from 'app/hooks/useBentoMasterApproveCallback'
 import { useInariContract } from 'app/hooks/useContract'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback } from 'react'
+import { CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 
 import { useDerivedInariState } from '../hooks'
 import { BaseStrategyHook } from '../strategies/useBaseStrategy'

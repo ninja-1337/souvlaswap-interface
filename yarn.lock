@@ -9511,7 +9511,7 @@
     "secp256k1" "4.0.2"
     "superagent" "^3.8.3"
 
-"gtgsdk@github:ninja-1337/sdk":
+"gtgsdk@github:ninja-1337/sdk#canary":
   "resolved" "git+ssh://git@github.com/ninja-1337/sdk.git#fe40cf3d7814fdde34a175c04318826baf02fb05"
 
 "gzip-size@^6.0.0":
@@ -15806,6 +15806,22 @@
   "integrity" "sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA=="
   "resolved" "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
   "version" "1.4.8"
+
+"souvlaswap-core-sdk@^1.1.8":
+  "integrity" "sha512-MSJIZkam2BT+p97LHFto2Oz849AOy30zol2BJJpDpws/UsC4RL+dxRWWReqfGi2/opI9NwcGAM5gexru4n3zgA=="
+  "resolved" "https://registry.npmjs.org/souvlaswap-core-sdk/-/souvlaswap-core-sdk-1.1.8.tgz"
+  "version" "1.1.8"
+  dependencies:
+    "@ethersproject/address" "^5.4.0"
+    "@ethersproject/bignumber" "^5.4.0"
+    "@ethersproject/providers" "^5.4.0"
+    "@ethersproject/solidity" "^5.4.0"
+    "big.js" "^6.1.1"
+    "decimal.js-light" "^2.5.0"
+    "jsbi" "^4.1.0"
+    "tiny-invariant" "^1.1.0"
+    "tiny-warning" "^1.0.0"
+    "toformat" "^2.0.0"
 
 "spawn-command@^0.0.2-1":
   "integrity" "sha1-YvXpRmmBwbeW3Fkpk34RycaSG9A="

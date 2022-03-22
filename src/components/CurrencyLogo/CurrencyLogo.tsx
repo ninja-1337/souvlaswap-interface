@@ -1,7 +1,7 @@
-import { ChainId, Currency, WNATIVE } from '@sushiswap/core-sdk'
 import useHttpLocations from 'app/hooks/useHttpLocations'
 import { WrappedTokenInfo } from 'app/state/lists/wrappedTokenInfo'
 import React, { FunctionComponent, useMemo } from 'react'
+import { ChainId, Currency, WNATIVE } from 'souvlaswap-core-sdk'
 
 import Logo, { UNKNOWN_ICON } from '../Logo'
 

@@ -1,12 +1,12 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Token } from '@sushiswap/core-sdk'
 import Chip from 'app/components/Chip'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import { HeadlessUiModal } from 'app/components/Modal'
 import Typography from 'app/components/Typography'
 import { shortenAddress } from 'app/functions'
 import React, { FC } from 'react'
+import { Token } from 'souvlaswap-core-sdk'
 
 interface ImportRow {
   token: Token
@@ -17,14 +17,14 @@ const ImportRow: FC<ImportRow> = ({ token, onClick }) => {
   const { i18n } = useLingui()
 
   return (
-    <HeadlessUiModal.BorderedContent className="border hover:border-gray-700 cursor-pointer" onClick={onClick}>
+    <HeadlessUiModal.BorderedContent className="border cursor-pointer hover:border-gray-700" onClick={onClick}>
       <div className="flex justify-between">
         <div className="flex items-center gap-3">
-          <div className="rounded-full overflow-hidden border border-dark-700">
+          <div className="overflow-hidden border rounded-full border-dark-700">
             <CurrencyLogo currency={token} size={48} />
           </div>
           <div className="flex flex-col">
-            <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2">
               <Typography variant="lg" weight={700} component="span" className="text-white">
                 {token.symbol}{' '}
                 <Typography variant="xs" component="span">

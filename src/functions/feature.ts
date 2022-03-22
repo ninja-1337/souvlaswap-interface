@@ -1,6 +1,6 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import features from 'app/config/features'
 import { Feature } from 'app/enums'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 export function featureEnabled(feature: Feature, chainId: ChainId): boolean {
   // @ts-ignore TYPE NEEDS FIXING

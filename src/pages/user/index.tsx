@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/core-sdk'
 import Back from 'app/components/Back'
 import Button from 'app/components/Button'
 import Container from 'app/components/Container'
@@ -20,6 +19,7 @@ import { useETHBalances } from 'app/state/wallet/hooks'
 import Head from 'next/head'
 import React, { useCallback, useMemo } from 'react'
 import { ExternalLink, User } from 'react-feather'
+import { ChainId } from 'souvlaswap-core-sdk'
 import useSWR, { SWRResponse } from 'swr'
 
 // we want the latest one to come first, so return negative if a is after b

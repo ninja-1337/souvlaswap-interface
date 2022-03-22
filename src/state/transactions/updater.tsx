@@ -1,4 +1,3 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { retry, RetryableError, RetryOptions } from 'app/functions/retry'
 import { routingInfo } from 'app/hooks/useBestTridentTrade'
 import { useActiveWeb3React } from 'app/services/web3'
@@ -8,6 +7,7 @@ import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { selectTransactions } from 'app/state/transactions/selectors'
 import { useCallback, useEffect, useMemo } from 'react'
 import { useRecoilValue } from 'recoil'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import { checkedTransaction, finalizeTransaction } from './actions'
 import { sendRevertTransactionLog } from './sentryLogger'

@@ -1,6 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
-import { WNATIVE } from '@sushiswap/core-sdk'
 import ERC20_ABI from 'app/constants/abis/erc20.json'
 import { isAddress } from 'app/functions'
 import { useContract } from 'app/hooks/useContract'
@@ -8,6 +7,7 @@ import useTransactionStatus from 'app/hooks/useTransactionStatus'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useBlockNumber } from 'app/state/application/hooks'
 import { useCallback, useEffect, useState } from 'react'
+import { WNATIVE } from 'souvlaswap-core-sdk'
 
 export interface BalanceProps {
   value: BigNumber

@@ -1,9 +1,9 @@
-import { Currency, CurrencyAmount } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import SumUSDCValues from 'app/features/trident/SumUSDCValues'
 import { currencyFormatter } from 'app/functions'
 import { useRouter } from 'next/router'
 import React from 'react'
+import { Currency, CurrencyAmount } from 'souvlaswap-core-sdk'
 
 interface CategorySumProps {
   title: string
@@ -24,8 +24,8 @@ export const CategorySum = ({ title, subtitle, assetAmounts, liabilityAmounts, r
           {({ amount: liabilityAmount }) => {
             return (
               <div onClick={() => router.push(route)}>
-                <div className="border border-dark-900 rounded flex justify-between p-4 hover:bg-dark-800 transition-colors hover:cursor-pointer">
-                  <div className="flex gap-2 items-center">
+                <div className="flex justify-between p-4 transition-colors border rounded border-dark-900 hover:bg-dark-800 hover:cursor-pointer">
+                  <div className="flex items-center gap-2">
                     <Typography weight={700} variant="lg" className="text-high-emphesis">
                       {title}
                     </Typography>

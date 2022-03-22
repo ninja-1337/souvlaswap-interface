@@ -2,7 +2,6 @@ import { TransactionResponse } from '@ethersproject/abstract-provider'
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, CurrencyAmount, currencyEquals, NATIVE, Percent, WNATIVE, ZERO } from '@sushiswap/core-sdk'
 import AssetInput from 'app/components/AssetInput'
 import Button from 'app/components/Button'
 import ListPanel from 'app/components/ListPanel'
@@ -25,6 +24,7 @@ import { selectSlippageWithDefault } from 'app/state/slippage/slippageSlice'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import React, { useCallback, useMemo, useState } from 'react'
 import ReactGA from 'react-ga'
+import { ChainId, CurrencyAmount, currencyEquals, NATIVE, Percent, WNATIVE, ZERO } from 'souvlaswap-core-sdk'
 
 const DEFAULT_REMOVE_LIQUIDITY_SLIPPAGE_TOLERANCE = new Percent(5, 100)
 

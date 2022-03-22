@@ -2,12 +2,12 @@ import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useWalletModalToggle } from 'app/state/application/hooks'
 import { useRouter } from 'next/router'
 import React, { FC, Fragment, ReactNode, useMemo, useState } from 'react'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 const MenuLink: FC<{ href?: string; label: string; onClick?(): void }> = ({ href, label, onClick }) => {
   const router = useRouter()
@@ -119,7 +119,7 @@ const OnsenFilter = () => {
         >
           <Menu.Items
             static
-            className="absolute w-full z-10 mt-2 border divide-y rounded shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border-dark-900 bg-dark-1000 divide-dark-900"
+            className="absolute z-10 w-full mt-2 border divide-y rounded shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border-dark-900 bg-dark-1000 divide-dark-900"
           >
             {Object.entries(items).map(([k, v], index) => (
               <div

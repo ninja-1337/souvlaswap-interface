@@ -1,8 +1,8 @@
-import { Currency, CurrencyAmount } from '@sushiswap/core-sdk'
 import { AssetCell } from 'app/features/portfolio/AssetBalances/AssetCell'
 import { Assets } from 'app/features/portfolio/AssetBalances/types'
 import { ValueCell } from 'app/features/portfolio/AssetBalances/ValueCell'
 import React, { useMemo } from 'react'
+import { Currency, CurrencyAmount } from 'souvlaswap-core-sdk'
 
 export type CellProps = { cell: { value: CurrencyAmount<Currency> } }
 

@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Percent } from '@sushiswap/core-sdk'
 import LoadingCircle from 'app/animation/loading-circle.json'
 import HeadlessUIModal from 'app/components/Modal/HeadlessUIModal'
 import Typography from 'app/components/Typography'
@@ -11,6 +10,7 @@ import { getExplorerLink, shortenString } from 'app/functions'
 import { useActiveWeb3React } from 'app/services/web3'
 import Lottie from 'lottie-react'
 import React, { FC, useCallback, useEffect, useState } from 'react'
+import { Percent } from 'souvlaswap-core-sdk'
 
 import LiquidityLauncherCreationSubmittedModalContent from './LiquidityLauncherCreationSubmittedModalContent'
 
@@ -95,30 +95,30 @@ const LiquidityLauncherCreationModal: FC<LiquidityLauncherCreationModalProps> = 
             subheader={i18n._(t`Please review your entered details thoroughly.`)}
           />
           <HeadlessUIModal.Content>
-            <div className="grid grid-cols-2 items-center">
-              <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+            <div className="grid items-center grid-cols-2">
+              <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                 {i18n._(t`Auction Address`)}
               </Typography>
-              <Typography weight={700} variant="sm" className="text-purple py-2 border-b border-dark-700">
+              <Typography weight={700} variant="sm" className="py-2 border-b text-purple border-dark-700">
                 <a target="_blank" rel="noreferrer" href={getExplorerLink(chainId, data.auctionAddress, 'address')}>
                   {shortenString(data.auctionAddress, 12)}
                 </a>
               </Typography>
-              <Typography variant="sm" className="text-secondary py-2 border-b border-dark-700">
+              <Typography variant="sm" className="py-2 border-b text-secondary border-dark-700">
                 {i18n._(t`Lock period`)}
               </Typography>
-              <Typography weight={700} variant="sm" className="text-high-emphesis py-2 border-b border-dark-700">
+              <Typography weight={700} variant="sm" className="py-2 border-b text-high-emphesis border-dark-700">
                 {i18n._(t`${data.liqLockTime} days`)}
               </Typography>
               {auction && (
                 <>
                   <Typography
                     variant="sm"
-                    className="text-secondary py-2 border-b border-dark-700 h-full flex items-center"
+                    className="flex items-center h-full py-2 border-b text-secondary border-dark-700"
                   >
                     {i18n._(t`Liquidity`)}
                   </Typography>
-                  <Typography weight={700} variant="sm" className="text-high-emphesis py-2 border-b border-dark-700">
+                  <Typography weight={700} variant="sm" className="py-2 border-b text-high-emphesis border-dark-700">
                     {auction.totalTokens?.multiply(new Percent(data.liqPercentage, '100')).toSignificant(6)}{' '}
                     {auction.auctionToken.symbol} + {new Percent(data.liqPercentage, '100').toSignificant(6)}% of
                     auction proceeds in {auction.paymentToken.symbol}

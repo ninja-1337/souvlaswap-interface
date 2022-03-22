@@ -6,16 +6,6 @@ import { Signature } from '@ethersproject/bytes'
 import { arrayify, DataOptions, hexlify, splitSignature } from '@ethersproject/bytes'
 import { AddressZero } from '@ethersproject/constants'
 import { t } from '@lingui/macro'
-import {
-  Currency,
-  CurrencyAmount,
-  Percent,
-  Router as LegacyRouter,
-  SwapParameters,
-  toHex,
-  Trade as LegacyTrade,
-  TradeType,
-} from '@sushiswap/core-sdk'
 import { getBigNumber, MultiRoute } from '@sushiswap/tines'
 import {
   ComplexPathParams,
@@ -42,6 +32,16 @@ import { USER_REJECTED_TX } from 'app/services/web3/WalletError'
 import { useBlockNumber } from 'app/state/application/hooks'
 import { TransactionResponseLight, useTransactionAdder } from 'app/state/transactions/hooks'
 import { useMemo } from 'react'
+import {
+  Currency,
+  CurrencyAmount,
+  Percent,
+  Router as LegacyRouter,
+  SwapParameters,
+  toHex,
+  Trade as LegacyTrade,
+  TradeType,
+} from 'souvlaswap-core-sdk'
 
 import { OPENMEV_SUPPORTED_NETWORKS, OPENMEV_URI } from '../config/openmev'
 import { useArgentWalletContract } from './useArgentWalletContract'

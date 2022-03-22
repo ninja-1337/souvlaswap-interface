@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Percent, WNATIVE } from '@sushiswap/core-sdk'
 import AssetInput from 'app/components/AssetInput'
 import Button from 'app/components/Button'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
@@ -30,6 +29,7 @@ import { useUSDCValue } from 'app/hooks/useUSDCPrice'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import React, { FC } from 'react'
+import { Currency, CurrencyAmount, Percent, WNATIVE } from 'souvlaswap-core-sdk'
 
 import SumUSDCValues from '../SumUSDCValues'
 

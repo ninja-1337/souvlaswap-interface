@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ZERO } from '@sushiswap/core-sdk'
 import Button, { ButtonProps } from 'app/components/Button'
 import Dots from 'app/components/Dots'
 import ProgressSteps from 'app/components/ProgressSteps'
@@ -9,6 +8,7 @@ import { BentoApprovalState } from 'app/hooks/useBentoMasterApproveCallback'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useDerivedInariState, useSelectedInariStrategy } from 'app/state/inari/hooks'
 import React, { FC, useCallback, useState } from 'react'
+import { ZERO } from 'souvlaswap-core-sdk'
 
 interface InariButtonProps extends ButtonProps {}
 

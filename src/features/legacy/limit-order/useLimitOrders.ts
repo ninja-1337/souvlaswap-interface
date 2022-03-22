@@ -1,10 +1,10 @@
-import { CurrencyAmount, Percent, Price, Token } from '@sushiswap/core-sdk'
 import { LAMBDA_URL, LimitOrder, OrderStatus } from '@sushiswap/limit-order-sdk'
 import { DerivedOrder, LimitOrdersResponse, Order } from 'app/features/legacy/limit-order/types'
 import { useLimitOrderContract } from 'app/hooks'
 import { useAllTokens } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { CurrencyAmount, Percent, Price, Token } from 'souvlaswap-core-sdk'
 import useSWR, { SWRResponse } from 'swr'
 
 interface State {

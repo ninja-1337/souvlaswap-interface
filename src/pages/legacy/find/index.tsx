@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from '@sushiswap/core-sdk'
 import Alert from 'app/components/Alert'
 import Back from 'app/components/Back'
 import Button from 'app/components/Button'
@@ -22,6 +21,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'
+import { Currency, CurrencyAmount, JSBI, NATIVE, Token } from 'souvlaswap-core-sdk'
 
 enum Fields {
   TOKEN0 = 0,

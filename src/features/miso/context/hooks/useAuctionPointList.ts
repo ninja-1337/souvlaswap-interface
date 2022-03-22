@@ -1,6 +1,5 @@
 import { Interface } from '@ethersproject/abi'
 import { AddressZero } from '@ethersproject/constants'
-import { CHAIN_KEY, Currency, CurrencyAmount, Fraction, JSBI } from '@sushiswap/core-sdk'
 import MISO from '@sushiswap/miso/exports/all.json'
 import BASE_AUCTION_ABI from 'app/constants/abis/base-auction.json'
 import { useContract } from 'app/hooks'
@@ -8,6 +7,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { CallState, useMultipleContractSingleData, useSingleCallResult } from 'app/state/multicall/hooks'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback } from 'react'
+import { CHAIN_KEY, Currency, CurrencyAmount, Fraction, JSBI } from 'souvlaswap-core-sdk'
 
 export const useAuctionPointLists = (auctionAddresses: string[]): string[] => {
   const callStates = useMultipleContractSingleData(auctionAddresses, new Interface(BASE_AUCTION_ABI), 'pointList')

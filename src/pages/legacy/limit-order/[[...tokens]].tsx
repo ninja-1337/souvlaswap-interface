@@ -1,7 +1,6 @@
 import { SwitchVerticalIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Percent } from '@sushiswap/core-sdk'
 import limitOrderPairList from '@sushiswap/limit-order-pair-list/dist/limit-order.pairlist.json'
 import RecipientField from 'app/components/RecipientField'
 import Typography from 'app/components/Typography'
@@ -28,6 +27,7 @@ import useLimitOrderDerivedCurrencies, {
 } from 'app/state/limit-order/hooks'
 import { useExpertModeManager } from 'app/state/user/hooks'
 import React, { useMemo } from 'react'
+import { Percent } from 'souvlaswap-core-sdk'
 
 const LimitOrder = () => {
   const { i18n } = useLingui()

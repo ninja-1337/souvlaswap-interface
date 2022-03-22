@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import QuestionHelper from 'app/components/QuestionHelper'
@@ -10,6 +9,7 @@ import { currencyId } from 'app/functions'
 import { useCurrencyModalContext } from 'app/modals/SearchModal/CurrencySearchModal'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC } from 'react'
+import { Currency } from 'souvlaswap-core-sdk'
 
 const CommonBases: FC = () => {
   const { chainId } = useActiveWeb3React()

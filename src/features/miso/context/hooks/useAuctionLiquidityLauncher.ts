@@ -1,6 +1,5 @@
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { AddressZero } from '@ethersproject/constants'
-import { CHAIN_KEY } from '@sushiswap/core-sdk'
 import MISO from '@sushiswap/miso/exports/all.json'
 import { useLiquidityLauncherTemplateMap } from 'app/features/miso/context/hooks/useLiquidityLauncherTemplateMap'
 import { LiquidityLauncherTemplate } from 'app/features/miso/context/types'
@@ -9,6 +8,7 @@ import { useContract, useFactoryContract } from 'app/hooks'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback } from 'react'
+import { CHAIN_KEY } from 'souvlaswap-core-sdk'
 
 export const useAuctionLiquidityLauncher = () => {
   const { account, chainId } = useActiveWeb3React()

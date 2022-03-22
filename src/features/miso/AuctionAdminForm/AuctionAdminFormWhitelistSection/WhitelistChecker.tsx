@@ -1,12 +1,12 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, ZERO } from '@sushiswap/core-sdk'
 import Form, { DEFAULT_FORM_FIELD_CLASSNAMES } from 'app/components/Form'
 import Typography from 'app/components/Typography'
 import { isAddressValidator, pipeline } from 'app/features/miso/AuctionAdminForm/validators'
 import { useAuctionPointListPoints } from 'app/features/miso/context/hooks/useAuctionPointList'
 import { classNames, isAddress } from 'app/functions'
 import React, { FC, useState } from 'react'
+import { Currency, ZERO } from 'souvlaswap-core-sdk'
 
 interface WhitelistCheckerProps {
   listAddress?: string
@@ -32,7 +32,7 @@ const WhitelistChecker: FC<WhitelistCheckerProps> = ({ listAddress: listAddressP
     <>
       <div className="flex flex-col flex-grow">
         <Typography weight={700}>{i18n._(t`Whitelist Checker`)}</Typography>
-        <div className="mt-2 flex rounded-md shadow-sm">
+        <div className="flex mt-2 rounded-md shadow-sm">
           <input
             value={listAddress || listAddressProp}
             onChange={(e) =>
@@ -42,7 +42,7 @@ const WhitelistChecker: FC<WhitelistCheckerProps> = ({ listAddress: listAddressP
             className={classNames(DEFAULT_FORM_FIELD_CLASSNAMES, !!error ? '!border-red' : '')}
           />
         </div>
-        <div className="mt-2 flex rounded-md shadow-sm">
+        <div className="flex mt-2 rounded-md shadow-sm">
           <input
             value={address}
             onChange={(e) =>

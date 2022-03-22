@@ -1,6 +1,6 @@
-import { Currency, Token } from '@sushiswap/core-sdk'
 import { Tags, TokenInfo } from '@uniswap/token-lists'
 import { TokenList } from '@uniswap/token-lists/dist/types'
+import { Currency, Token } from 'souvlaswap-core-sdk'
 
 import { isAddress } from '../../functions/validate'
 

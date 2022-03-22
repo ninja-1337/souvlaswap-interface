@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, SUSHI } from '@sushiswap/core-sdk'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import ListPanel from 'app/components/ListPanel'
 import Typography from 'app/components/Typography'
@@ -8,6 +7,7 @@ import { tryParseAmount } from 'app/functions'
 import useDesktopMediaQuery from 'app/hooks/useDesktopMediaQuery'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC } from 'react'
+import { ChainId, SUSHI } from 'souvlaswap-core-sdk'
 
 const Rewards: FC = () => {
   const { chainId } = useActiveWeb3React()
@@ -46,7 +46,7 @@ const Rewards: FC = () => {
               <ListPanel.Item
                 key={0}
                 left={
-                  <div className="flex flex-row gap-4 items-center">
+                  <div className="flex flex-row items-center gap-4">
                     <CurrencyLogo size={30} currency={rewardCurrency} className="!rounded-full" />
                     <Typography weight={700} className="text-high-emphesis">
                       {rewardCurrency?.symbol}
@@ -54,7 +54,7 @@ const Rewards: FC = () => {
                   </div>
                 }
                 right={
-                  <div className="flex flex-row gap-1 justify-end">
+                  <div className="flex flex-row justify-end gap-1">
                     <Typography weight={700} className="text-high-emphesis">
                       69.74 SUSHI per Day
                     </Typography>
@@ -70,7 +70,7 @@ const Rewards: FC = () => {
               <ListPanel.Item
                 left={<ListPanel.Item.Left amount={tryParseAmount('401.34', SUSHI[ChainId.ETHEREUM])} />}
                 right={
-                  <div className="flex flex-row gap-1 justify-end">
+                  <div className="flex flex-row justify-end gap-1">
                     <Typography variant="sm" weight={700}>
                       SUSHI
                     </Typography>

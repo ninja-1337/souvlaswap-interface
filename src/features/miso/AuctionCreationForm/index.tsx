@@ -1,7 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, NATIVE, Price, Token } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Form from 'app/components/Form'
 import AuctionCreationFormGeneralDetails from 'app/features/miso/AuctionCreationForm/AuctionCreationFormGeneralDetails'
@@ -15,6 +14,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { useRouter } from 'next/router'
 import React, { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { Currency, CurrencyAmount, NATIVE, Price, Token } from 'souvlaswap-core-sdk'
 import * as yup from 'yup'
 
 export interface AuctionCreationFormInput {

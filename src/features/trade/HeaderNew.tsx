@@ -1,12 +1,12 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency } from '@sushiswap/core-sdk'
 import NavLink from 'app/components/NavLink'
 import Settings from 'app/components/Settings'
 import Typography from 'app/components/Typography'
 import MyOrders from 'app/features/legacy/limit-order/MyOrders'
 import { useRouter } from 'next/router'
 import React, { FC } from 'react'
+import { Currency } from 'souvlaswap-core-sdk'
 
 const getQuery = (input?: Currency, output?: Currency) => {
   if (!input && !output) return

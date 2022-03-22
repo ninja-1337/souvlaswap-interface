@@ -1,6 +1,6 @@
-import { Currency } from '@sushiswap/core-sdk'
 import { classNames } from 'app/functions'
 import React from 'react'
+import { Currency } from 'souvlaswap-core-sdk'
 
 import { CurrencyLogo } from '../CurrencyLogo'
 

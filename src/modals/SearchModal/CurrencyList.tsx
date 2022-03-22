@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, ZERO } from '@sushiswap/core-sdk'
 import Chip from 'app/components/Chip'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import Loader from 'app/components/Loader'
@@ -19,6 +18,7 @@ import React, { CSSProperties, FC, useCallback, useMemo } from 'react'
 import AutoSizer from 'react-virtualized-auto-sizer'
 // @ts-ignore TYPE NEEDS FIXING
 import { FixedSizeList as List } from 'react-window'
+import { Currency, CurrencyAmount, ZERO } from 'souvlaswap-core-sdk'
 
 function currencyKey(currency: Currency): string {
   return currency.isToken ? currency.address : 'ETHER'

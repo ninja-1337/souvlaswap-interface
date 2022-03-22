@@ -1,7 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import CHAINLINK_TOKENS from '@sushiswap/chainlink-whitelist/dist/sushiswap-chainlink.whitelist.json'
-import { ChainId, Currency, NATIVE, Token } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import HeadlessUiModal from 'app/components/Modal/HeadlessUIModal'
 import Typography from 'app/components/Typography'
@@ -15,6 +14,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { useRouter } from 'next/router'
 import React, { KeyboardEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import ReactGA from 'react-ga'
+import { ChainId, Currency, NATIVE, Token } from 'souvlaswap-core-sdk'
 
 import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
@@ -165,7 +165,7 @@ export function CurrencySearch({
             otherCurrency={otherSelectedCurrency}
           />
         ) : (
-          <Typography weight={700} variant="xs" className="text-secondary flex h-full justify-center items-center">
+          <Typography weight={700} variant="xs" className="flex items-center justify-center h-full text-secondary">
             {i18n._(t`No results found`)}
           </Typography>
         )}

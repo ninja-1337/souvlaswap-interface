@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, Currency } from '@sushiswap/core-sdk'
 import loadingRollingCircle from 'app/animation/loading-rolling-circle.json'
 import receiptPrinting from 'app/animation/receipt-printing.json'
 import Button from 'app/components/Button'
@@ -12,6 +11,7 @@ import useAddTokenToMetaMask from 'app/hooks/useAddTokenToMetaMask'
 import { useActiveWeb3React } from 'app/services/web3'
 import Lottie from 'lottie-react'
 import React, { FC } from 'react'
+import { ChainId, Currency } from 'souvlaswap-core-sdk'
 
 interface ConfirmationPendingContentProps {
   onDismiss: () => void

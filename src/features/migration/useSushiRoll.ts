@@ -1,11 +1,11 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Zero } from '@ethersproject/constants'
-import { ChainId } from '@sushiswap/core-sdk'
 import { useSushiRollContract } from 'app/hooks/useContract'
 import { useActiveWeb3React } from 'app/services/web3'
 import { signERC2612Permit } from 'eth-permit'
 import { useCallback } from 'react'
 import ReactGA from 'react-ga'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import LPToken from './LPToken'
 

@@ -1,10 +1,10 @@
-import { Currency, CurrencyAmount, Percent } from '@sushiswap/core-sdk'
 import { usePoolContext } from 'app/features/trident/PoolContext'
 import { useRemoveLiquidityDerivedSLPAmount } from 'app/features/trident/remove/useRemoveLiquidityDerivedState'
 import { calculateSlippageAmount, toAmountCurrencyAmount } from 'app/functions'
 import { useAppSelector } from 'app/state/hooks'
 import { selectSlippage } from 'app/state/slippage/slippageSlice'
 import { useCallback, useMemo } from 'react'
+import { Currency, CurrencyAmount, Percent } from 'souvlaswap-core-sdk'
 
 export const useRemoveDetails = () => {
   const {

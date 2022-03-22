@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit'
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import {
   addTransaction,

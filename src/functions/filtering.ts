@@ -1,6 +1,6 @@
-import { Token } from '@sushiswap/core-sdk'
 import { TokenInfo } from '@uniswap/token-lists'
 import { useMemo } from 'react'
+import { Token } from 'souvlaswap-core-sdk'
 
 import { isAddress } from './validate'
 

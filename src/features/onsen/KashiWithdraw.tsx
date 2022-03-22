@@ -1,7 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount } from '@sushiswap/core-sdk'
 import AssetInput from 'app/components/AssetInput'
 import Button from 'app/components/Button'
 import { HeadlessUiModal } from 'app/components/Modal'
@@ -14,6 +13,7 @@ import { useCurrency } from 'app/hooks/Tokens'
 import useKashiApproveCallback, { BentoApprovalState } from 'app/hooks/useKashiApproveCallback'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { useCallback, useState } from 'react'
+import { CurrencyAmount } from 'souvlaswap-core-sdk'
 
 // @ts-ignore TYPE NEEDS FIXING
 const KashiWithdraw = ({ pair, header }) => {

@@ -1,4 +1,3 @@
-import { Currency, CurrencyAmount, JSBI, Percent, Rebase, Token, ZERO } from '@sushiswap/core-sdk'
 import { ConstantProductPool, PoolState } from '@sushiswap/trident-sdk'
 import useCurrenciesFromURL from 'app/features/trident/useCurrenciesFromURL'
 import { toAmountCurrencyAmount } from 'app/functions'
@@ -9,6 +8,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { useTokenBalance } from 'app/state/wallet/hooks'
 import { PoolWithState } from 'app/types'
 import React, { createContext, FC, useContext, useMemo } from 'react'
+import { Currency, CurrencyAmount, JSBI, Percent, Rebase, Token, ZERO } from 'souvlaswap-core-sdk'
 
 interface PoolContext {
   poolWithState?: PoolWithState<ConstantProductPool>

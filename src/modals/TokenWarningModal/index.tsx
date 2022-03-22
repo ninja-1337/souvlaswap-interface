@@ -1,6 +1,6 @@
-import { Token } from '@sushiswap/core-sdk'
 import HeadlessUiModal from 'app/components/Modal/HeadlessUIModal'
 import React, { FC } from 'react'
+import { Token } from 'souvlaswap-core-sdk'
 
 import { ImportToken } from '../SearchModal/ImportToken'
 

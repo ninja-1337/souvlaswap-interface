@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount } from '@sushiswap/core-sdk'
 import Alert from 'app/components/Alert'
 import Back from 'app/components/Back'
 import Container from 'app/components/Container'
@@ -15,6 +14,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
+import { CurrencyAmount } from 'souvlaswap-core-sdk'
 
 export default function Pool() {
   const { i18n } = useLingui()

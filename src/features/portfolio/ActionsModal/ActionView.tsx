@@ -1,7 +1,6 @@
 import { SwitchHorizontalIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { NATIVE } from '@sushiswap/core-sdk'
 import { BentoboxIcon, WalletIcon } from 'app/components/Icon'
 import HeadlessUiModal from 'app/components/Modal/HeadlessUIModal'
 import { Feature } from 'app/enums/Feature'
@@ -14,6 +13,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { useAppDispatch } from 'app/state/hooks'
 import { useRouter } from 'next/router'
 import React, { FC, useCallback } from 'react'
+import { NATIVE } from 'souvlaswap-core-sdk'
 
 interface ActionViewProps {
   onClose(): void

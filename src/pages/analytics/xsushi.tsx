@@ -1,4 +1,3 @@
-import { ChainId, SUSHI_ADDRESS } from '@sushiswap/core-sdk'
 import TimespanGraph from 'app/components/TimespanGraph'
 import { XSUSHI } from 'app/config/tokens'
 import AnalyticsContainer from 'app/features/analytics/AnalyticsContainer'
@@ -10,6 +9,7 @@ import { aprToApy } from 'app/functions/convert/apyApr'
 import { useDayData, useFactory, useNativePrice, useOneDayBlock, useTokenDayData, useTokens } from 'app/services/graph'
 import { useBar, useBarHistory } from 'app/services/graph/hooks/bar'
 import React, { useMemo } from 'react'
+import { ChainId, SUSHI_ADDRESS } from 'souvlaswap-core-sdk'
 
 const chartTimespans = [
   {

@@ -1,12 +1,12 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Percent } from '@sushiswap/core-sdk'
 import CopyHelper from 'app/components/AccountDetails/Copy'
 import Typography from 'app/components/Typography'
 import { Auction } from 'app/features/miso/context/Auction'
 import { classNames, shortenAddress } from 'app/functions'
 import { useTotalSupply } from 'app/hooks/useTotalSupply'
 import { FC } from 'react'
+import { Percent } from 'souvlaswap-core-sdk'
 
 interface AuctionDetailsTabStatProps {
   label: string

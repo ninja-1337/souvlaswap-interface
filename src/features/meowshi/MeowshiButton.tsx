@@ -1,7 +1,6 @@
 import { parseUnits } from '@ethersproject/units'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, SUSHI } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Dots from 'app/components/Dots'
 import { XSUSHI } from 'app/config/tokens'
@@ -12,6 +11,7 @@ import TransactionConfirmationModal, { ConfirmationModalContent } from 'app/moda
 import { useActiveWeb3React } from 'app/services/web3'
 import { useTokenBalance } from 'app/state/wallet/hooks'
 import React, { FC, useMemo, useState } from 'react'
+import { ChainId, SUSHI } from 'souvlaswap-core-sdk'
 
 import { Field, MeowshiState } from '../../pages/tools/meowshi'
 

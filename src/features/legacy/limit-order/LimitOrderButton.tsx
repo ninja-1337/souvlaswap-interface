@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Trade, TradeType } from '@sushiswap/core-sdk'
 import { STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
 import Button from 'app/components/Button'
 import Typography from 'app/components/Typography'
@@ -13,6 +12,7 @@ import { useAppDispatch } from 'app/state/hooks'
 import { setFromBentoBalance, setLimitOrderBentoPermit, setLimitOrderShowReview } from 'app/state/limit-order/actions'
 import { useLimitOrderDerivedInputError, useLimitOrderState } from 'app/state/limit-order/hooks'
 import React, { FC, useCallback, useState } from 'react'
+import { Currency, CurrencyAmount, Trade, TradeType } from 'souvlaswap-core-sdk'
 
 interface LimitOrderButton {
   trade?: Trade<Currency, Currency, TradeType>

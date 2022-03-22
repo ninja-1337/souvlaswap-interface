@@ -1,6 +1,6 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { useActiveWeb3React } from 'app/services/web3'
 import stringify from 'fast-json-stable-stringify'
+import { ChainId } from 'souvlaswap-core-sdk'
 import useSWR, { SWRConfiguration } from 'swr'
 
 import {

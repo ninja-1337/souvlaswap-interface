@@ -1,8 +1,8 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { selectTransactions } from 'app/state/transactions/selectors'
 import { useCallback, useMemo } from 'react'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import { addTransaction } from './actions'
 import { TransactionDetails, TransactionState } from './reducer'

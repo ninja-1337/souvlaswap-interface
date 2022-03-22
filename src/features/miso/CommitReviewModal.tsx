@@ -1,7 +1,6 @@
 import { ChevronRightIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, ZERO } from '@sushiswap/core-sdk'
 import Chip from 'app/components/Chip'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import { RestrictedIcon } from 'app/components/Icon'
@@ -15,6 +14,7 @@ import { useContract } from 'app/hooks'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import React, { FC, useCallback, useState } from 'react'
+import { Currency, CurrencyAmount, ZERO } from 'souvlaswap-core-sdk'
 
 import { Auction } from './context/Auction'
 
@@ -101,7 +101,7 @@ const CommitReviewStandardModal: FC<CommitReviewStandardModalProps> = ({
             />
             <HeadlessUIModal.Content>
               <div className="flex flex-col gap-6 mb-6">
-                <div className="flex gap-4 items-center mt-2">
+                <div className="flex items-center gap-4 mt-2">
                   {auction.auctionDocuments.category && <Chip label={auction.auctionDocuments.category} color="blue" />}
                   {auction && (
                     <div className="flex gap-1.5">
@@ -120,11 +120,11 @@ const CommitReviewStandardModal: FC<CommitReviewStandardModalProps> = ({
                     </Typography>
                   </div>
                 </div>
-                <div className="flex flex-col gap-3 bg-dark-900 border border-dark-700 rounded p-5">
+                <div className="flex flex-col gap-3 p-5 border rounded bg-dark-900 border-dark-700">
                   <Typography className="text-low-emphesis">{i18n._(t`You are committing`)}</Typography>
                   <div className="flex items-center gap-3 border-dark-700">
                     <CurrencyLogo currency={amount?.currency} size={32} className="!rounded-full overflow-hidden" />
-                    <div className="flex gap-2 items-baseline">
+                    <div className="flex items-baseline gap-2">
                       <Typography variant="lg" className="text-right text-high-emphesis" weight={700}>
                         {amount?.toSignificant(6)}
                       </Typography>
@@ -136,7 +136,7 @@ const CommitReviewStandardModal: FC<CommitReviewStandardModalProps> = ({
                       <>
                         <ChevronRightIcon width={20} className="text-secondary" />
                         {amount?.greaterThan(ZERO) && (
-                          <div className="flex gap-2 items-baseline">
+                          <div className="flex items-baseline gap-2">
                             <Typography variant="lg" className="text-right text-high-emphesis" weight={700}>
                               {auction.tokenAmount(amount)?.toSignificant(6)}
                             </Typography>

@@ -1,5 +1,4 @@
 import { getAddress } from '@ethersproject/address'
-import { ChainId, Currency, NATIVE, SUSHI, Token } from '@sushiswap/core-sdk'
 import { ARBITRUM_TOKENS, MATIC_TOKENS, XDAI_TOKENS } from 'app/config/tokens'
 import { Feature } from 'app/enums'
 import { Chef, PairType } from 'app/features/onsen/enum'
@@ -31,6 +30,7 @@ import {
 import { useActiveWeb3React } from 'app/services/web3'
 import toLower from 'lodash/toLower'
 import { useMemo } from 'react'
+import { ChainId, Currency, NATIVE, SUSHI, Token } from 'souvlaswap-core-sdk'
 
 export default function useFarmRewards() {
   const { chainId } = useActiveWeb3React()

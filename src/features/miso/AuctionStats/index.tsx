@@ -1,7 +1,6 @@
 import { QuestionMarkCircleIcon as SolidQuestionMarkCircleIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ZERO } from '@sushiswap/core-sdk'
 import QuestionHelper from 'app/components/QuestionHelper'
 import Typography from 'app/components/Typography'
 import AuctionStatsSkeleton from 'app/features/miso/AuctionStats/AuctionStatsSkeleton'
@@ -10,12 +9,13 @@ import { AuctionPriceHelperTextByTemplateId } from 'app/features/miso/context/ut
 import { classNames } from 'app/functions'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC } from 'react'
+import { ZERO } from 'souvlaswap-core-sdk'
 
 import { ChartCard } from './ChartCard'
 
 const AuctionStat: FC<{ label: any; value?: any; className?: string }> = ({ label, value, className }) => {
   return (
-    <div className="flex flex-col rounded gap-1">
+    <div className="flex flex-col gap-1 rounded">
       <Typography variant="sm" className={classNames('text-secondary', className)}>
         {label}
       </Typography>
@@ -34,8 +34,8 @@ const AuctionStats: FC = () => {
   if (loading || !auction) return <AuctionStatsSkeleton />
 
   return (
-    <div className="flex flex-col gap-6 w-full">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-2">
+    <div className="flex flex-col w-full gap-6">
+      <div className="grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-2">
         {account && (
           <AuctionStat
             className="text-left lg:text-left"
@@ -74,7 +74,7 @@ const AuctionStats: FC = () => {
             </div>
           }
           value={
-            <div className="flex justify-end items-baseline gap-1">
+            <div className="flex items-baseline justify-end gap-1">
               {auction.tokenPrice?.toSignificant(6)}
               <Typography variant="sm" weight={700} className="text-low-emphesis">
                 {auction.tokenPrice?.quoteCurrency.symbol}
@@ -86,7 +86,7 @@ const AuctionStats: FC = () => {
           className="text-left lg:text-right"
           label={i18n._(t`Amount Raised`)}
           value={
-            <div className="flex justify-start items-baseline gap-1 lg:justify-end">
+            <div className="flex items-baseline justify-start gap-1 lg:justify-end">
               {auction.commitmentsTotal?.toSignificant(6)}
               <Typography variant="sm" weight={700} className="text-low-emphesis">
                 {auction.totalTokensCommitted?.currency.symbol}
@@ -98,7 +98,7 @@ const AuctionStats: FC = () => {
           className="text-right"
           label={i18n._(t`Remaining Tokens`)}
           value={
-            <div className="flex justify-end items-baseline gap-1">
+            <div className="flex items-baseline justify-end gap-1">
               {auction.remainingPercentage?.toSignificant(6)}
               <Typography variant="sm" weight={700} className="text-low-emphesis">
                 %

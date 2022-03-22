@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Token } from '@sushiswap/core-sdk'
+import { ChainId, CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 
 import { BaseStrategyHook } from './strategies/useBaseStrategy'
 import { BaseStrategyWithBentoBoxTraitHook } from './traits/useBentoBoxTrait'

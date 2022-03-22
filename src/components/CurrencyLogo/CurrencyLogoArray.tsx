@@ -1,5 +1,5 @@
-import { Currency } from '@sushiswap/core-sdk'
 import React, { FC } from 'react'
+import { Currency } from 'souvlaswap-core-sdk'
 
 import Typography from '../Typography'
 import CurrencyLogo, { CurrencyLogoProps } from './CurrencyLogo'

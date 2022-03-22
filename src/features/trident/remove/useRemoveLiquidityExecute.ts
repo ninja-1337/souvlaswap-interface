@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount, Token, WNATIVE } from '@sushiswap/core-sdk'
 import {
   approveMasterContractAction,
   approveSLPAction,
@@ -24,6 +23,7 @@ import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback } from 'react'
 import ReactGA from 'react-ga'
+import { CurrencyAmount, Token, WNATIVE } from 'souvlaswap-core-sdk'
 
 export const useRemoveLiquidityExecute = () => {
   const { i18n } = useLingui()

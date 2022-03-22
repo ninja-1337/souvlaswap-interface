@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { NATIVE, ZERO } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import AssetBalances from 'app/features/portfolio/AssetBalances/AssetBalances'
 import { Assets } from 'app/features/portfolio/AssetBalances/types'
@@ -11,6 +10,7 @@ import { useBentoBalancesV2ForAccount } from 'app/state/bentobox/hooks'
 import { useAppDispatch } from 'app/state/hooks'
 import { useAllTokenBalancesWithLoadingIndicator, useCurrencyBalance } from 'app/state/wallet/hooks'
 import React, { FC, useCallback, useMemo } from 'react'
+import { NATIVE, ZERO } from 'souvlaswap-core-sdk'
 
 import { useBasicTableConfig } from '../useBasicTableConfig'
 

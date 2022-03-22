@@ -1,4 +1,4 @@
-// import { CurrencyAmount, JSBI, Token } from '@sushiswap/core-sdk'
+// import { CurrencyAmount, JSBI, Token } from 'souvlaswap-core-sdk'
 
 // import { t } from '@lingui/macro'
 // import { tryParseAmount } from '../../functions'

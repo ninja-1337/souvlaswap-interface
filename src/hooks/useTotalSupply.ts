@@ -1,8 +1,8 @@
 import { Interface } from '@ethersproject/abi'
 import { BigNumber } from '@ethersproject/bignumber'
-import { Currency, CurrencyAmount, Token } from '@sushiswap/core-sdk'
 import ERC20_ABI from 'app/constants/abis/erc20.json'
 import { useMultipleContractSingleData } from 'app/state/multicall/hooks'
+import { Currency, CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 
 function bigNumToCurrencyAmount(totalSupply?: BigNumber, token?: Currency) {
   return token?.isToken && totalSupply ? CurrencyAmount.fromRawAmount(token, totalSupply.toString()) : undefined

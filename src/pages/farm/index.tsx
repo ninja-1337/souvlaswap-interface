@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import ExternalLink from 'app/components/ExternalLink'
 import Search from 'app/components/Search'
@@ -14,6 +13,7 @@ import { TridentBody, TridentHeader } from 'app/layouts/Trident'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useRouter } from 'next/router'
 import React from 'react'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 export default function Farm(): JSX.Element {
   const { i18n } = useLingui()
@@ -82,13 +82,13 @@ export default function Farm(): JSX.Element {
       </TridentHeader>
       <TridentBody>
         <div className="flex flex-col w-full gap-6">
-          <div className="flex flex-col sm:flex-row justify-between gap-4 items-center">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <Search search={search} term={term} />
             <OnsenFilter />
           </div>
           <FarmList farms={result} term={term} />
           {chainId && chainId === ChainId.CELO && (
-            <Typography variant="xs" weight={700} className="text-secondary italic text-center">
+            <Typography variant="xs" weight={700} className="italic text-center text-secondary">
               {i18n._(t`Users can now bridge back to Celo using a new version of Optics.`)}{' '}
               <ExternalLink
                 color="blue"

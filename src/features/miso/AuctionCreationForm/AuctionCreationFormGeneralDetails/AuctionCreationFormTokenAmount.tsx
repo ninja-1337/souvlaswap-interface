@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CHAIN_KEY, CurrencyAmount, Token } from '@sushiswap/core-sdk'
 import MISO from '@sushiswap/miso/exports/all.json'
 import Button from 'app/components/Button'
 import Dots from 'app/components/Dots'
@@ -14,6 +13,7 @@ import { useToken } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
+import { CHAIN_KEY, CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 
 interface AuctionCreationFormTokenProps {}
 

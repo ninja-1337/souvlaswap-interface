@@ -1,6 +1,6 @@
-import { Pair } from '@sushiswap/core-sdk'
 import { Fee } from '@sushiswap/trident-sdk'
 import { TridentPool } from 'app/services/graph'
+import { Pair } from 'souvlaswap-core-sdk'
 
 export const deDupe = (value: any, i: number, arr: any[]) => arr.indexOf(value) === i
 

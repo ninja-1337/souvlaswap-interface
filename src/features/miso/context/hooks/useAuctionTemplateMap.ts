@@ -1,10 +1,10 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CHAIN_KEY } from '@sushiswap/core-sdk'
 import MISO from '@sushiswap/miso/exports/all.json'
 import { AuctionTemplate } from 'app/features/miso/context/types'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useCallback, useMemo } from 'react'
+import { CHAIN_KEY } from 'souvlaswap-core-sdk'
 
 const useAuctionTemplateMap = () => {
   const { i18n } = useLingui()

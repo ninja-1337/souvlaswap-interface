@@ -1,7 +1,7 @@
-import { ChainId } from "@sushiswap/core-sdk";
-import { Feature } from "app/enums";
+import { Feature } from 'app/enums'
+import { ChainId } from 'souvlaswap-core-sdk'
 
-type FeatureMap = { readonly [chainId in ChainId]?: Feature[] };
+type FeatureMap = { readonly [chainId in ChainId]?: Feature[] }
 
 const features: FeatureMap = {
   [ChainId.ETHEREUM]: [
@@ -18,42 +18,24 @@ const features: FeatureMap = {
     Feature.VESTING,
     Feature.LIMIT_ORDERS,
   ],
-  [ChainId.ROPSTEN]: [
-    Feature.AMM,
-    Feature.LIQUIDITY_MINING,
-    Feature.BENTOBOX,
-    Feature.KASHI,
-    Feature.MISO,
-  ],
-  [ChainId.RINKEBY]: [
-    Feature.AMM,
-    Feature.LIQUIDITY_MINING,
-    Feature.BENTOBOX,
-    Feature.KASHI,
-    Feature.MISO,
-  ],
-  [ChainId.GÖRLI]: [
-    Feature.AMM,
-    Feature.LIQUIDITY_MINING,
-    Feature.BENTOBOX,
-    Feature.KASHI,
-    Feature.MISO,
-  ],
+  [ChainId.ROPSTEN]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.BENTOBOX, Feature.KASHI, Feature.MISO],
+  [ChainId.RINKEBY]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.BENTOBOX, Feature.KASHI, Feature.MISO],
+  [ChainId.GÖRLI]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.BENTOBOX, Feature.KASHI, Feature.MISO],
   [ChainId.KOVAN]: [
     Feature.AMM,
     Feature.LIQUIDITY_MINING,
     Feature.BENTOBOX,
     Feature.KASHI,
-    Feature.MISO,
-    Feature.TRIDENT,
-  ],
-  [ChainId.BSC]: [
-    Feature.AMM,
-    Feature.BENTOBOX,
-    Feature.KASHI,
     Feature.MIGRATE,
     Feature.ANALYTICS,
+    Feature.STAKING,
+    Feature.MISO,
+    Feature.MEOWSHI,
+    Feature.INARI,
+    Feature.VESTING,
+    Feature.LIMIT_ORDERS,
   ],
+  [ChainId.BSC]: [Feature.AMM, Feature.BENTOBOX, Feature.KASHI, Feature.MIGRATE, Feature.ANALYTICS],
   [ChainId.BSC_TESTNET]: [Feature.AMM],
   [ChainId.FANTOM]: [
     Feature.AMM,
@@ -79,45 +61,18 @@ const features: FeatureMap = {
     Feature.LIMIT_ORDERS,
   ],
   [ChainId.MATIC_TESTNET]: [Feature.AMM],
-  [ChainId.HARMONY]: [
-    Feature.AMM,
-    Feature.LIQUIDITY_MINING,
-    Feature.ANALYTICS,
-    Feature.MISO,
-  ],
+  [ChainId.HARMONY]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS, Feature.MISO],
   [ChainId.HARMONY_TESTNET]: [Feature.AMM],
-  [ChainId.AVALANCHE]: [
-    Feature.AMM,
-    Feature.BENTOBOX,
-    Feature.KASHI,
-    Feature.LIMIT_ORDERS,
-    Feature.ANALYTICS,
-  ],
+  [ChainId.AVALANCHE]: [Feature.AMM, Feature.BENTOBOX, Feature.KASHI, Feature.LIMIT_ORDERS, Feature.ANALYTICS],
   [ChainId.AVALANCHE_TESTNET]: [Feature.AMM],
   [ChainId.OKEX]: [Feature.AMM],
   [ChainId.OKEX_TESTNET]: [Feature.AMM],
-  [ChainId.XDAI]: [
-    Feature.AMM,
-    Feature.LIQUIDITY_MINING,
-    Feature.ANALYTICS,
-    Feature.BENTOBOX,
-    Feature.KASHI,
-  ],
-  [ChainId.MOONRIVER]: [
-    Feature.AMM,
-    Feature.LIQUIDITY_MINING,
-    Feature.ANALYTICS,
-  ],
+  [ChainId.XDAI]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS, Feature.BENTOBOX, Feature.KASHI],
+  [ChainId.MOONRIVER]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS],
   [ChainId.CELO]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS],
-  [ChainId.ARBITRUM]: [
-    Feature.AMM,
-    Feature.LIQUIDITY_MINING,
-    Feature.ANALYTICS,
-    Feature.BENTOBOX,
-    Feature.KASHI,
-  ],
+  [ChainId.ARBITRUM]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS, Feature.BENTOBOX, Feature.KASHI],
   [ChainId.FUSE]: [Feature.AMM, Feature.LIQUIDITY_MINING, Feature.ANALYTICS],
   [ChainId.MOONBEAM]: [Feature.AMM, Feature.MISO, Feature.LIQUIDITY_MINING],
-};
+}
 
-export default features;
+export default features

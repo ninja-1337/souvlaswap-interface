@@ -1,6 +1,6 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Percent } from '@sushiswap/core-sdk'
 import { AppState } from 'app/state'
+import { Percent } from 'souvlaswap-core-sdk'
 
 export const GLOBAL_DEFAULT_SLIPPAGE_PERCENT = new Percent(50, 10_000) // .5%
 export const GLOBAL_DEFAULT_SLIPPAGE_STR = GLOBAL_DEFAULT_SLIPPAGE_PERCENT.toFixed(2)

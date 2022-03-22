@@ -1,11 +1,11 @@
 import { Transition } from '@headlessui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
-import { ChainId } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import { classNames } from 'app/functions'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { useCallback, useState } from 'react'
 import { FC } from 'react'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import { getStrapiMedia } from '../../lib/media'
 

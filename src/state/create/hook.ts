@@ -1,11 +1,11 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency } from '@sushiswap/core-sdk'
 import { useCurrency } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
 import { AppState } from 'app/state'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { useCallback } from 'react'
+import { Currency } from 'souvlaswap-core-sdk'
 
 import { Field, selectCurrency, switchCurrencies, typeInput } from './actions'
 

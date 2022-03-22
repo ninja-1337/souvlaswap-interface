@@ -1,17 +1,5 @@
 import { i18n } from '@lingui/core'
 import { t } from '@lingui/macro'
-import {
-  ChainId,
-  Currency,
-  CurrencyAmount,
-  JSBI,
-  Price,
-  SUSHI_ADDRESS,
-  Trade,
-  TradeType,
-  WNATIVE_ADDRESS,
-  ZERO,
-} from '@sushiswap/core-sdk'
 import { isAddress, tryParseAmount } from 'app/functions'
 import { useCurrency } from 'app/hooks/Tokens'
 import { useBentoOrWalletBalance } from 'app/hooks/useBentoOrWalletBalance'
@@ -24,6 +12,18 @@ import { useExpertModeManager, useUserSingleHopOnly } from 'app/state/user/hooks
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
+import {
+  ChainId,
+  Currency,
+  CurrencyAmount,
+  JSBI,
+  Price,
+  SUSHI_ADDRESS,
+  Trade,
+  TradeType,
+  WNATIVE_ADDRESS,
+  ZERO,
+} from 'souvlaswap-core-sdk'
 
 import {
   Field,

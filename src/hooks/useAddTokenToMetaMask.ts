@@ -1,7 +1,7 @@
-import { Currency, Token } from '@sushiswap/core-sdk'
 import { getCurrencyLogoUrls } from 'app/components/CurrencyLogo/CurrencyLogo'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useCallback, useState } from 'react'
+import { Currency, Token } from 'souvlaswap-core-sdk'
 
 export default function useAddTokenToMetaMask(currencyToAdd: Currency | undefined): {
   addToken: () => void

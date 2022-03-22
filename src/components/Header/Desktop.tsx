@@ -1,4 +1,3 @@
-import { NATIVE } from '@sushiswap/core-sdk'
 import Container from 'app/components/Container'
 import { NAV_CLASS } from 'app/components/Header/styles'
 import useMenu from 'app/components/Header/useMenu'
@@ -11,6 +10,7 @@ import { useETHBalances } from 'app/state/wallet/hooks'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC } from 'react'
+import { NATIVE } from 'souvlaswap-core-sdk'
 
 import { NavigationItem } from './NavigationItem'
 

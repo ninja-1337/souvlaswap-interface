@@ -1,4 +1,3 @@
-import { CHAIN_KEY } from '@sushiswap/core-sdk'
 import MISO from '@sushiswap/miso/exports/all.json'
 import { DocumentInput } from 'app/features/miso/context/hooks/useAuctionDocuments'
 import { MisoAbiByTemplateId } from 'app/features/miso/context/utils'
@@ -6,6 +5,7 @@ import { useContract } from 'app/hooks'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback } from 'react'
+import { CHAIN_KEY } from 'souvlaswap-core-sdk'
 
 export const useAuctionEdit = (
   address?: string,

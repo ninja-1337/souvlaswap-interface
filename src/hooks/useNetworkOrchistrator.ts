@@ -1,9 +1,9 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { ChainSubdomain } from 'app/enums'
 import { SUPPORTED_NETWORKS } from 'app/modals/NetworkModal'
 import { useActiveWeb3React } from 'app/services/web3'
 import Cookies from 'js-cookie'
 import { useEffect } from 'react'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 const CHAIN_ID_SUBDOMAIN: { [chainId: number]: string } = {
   [ChainId.ETHEREUM]: ChainSubdomain.ETHEREUM,

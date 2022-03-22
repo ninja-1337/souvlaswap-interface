@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Token } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Chip from 'app/components/Chip'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
@@ -13,6 +12,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { WrappedTokenInfo } from 'app/state/lists/wrappedTokenInfo'
 import { useAddUserToken } from 'app/state/user/hooks'
 import React, { FC } from 'react'
+import { Token } from 'souvlaswap-core-sdk'
 
 interface ImportProps {
   tokens: Token[]
@@ -41,7 +41,7 @@ export const ImportToken: FC<ImportProps> = ({ tokens, onBack }) => {
               <div className="flex items-center gap-3">
                 <CurrencyLogo currency={token} size={48} className="!rounded-full overflow-hidden" />
                 <div className="flex flex-col">
-                  <div className="flex gap-2 items-center">
+                  <div className="flex items-center gap-2">
                     <Typography variant="lg" weight={700}>
                       <ExternalLink href={getExplorerLink(chainId, token.address, 'address')} color="blue">
                         {shortenAddress(token.address)}

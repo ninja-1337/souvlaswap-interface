@@ -1,5 +1,4 @@
 import { AddressZero } from '@ethersproject/constants'
-import { Token } from '@sushiswap/core-sdk'
 import { useAuctionDocuments } from 'app/features/miso/context/hooks/useAuctionDocuments'
 import { useAuctionEnded } from 'app/features/miso/context/hooks/useAuctionEnded'
 import {
@@ -15,6 +14,7 @@ import { getNativeOrToken, getStatusByTimestamp } from 'app/features/miso/contex
 import { useActiveWeb3React } from 'app/services/web3'
 import { useBlockTimestamp } from 'app/state/application/hooks'
 import { useMemo } from 'react'
+import { Token } from 'souvlaswap-core-sdk'
 
 import { Auction } from '../Auction'
 import { useAuctionList } from './useAuctionList'

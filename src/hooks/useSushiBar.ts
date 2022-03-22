@@ -1,6 +1,6 @@
-import { CurrencyAmount, Token } from '@sushiswap/core-sdk'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback } from 'react'
+import { CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 
 import { useSushiBarContract } from './useContract'
 

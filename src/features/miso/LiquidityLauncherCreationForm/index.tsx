@@ -1,7 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { CurrencyAmount, Token } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Form from 'app/components/Form'
 import useAuction from 'app/features/miso/context/hooks/useAuction'
@@ -12,6 +11,7 @@ import { formatData } from 'app/features/miso/LiquidityLauncherCreationForm/util
 import { addressValidator } from 'app/functions/yupValidators'
 import React, { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 import * as yup from 'yup'
 
 export interface LiquidityLauncherFormInput {

@@ -1,6 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { MenuIcon } from '@heroicons/react/outline'
-import { NATIVE } from '@sushiswap/core-sdk'
 import useMenu from 'app/components/Header/useMenu'
 import Web3Network from 'app/components/Web3Network'
 import Web3Status from 'app/components/Web3Status'
@@ -10,6 +9,7 @@ import { useETHBalances } from 'app/state/wallet/hooks'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC, Fragment, useState } from 'react'
+import { NATIVE } from 'souvlaswap-core-sdk'
 
 import { NavigationItem } from './NavigationItem'
 
@@ -23,18 +23,18 @@ const Mobile: FC = () => {
   return (
     <>
       <header className="w-full flex items-center justify-between min-h-[64px] h-[64px] px-4">
-        <div className="flex flex-grow justify-between">
-          <div className="p-2 hover:bg-white/10 rounded-full">
-            <MenuIcon width={28} className="hover:text-white text-white cursor-pointer" onClick={() => setOpen(true)} />
+        <div className="flex justify-between flex-grow">
+          <div className="p-2 rounded-full hover:bg-white/10">
+            <MenuIcon width={28} className="text-white cursor-pointer hover:text-white" onClick={() => setOpen(true)} />
           </div>
-          <div className="flex w-6 mr-1 items-center">
+          <div className="flex items-center w-6 mr-1">
             <Link href="/swap" passHref={true}>
               <Image src="https://app.sushi.com/images/logo.svg" alt="Sushi logo" width="24px" height="24px" />
             </Link>
           </div>
         </div>
         <Transition.Root show={open} as={Fragment}>
-          <Dialog as="div" className="fixed inset-0 overflow-hidden z-20" onClose={setOpen}>
+          <Dialog as="div" className="fixed inset-0 z-20 overflow-hidden" onClose={setOpen}>
             <div className="absolute inset-0 overflow-hidden">
               <Transition.Child
                 as={Fragment}
@@ -45,7 +45,7 @@ const Mobile: FC = () => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <Dialog.Overlay className="absolute inset-0 bg-dark-1000 bg-opacity-80 transition-opacity" />
+                <Dialog.Overlay className="absolute inset-0 transition-opacity bg-dark-1000 bg-opacity-80" />
               </Transition.Child>
 
               <div className="fixed inset-y-0 left-0 pr-10 max-w-[260px] flex">
@@ -59,14 +59,14 @@ const Mobile: FC = () => {
                   leaveTo="translate-x-[-100%]"
                 >
                   <div className="w-screen max-w-sm">
-                    <div className="h-full flex flex-col py-6 bg-dark-800 shadow-xl overflow-y-scroll overflow-x-hidden">
+                    <div className="flex flex-col h-full py-6 overflow-x-hidden overflow-y-scroll shadow-xl bg-dark-800">
                       <nav className="flex-1 pl-6" aria-label="Sidebar">
                         {menu.map((node) => {
                           return <NavigationItem node={node} key={node.key} />
                         })}
                       </nav>
 
-                      <div className="px-6 flex flex-col gap-4">
+                      <div className="flex flex-col gap-4 px-6">
                         {library && (library.provider.isMetaMask || isCoinbaseWallet) && (
                           <div className="hidden sm:flex">
                             <Web3Network />

@@ -1,8 +1,8 @@
 import { parseUnits } from '@ethersproject/units'
-import { ChainId } from '@sushiswap/core-sdk'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useIsTransactionPending, useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback, useEffect, useState } from 'react'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import useLPTokensState, { LPTokensState } from './useLPTokensState'
 import useSushiRoll from './useSushiRoll'

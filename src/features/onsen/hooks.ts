@@ -1,14 +1,5 @@
 import { Zero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
-import {
-  ChainId,
-  CurrencyAmount,
-  JSBI,
-  MASTERCHEF_ADDRESS,
-  MASTERCHEF_V2_ADDRESS,
-  MINICHEF_ADDRESS,
-  SUSHI,
-} from '@sushiswap/core-sdk'
 import { OLD_FARMS } from 'app/config/farms'
 import {
   useMasterChefContract,
@@ -21,6 +12,15 @@ import { NEVER_RELOAD, useSingleCallResult, useSingleContractMultipleData } from
 import concat from 'lodash/concat'
 import zip from 'lodash/zip'
 import { useCallback, useMemo } from 'react'
+import {
+  ChainId,
+  CurrencyAmount,
+  JSBI,
+  MASTERCHEF_ADDRESS,
+  MASTERCHEF_V2_ADDRESS,
+  MINICHEF_ADDRESS,
+  SUSHI,
+} from 'souvlaswap-core-sdk'
 
 import { Chef } from './enum'
 

@@ -1,8 +1,8 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { getAverageBlockTime, getBlock, getMassBlocks } from 'app/services/graph/fetchers'
 import { useActiveWeb3React } from 'app/services/web3'
 import { addSeconds, getUnixTime, startOfHour, startOfMinute, startOfSecond, subDays, subWeeks } from 'date-fns'
 import stringify from 'fast-json-stable-stringify'
+import { ChainId } from 'souvlaswap-core-sdk'
 import useSWR, { SWRConfiguration } from 'swr'
 
 import { GraphProps } from '../interfaces'

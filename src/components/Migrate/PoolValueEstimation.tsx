@@ -1,7 +1,7 @@
-import { Pair } from '@sushiswap/core-sdk'
 import SumUSDCValues from 'app/features/trident/SumUSDCValues'
 import { classNames } from 'app/functions'
 import React, { FC } from 'react'
+import { Pair } from 'souvlaswap-core-sdk'
 
 interface PoolValueProps {
   pair: Pair
@@ -20,7 +20,7 @@ export const PoolValueEstimation: FC<PoolValueProps> = ({ pair, roundedBottom })
     </div>
     <SumUSDCValues amounts={[pair.reserve0, pair.reserve1]}>
       {({ amount }) => {
-        return <div className="text-high-emphesis font-bold">≈ ${amount?.toFixed(2)}</div>
+        return <div className="font-bold text-high-emphesis">≈ ${amount?.toFixed(2)}</div>
       }}
     </SumUSDCValues>
   </div>

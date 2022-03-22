@@ -2,7 +2,6 @@ import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Route, TradeVersion } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import TradePrice from 'app/features/legacy/swap/TradePrice'
 import { classNames, computeRealizedLPFeePercent, shortenAddress } from 'app/functions'
@@ -10,6 +9,7 @@ import { getTradeVersion } from 'app/functions/getTradeVersion'
 import useSwapSlippageTolerance from 'app/hooks/useSwapSlippageTollerence'
 import { TradeUnion } from 'app/types'
 import React, { FC, Fragment, useState } from 'react'
+import { Currency, Route, TradeVersion } from 'souvlaswap-core-sdk'
 import { isAddress } from 'web3-utils'
 
 interface SwapDetailsContent {
@@ -38,7 +38,7 @@ const SwapDetails: FC<SwapDetails> = ({ inputCurrency, outputCurrency, recipient
             className
           )}
         >
-          <div className="flex justify-between gap-2 items-center pl-2">
+          <div className="flex items-center justify-between gap-2 pl-2">
             <div>
               <TradePrice
                 inputCurrency={inputCurrency}
@@ -49,7 +49,7 @@ const SwapDetails: FC<SwapDetails> = ({ inputCurrency, outputCurrency, recipient
               />
             </div>
             <Disclosure.Button as={Fragment}>
-              <div className="flex flex-grow items-center justify-end p-1 cursor-pointer rounded">
+              <div className="flex items-center justify-end flex-grow p-1 rounded cursor-pointer">
                 <ChevronDownIcon
                   width={20}
                   className={classNames(open ? 'transform rotate-180' : '', 'transition hover:text-white')}

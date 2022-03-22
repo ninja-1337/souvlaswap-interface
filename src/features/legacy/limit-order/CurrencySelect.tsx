@@ -1,13 +1,13 @@
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency } from '@sushiswap/core-sdk'
 import selectCoinAnimation from 'app/animation/select-coin.json'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import { classNames } from 'app/functions'
 import CurrencySearchModal from 'app/modals/SearchModal/CurrencySearchModal'
 import Lottie from 'lottie-react'
 import React, { FC, useCallback, useState } from 'react'
+import { Currency } from 'souvlaswap-core-sdk'
 
 interface CurrencySelectProps {
   currency?: Currency

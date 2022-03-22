@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@sushiswap/core-sdk'
+import { ChainId, Token } from 'souvlaswap-core-sdk'
 
 export const USDC = new Token(ChainId.MOONBEAM, '0x8f552a71EFE5eeFc207Bf75485b356A0b3f01eC9', 6, 'USDC', 'USD Coin')
 export const USDT = new Token(ChainId.MOONBEAM, '0x8e70cD5B4Ff3f62659049e74b6649c6603A0E594', 6, 'USDT', 'Tether USD')

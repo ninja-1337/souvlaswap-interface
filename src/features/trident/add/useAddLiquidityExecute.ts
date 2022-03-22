@@ -4,7 +4,6 @@ import { AddressZero } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, toHex, Token } from '@sushiswap/core-sdk'
 import { approveMasterContractAction, batchAction, getAsEncodedAction } from 'app/features/trident/actions'
 import { setAddAttemptingTxn, setAddBentoPermit } from 'app/features/trident/add/addSlice'
 import { usePoolContext } from 'app/features/trident/PoolContext'
@@ -17,6 +16,7 @@ import { useAppDispatch } from 'app/state/hooks'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback } from 'react'
 import ReactGA from 'react-ga'
+import { Currency, CurrencyAmount, toHex, Token } from 'souvlaswap-core-sdk'
 
 type ExecutePayload = {
   parsedAmounts: (CurrencyAmount<Currency> | undefined)[]

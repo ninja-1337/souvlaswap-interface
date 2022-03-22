@@ -1,10 +1,10 @@
-import { CurrencyAmount } from '@sushiswap/core-sdk'
 import { useAddLiquidityDerivedCurrencyAmounts } from 'app/features/trident/add/useAddLiquidityDerivedState'
 import { usePoolContext } from 'app/features/trident/PoolContext'
 import { maxAmountSpend, toAmountCurrencyAmount, toShareCurrencyAmount, tryParseAmount } from 'app/functions'
 import { useBentoOrWalletBalances } from 'app/hooks/useBentoOrWalletBalance'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useCallback, useEffect, useMemo } from 'react'
+import { CurrencyAmount } from 'souvlaswap-core-sdk'
 
 export type useDependentAssetInputs = (x: {
   fixedRatio: boolean

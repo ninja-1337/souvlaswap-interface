@@ -1,7 +1,6 @@
 import { ArrowDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, Percent, Price, Trade, TradeType, ZERO } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import ListPanel from 'app/components/ListPanel'
 import { HeadlessUiModal } from 'app/components/Modal'
@@ -13,6 +12,7 @@ import { useAppDispatch } from 'app/state/hooks'
 import { setLimitOrderShowReview } from 'app/state/limit-order/actions'
 import { useLimitOrderState } from 'app/state/limit-order/hooks'
 import React, { FC, useCallback, useMemo, useState } from 'react'
+import { Currency, CurrencyAmount, Percent, Price, Trade, TradeType, ZERO } from 'souvlaswap-core-sdk'
 
 interface LimitOrderReviewModal {
   trade?: Trade<Currency, Currency, TradeType>

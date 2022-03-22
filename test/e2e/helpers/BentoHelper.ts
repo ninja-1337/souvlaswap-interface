@@ -1,6 +1,6 @@
 import { JsonRpcProvider } from '@ethersproject/providers'
-import { BENTOBOX_ADDRESS, ChainId } from '@sushiswap/core-sdk'
 import { Contract, Signer, utils, Wallet } from 'ethers'
+import { BENTOBOX_ADDRESS, ChainId } from 'souvlaswap-core-sdk'
 
 import { ADDRESSES } from '../constants/Index'
 

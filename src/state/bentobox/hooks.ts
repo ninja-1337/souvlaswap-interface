@@ -1,5 +1,4 @@
 import { Web3Provider } from '@ethersproject/providers'
-import { CurrencyAmount, JSBI, Rebase, Token, ZERO } from '@sushiswap/core-sdk'
 import { Web3ReactContextInterface } from '@web3-react/core/dist/types'
 import { isAddress, toAmountCurrencyAmount } from 'app/functions'
 import { useAllTokens } from 'app/hooks/Tokens'
@@ -8,6 +7,7 @@ import { useBentoUserTokens } from 'app/services/graph'
 import { useActiveWeb3React } from 'app/services/web3'
 import { OptionalMethodInputs, useSingleCallResult, useSingleContractMultipleData } from 'app/state/multicall/hooks'
 import { useMemo } from 'react'
+import { CurrencyAmount, JSBI, Rebase, Token, ZERO } from 'souvlaswap-core-sdk'
 
 export interface BentoBalance {
   address: string
