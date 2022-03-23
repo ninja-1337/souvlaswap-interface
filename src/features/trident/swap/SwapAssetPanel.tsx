@@ -1,6 +1,7 @@
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Percent, ZERO } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import NumericalInput from 'app/components/Input/Numeric'
@@ -12,7 +13,6 @@ import { useUSDCValue } from 'app/hooks/useUSDCPrice'
 import CurrencySearchModal from 'app/modals/SearchModal/CurrencySearchModal'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Currency, Percent, ZERO } from 'souvlaswap-core-sdk'
 
 import BentoBoxFundingSourceModal from '../add/BentoBoxFundingSourceModal'
 

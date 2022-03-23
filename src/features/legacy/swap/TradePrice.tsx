@@ -1,8 +1,8 @@
+import { Currency, Price, ZERO } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import { classNames } from 'app/functions'
 import { useUSDCPrice } from 'app/hooks'
 import React, { FC, useCallback } from 'react'
-import { Currency, Price, ZERO } from 'souvlaswap-core-sdk'
 
 interface TradePriceProps {
   price?: Price<Currency, Currency>

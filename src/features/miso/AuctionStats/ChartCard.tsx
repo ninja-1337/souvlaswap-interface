@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { JSBI } from '@sushiswap/core-sdk'
 import LineGraph from 'app/components/LineGraph'
 import Typography from 'app/components/Typography'
 import AuctionChart from 'app/features/miso/AuctionChart'
@@ -7,7 +8,6 @@ import { useAuctionCommitments } from 'app/features/miso/context/hooks/useAuctio
 import { classNames, formatBalance } from 'app/functions'
 import { useToken } from 'app/hooks/Tokens'
 import React, { useEffect, useState } from 'react'
-import { JSBI } from 'souvlaswap-core-sdk'
 
 import { Auction } from '../context/Auction'
 

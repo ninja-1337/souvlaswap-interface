@@ -66,7 +66,7 @@ Do not waste your gas.`)}
       <>
         <MisoHeader auction={auction}>{header}</MisoHeader>
         <MisoBody>
-          <div className="flex gap-4 items-center">
+          <div className="flex items-center gap-4">
             <EmojiSadIcon width={40} />
             <Typography weight={700}>
               {i18n._(t`Oops! You're not allowed to edit this page.`)}{' '}

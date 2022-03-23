@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { CurrencyAmount, ZERO } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import ListPanel from 'app/components/ListPanel'
 import HeadlessUIModal from 'app/components/Modal/HeadlessUIModal'
@@ -14,7 +15,6 @@ import {
 import { useRemoveLiquiditySingleExecute } from 'app/features/trident/remove/useRemoveLiquiditySingleExecute'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import React, { FC, useCallback, useMemo } from 'react'
-import { CurrencyAmount, ZERO } from 'souvlaswap-core-sdk'
 
 import WithdrawalSubmittedModalContent from './WithdrawalSubmittedModalContent'
 

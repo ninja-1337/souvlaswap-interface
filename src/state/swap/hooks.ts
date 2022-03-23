@@ -1,5 +1,15 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import {
+  ChainId,
+  Currency,
+  CurrencyAmount,
+  Percent,
+  SUSHI_ADDRESS,
+  Trade as V2Trade,
+  TradeType,
+  WNATIVE_ADDRESS,
+} from '@sushiswap/core-sdk'
 import { tryParseAmount } from 'app/functions/parse'
 import { isAddress } from 'app/functions/validate'
 import { useCurrency } from 'app/hooks/Tokens'
@@ -14,16 +24,6 @@ import { useExpertModeManager, useUserSingleHopOnly } from 'app/state/user/hooks
 import { useCurrencyBalances } from 'app/state/wallet/hooks'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
-import {
-  ChainId,
-  Currency,
-  CurrencyAmount,
-  Percent,
-  SUSHI_ADDRESS,
-  Trade as V2Trade,
-  TradeType,
-  WNATIVE_ADDRESS,
-} from 'souvlaswap-core-sdk'
 
 // import {
 //   EstimatedSwapCall,

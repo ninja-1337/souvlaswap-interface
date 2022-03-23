@@ -1,3 +1,4 @@
+import { ChainId, CurrencyAmount, JSBI, Token } from '@sushiswap/core-sdk'
 import { aprToApy, getFraction, toAmount, toAmountCurrencyAmount } from 'app/functions'
 import { GRAPH_HOST } from 'app/services/graph/constants'
 import { getTokenSubset } from 'app/services/graph/fetchers'
@@ -10,7 +11,6 @@ import {
   kashiPairsQuery,
   kashiUserPairsQuery,
 } from 'app/services/graph/queries/bentobox'
-import { ChainId, CurrencyAmount, JSBI, Token } from 'souvlaswap-core-sdk'
 
 import { pager } from './pager'
 

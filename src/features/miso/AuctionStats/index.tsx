@@ -1,6 +1,7 @@
 import { QuestionMarkCircleIcon as SolidQuestionMarkCircleIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ZERO } from '@sushiswap/core-sdk'
 import QuestionHelper from 'app/components/QuestionHelper'
 import Typography from 'app/components/Typography'
 import AuctionStatsSkeleton from 'app/features/miso/AuctionStats/AuctionStatsSkeleton'
@@ -9,7 +10,6 @@ import { AuctionPriceHelperTextByTemplateId } from 'app/features/miso/context/ut
 import { classNames } from 'app/functions'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC } from 'react'
-import { ZERO } from 'souvlaswap-core-sdk'
 
 import { ChartCard } from './ChartCard'
 

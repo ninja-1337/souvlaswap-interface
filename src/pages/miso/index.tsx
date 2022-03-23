@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Typography from 'app/components/Typography'
 import { Feature } from 'app/enums'
@@ -13,7 +14,6 @@ import { useActiveWeb3React } from 'app/services/web3'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { ChainId } from 'souvlaswap-core-sdk'
 const queryToAuctionStatus = {
   live: AuctionStatus.LIVE,
   upcoming: AuctionStatus.UPCOMING,

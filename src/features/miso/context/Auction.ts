@@ -1,3 +1,4 @@
+import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Price, Token, ZERO } from '@sushiswap/core-sdk'
 import { ZERO_PERCENT } from 'app/constants'
 import {
   AuctionDocument,
@@ -7,7 +8,6 @@ import {
   RawLauncherInfo,
   RawMarketInfo,
 } from 'app/features/miso/context/types'
-import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Price, Token, ZERO } from 'souvlaswap-core-sdk'
 
 export class Auction {
   public readonly template: AuctionTemplate

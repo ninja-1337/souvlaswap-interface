@@ -1,3 +1,4 @@
+import { ChainId, CurrencyAmount, Token } from '@sushiswap/core-sdk'
 import { Feature } from 'app/enums'
 import { featureEnabled } from 'app/functions/feature'
 import {
@@ -9,7 +10,6 @@ import {
   getKashiPairs,
 } from 'app/services/graph/fetchers'
 import stringify from 'fast-json-stable-stringify'
-import { ChainId, CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 import useSWR from 'swr'
 
 import { GraphProps } from '../interfaces'

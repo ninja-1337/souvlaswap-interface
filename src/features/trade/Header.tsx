@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ChainId, Currency, Percent } from '@sushiswap/core-sdk'
 import Gas from 'app/components/Gas'
 import NavLink from 'app/components/NavLink'
 import Settings from 'app/components/Settings'
@@ -7,7 +8,6 @@ import { currencyId } from 'app/functions/currency'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useRouter } from 'next/router'
 import React, { FC, useState } from 'react'
-import { ChainId, Currency, Percent } from 'souvlaswap-core-sdk'
 
 // @ts-ignore TYPE NEEDS FIXING
 const getQuery = (input, output) => {

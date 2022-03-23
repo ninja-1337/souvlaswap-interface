@@ -1,11 +1,11 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Trade as V2Trade, TradeType } from '@sushiswap/core-sdk'
 import FormattedPriceImpact from 'app/components/FormattedPriceImpact'
 import QuestionHelper from 'app/components/QuestionHelper'
 import SwapRoute from 'app/features/legacy/swap/SwapRoute'
 import { computeRealizedLPFeePercent } from 'app/functions/prices'
 import React, { useMemo } from 'react'
-import { Currency, Trade as V2Trade, TradeType } from 'souvlaswap-core-sdk'
 
 function TradeReview({
   trade,

@@ -1,12 +1,12 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, Price, Trade, TradeType } from '@sushiswap/core-sdk'
 import NumericalInput from 'app/components/Input/Numeric'
 import Typography from 'app/components/Typography'
 import { useAppDispatch } from 'app/state/hooks'
 import { LimitPrice, setLimitOrderInvertState, setLimitPrice } from 'app/state/limit-order/actions'
 import useLimitOrderDerivedCurrencies, { useLimitOrderState } from 'app/state/limit-order/hooks'
 import React, { FC } from 'react'
-import { Currency, Price, Trade, TradeType } from 'souvlaswap-core-sdk'
 
 interface LimitPriceInputPanel {
   trade?: Trade<Currency, Currency, TradeType.EXACT_INPUT | TradeType.EXACT_OUTPUT>

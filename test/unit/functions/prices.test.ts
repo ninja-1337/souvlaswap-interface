@@ -1,6 +1,6 @@
+import { ChainId, CurrencyAmount, JSBI, Token, TradeType } from '@sushiswap/core-sdk'
+import { Pair, Route, Trade } from '@sushiswap/core-sdk'
 import { computeRealizedLPFeeAmount } from 'app/functions/prices'
-import { ChainId, CurrencyAmount, JSBI, Token, TradeType } from 'souvlaswap-core-sdk'
-import { Pair, Route, Trade } from 'souvlaswap-core-sdk'
 
 describe('prices', () => {
   const token1 = new Token(ChainId.ETHEREUM, '0x0000000000000000000000000000000000000001', 18)

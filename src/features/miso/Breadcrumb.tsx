@@ -20,7 +20,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ auction }) => {
     auction?.auctionInfo.liquidityTemplate
   )
 
-  if (!auction) return <div className="animate-pulse h-2 mb-2 mt-1 bg-dark-800" />
+  if (!auction) return <div className="h-2 mt-1 mb-2 animate-pulse bg-dark-800" />
 
   return (
     <div className="flex justify-between">
@@ -41,7 +41,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ auction }) => {
           <span
             role="button"
             onClick={() => finalizeAuction()}
-            className="bg-gradient-to-r from-pink-red via-pink to-red bg-clip-text text-transparent"
+            className="text-transparent bg-gradient-to-r from-pink-red via-pink to-red bg-clip-text"
           >
             {i18n._(t`Finalize Auction`)}
           </span>

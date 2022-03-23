@@ -1,5 +1,5 @@
+import { ChainId, Currency, CurrencyAmount, JSBI, Percent, Trade, TradeType } from '@sushiswap/core-sdk'
 import { TradeUnion } from 'app/types'
-import { ChainId, Currency, CurrencyAmount, JSBI, Percent, Trade, TradeType } from 'souvlaswap-core-sdk'
 
 import {
   ALLOWED_PRICE_IMPACT_HIGH,

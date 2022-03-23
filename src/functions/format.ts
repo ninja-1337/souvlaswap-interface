@@ -3,9 +3,9 @@
 import { getAddress } from '@ethersproject/address'
 import { BigNumberish } from '@ethersproject/bignumber'
 import { formatUnits } from '@ethersproject/units'
+import { Currency, CurrencyAmount, Fraction, JSBI, Price } from '@sushiswap/core-sdk'
 // @ts-ignore TYPE NEEDS FIXING
 import Numeral from 'numeral'
-import { Currency, CurrencyAmount, Fraction, JSBI, Price } from 'souvlaswap-core-sdk'
 
 // @ts-ignore TYPE NEEDS FIXING
 export const capitalize = (s) => {

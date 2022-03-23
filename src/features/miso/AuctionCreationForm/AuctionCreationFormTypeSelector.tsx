@@ -61,7 +61,7 @@ const AuctionCreationFormTypeSelector: FC<AuctionCreationFormTypeSelectorProps> 
         <RadioGroup
           value={auctionType}
           onChange={(auctionType) => setValue('auctionType', auctionType)}
-          className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10"
+          className="grid grid-cols-1 gap-10 lg:grid-cols-3 md:grid-cols-2"
         >
           <input className="hidden" name="auctionType" value={auctionType} onChange={() => {}} />
           {items.map(({ icon, value, label, description, note }) => (
@@ -79,8 +79,8 @@ const AuctionCreationFormTypeSelector: FC<AuctionCreationFormTypeSelectorProps> 
                   {icon}
                   <Typography className="text-high-emphesis">{description}</Typography>
                   <div className="flex items-baseline gap-1">
-                    <InformationCircleIcon width={20} height={20} className="top-1 relative" />
-                    <Typography className="text-secondary italic">{note}</Typography>
+                    <InformationCircleIcon width={20} height={20} className="relative top-1" />
+                    <Typography className="italic text-secondary">{note}</Typography>
                   </div>
                 </div>
               )}

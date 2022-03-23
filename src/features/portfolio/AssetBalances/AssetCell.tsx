@@ -1,9 +1,9 @@
+import { Currency, CurrencyAmount } from '@sushiswap/core-sdk'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import Typography from 'app/components/Typography'
 import { currencyFormatter } from 'app/functions'
 import { useUSDCPriceWithLoadingIndicator } from 'app/hooks/useUSDCPrice'
 import React from 'react'
-import { Currency, CurrencyAmount } from 'souvlaswap-core-sdk'
 
 export const AssetCell = (amount: CurrencyAmount<Currency>, balancesLoading?: boolean) => {
   const { price, loading } = useUSDCPriceWithLoadingIndicator(balancesLoading ? undefined : amount.currency)

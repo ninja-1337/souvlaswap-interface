@@ -1,4 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
+import { ChainId, Currency, CurrencyAmount, Pair, Trade as LegacyTrade, TradeType, WNATIVE } from '@sushiswap/core-sdk'
 import { MultiRoute, RouteStatus } from '@sushiswap/tines'
 import {
   ConstantProductPool,
@@ -19,7 +20,6 @@ import { useBlockNumber } from 'app/state/application/hooks'
 import { TradeUnion } from 'app/types'
 import { useEffect, useMemo, useState } from 'react'
 import { atom, useSetRecoilState } from 'recoil'
-import { ChainId, Currency, CurrencyAmount, Pair, Trade as LegacyTrade, TradeType, WNATIVE } from 'souvlaswap-core-sdk'
 
 import { useAllCurrencyCombinations } from './useAllCurrencyCombinations'
 import { useGetAllExistedPools } from './useConstantProductPools'

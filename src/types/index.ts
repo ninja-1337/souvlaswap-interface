@@ -1,6 +1,6 @@
+import { Currency, TradeType } from '@sushiswap/core-sdk'
+import { Trade as LegacyTrade } from '@sushiswap/core-sdk/dist/entities/Trade'
 import { PoolState, Trade } from '@sushiswap/trident-sdk'
-import { Currency, TradeType } from 'souvlaswap-core-sdk'
-import { Trade as LegacyTrade } from 'souvlaswap-core-sdk/dist/entities/Trade'
 
 export type TradeUnion =
   | Trade<Currency, Currency, TradeType.EXACT_INPUT | TradeType.EXACT_OUTPUT>

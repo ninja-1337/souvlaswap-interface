@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency, CurrencyAmount, Percent, Token } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import ListPanel from 'app/components/ListPanel'
 import { HeadlessUiModal } from 'app/components/Modal'
@@ -10,7 +11,6 @@ import { setOnsenModalOpen } from 'app/features/onsen/onsenSlice'
 import { useAppDispatch } from 'app/state/hooks'
 import { Field } from 'app/state/mint/actions'
 import React, { FC } from 'react'
-import { Currency, CurrencyAmount, Percent, Token } from 'souvlaswap-core-sdk'
 
 interface PoolAddLiquidityReviewContentProps {
   noLiquidity?: boolean

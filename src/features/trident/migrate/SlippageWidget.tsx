@@ -22,7 +22,7 @@ export const SlippageWidget = () => {
   const slippageIsDefault = percent.equalTo(GLOBAL_DEFAULT_SLIPPAGE_PERCENT)
 
   return (
-    <div className="flex items-center md:self-start self-center gap-2">
+    <div className="flex items-center self-center gap-2 md:self-start">
       <div className="flex items-center">
         <Typography variant="xs" weight={700} className="text-high-emphesis">
           {i18n._(t`Slippage tolerance`)}
@@ -39,7 +39,7 @@ export const SlippageWidget = () => {
         )}
       >
         <input
-          className="bg-transparent placeholder-low-emphesis min-w-0 font-bold w-16"
+          className="w-16 min-w-0 font-bold bg-transparent placeholder-low-emphesis"
           value={input}
           onChange={(e) => dispatch(setSlippageInput(e.target.value))}
           onBlur={() =>

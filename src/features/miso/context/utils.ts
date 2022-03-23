@@ -1,4 +1,5 @@
 import { t } from '@lingui/macro'
+import { CHAIN_KEY, ChainId, NATIVE, Token } from '@sushiswap/core-sdk'
 import MISO from '@sushiswap/miso/exports/all.json'
 import { NATIVE_PAYMENT_TOKEN } from 'app/features/miso/context/constants'
 import {
@@ -7,7 +8,6 @@ import {
   AuctionTemplate,
   RawAuctionInfo,
 } from 'app/features/miso/context/types'
-import { CHAIN_KEY, ChainId, NATIVE, Token } from 'souvlaswap-core-sdk'
 
 // @ts-ignore TYPE NEEDS FIXING
 export const AuctionStatusById = (i18n) => ({

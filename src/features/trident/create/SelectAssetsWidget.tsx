@@ -37,7 +37,7 @@ export const SelectAssetsWidget: FC = () => {
   const { i18n } = useLingui()
 
   return (
-    <div className="flex flex-col gap-4 max-w-2xl">
+    <div className="flex flex-col max-w-2xl gap-4">
       <div className="flex flex-col gap-0.5">
         <Typography variant="lg" weight={700} className="text-high-emphesis">
           {i18n._(t`Select Two Assets`)}
@@ -48,9 +48,9 @@ export const SelectAssetsWidget: FC = () => {
           )}
         </Typography>
       </div>
-      <div className="flex flex-col gap-6 max-w-xl">
+      <div className="flex flex-col max-w-xl gap-6">
         <SelectPanel index={0} />
-        <div className="flex justify-center -mt-8 -mb-8 z-10">
+        <div className="z-10 flex justify-center -mt-8 -mb-8">
           <div className="p-1.5 rounded-full bg-dark-800 border border-dark-800 shadow-md border-dark-700">
             <PlusIcon width={14} className="text-high-emphesis" />
           </div>

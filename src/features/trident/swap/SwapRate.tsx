@@ -1,9 +1,9 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Price } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import { useDerivedTridentSwapContext } from 'app/features/trident/swap/DerivedTradeContext'
 import React, { FC, useState } from 'react'
-import { Price } from 'souvlaswap-core-sdk'
 
 import useCurrenciesFromURL from '../useCurrenciesFromURL'
 

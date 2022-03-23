@@ -1,6 +1,7 @@
 import { parseUnits } from '@ethersproject/units'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { CurrencyAmount, JSBI } from '@sushiswap/core-sdk'
 import LoadingCircle from 'app/animation/loading-circle.json'
 import HeadlessUIModal from 'app/components/Modal/HeadlessUIModal'
 import Typography from 'app/components/Typography'
@@ -15,7 +16,6 @@ import { useActiveWeb3React } from 'app/services/web3'
 import Lottie from 'lottie-react'
 import { useRouter } from 'next/router'
 import React, { FC, useCallback, useEffect, useState } from 'react'
-import { CurrencyAmount, JSBI } from 'souvlaswap-core-sdk'
 
 interface AuctionCreationWizardReviewModalProps {
   open: boolean

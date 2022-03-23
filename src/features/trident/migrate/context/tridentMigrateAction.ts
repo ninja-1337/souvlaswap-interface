@@ -1,11 +1,11 @@
 import { Contract } from '@ethersproject/contracts'
+import { CurrencyAmount, Percent, Rebase, Token } from '@sushiswap/core-sdk'
 import { ConstantProductPool, Fee } from '@sushiswap/trident-sdk'
 import { v2Migration } from 'app/features/trident/migrate/context/migrateSlice'
 import { calculateSlippageAmount, toShareCurrencyAmount } from 'app/functions'
 import store from 'app/state'
 import { selectSlippage } from 'app/state/slippage/slippageSlice'
 import { PoolWithState } from 'app/types'
-import { CurrencyAmount, Percent, Rebase, Token } from 'souvlaswap-core-sdk'
 
 const NEW_POOL_MIN_LP_RECIEVED = '1'
 

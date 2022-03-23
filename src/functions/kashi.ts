@@ -1,4 +1,5 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
+import { USD } from '@sushiswap/core-sdk'
 import {
   FACTOR_PRECISION,
   FULL_UTILIZATION_MINUS_MAX,
@@ -11,7 +12,6 @@ import {
   PROTOCOL_FEE_DIVISOR,
   STARTING_INTEREST_PER_YEAR,
 } from '@sushiswap/sdk'
-import { USD } from 'souvlaswap-core-sdk'
 
 import { e10, ZERO } from './math'
 

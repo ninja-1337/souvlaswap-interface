@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Percent } from '@sushiswap/core-sdk'
 import Form from 'app/components/Form'
 import FormFieldHelperText from 'app/components/Form/FormFieldHelperText'
 import Typography from 'app/components/Typography'
@@ -7,7 +8,6 @@ import useAuction from 'app/features/miso/context/hooks/useAuction'
 import LiquidityLauncherCreationLockupField from 'app/features/miso/LiquidityLauncherCreationForm/LiquidityLauncherCreationLockupField'
 import React, { FC } from 'react'
 import { useWatch } from 'react-hook-form'
-import { Percent } from 'souvlaswap-core-sdk'
 
 interface LiquidityLauncherCreationOptionsProps {}
 

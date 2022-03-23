@@ -22,7 +22,7 @@ const ManageKashiPair = ({ farm }) => {
   const header = useMemo(
     () => (
       <div className="flex flex-col gap-2">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <Typography weight={700} className="text-high-emphesis">
             {toggle ? i18n._(t`Deposit`) : i18n._(t`Withdraw`)}
           </Typography>

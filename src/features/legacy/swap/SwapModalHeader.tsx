@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Percent, TradeType, ZERO } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import HeadlessUiModal from 'app/components/Modal/HeadlessUIModal'
@@ -9,7 +10,6 @@ import { useUSDCValue } from 'app/hooks/useUSDCPrice'
 import { TradeUnion } from 'app/types'
 import React, { FC } from 'react'
 import { ArrowDown } from 'react-feather'
-import { Percent, TradeType, ZERO } from 'souvlaswap-core-sdk'
 
 interface SwapModalHeader {
   trade?: TradeUnion

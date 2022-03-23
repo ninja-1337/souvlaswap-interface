@@ -1,10 +1,10 @@
 import { AddressZero } from '@ethersproject/constants'
 import { parseUnits } from '@ethersproject/units'
+import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Price, Token } from '@sushiswap/core-sdk'
 import {
   AuctionCreationWizardInput,
   AuctionCreationWizardInputFormatted,
 } from 'app/features/miso/AuctionCreationWizard/index'
-import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Price, Token } from 'souvlaswap-core-sdk'
 import { toWei } from 'web3-utils'
 
 export const getPriceEntity = (price: string, auctionToken: Token, paymentToken: Currency) => {

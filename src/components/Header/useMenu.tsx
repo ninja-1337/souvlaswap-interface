@@ -1,12 +1,12 @@
 import { GlobeIcon, SwitchVerticalIcon, TrendingUpIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { SUSHI_ADDRESS } from '@sushiswap/core-sdk'
 import { PoolIcon, RocketIcon, WalletIcon } from 'app/components/Icon'
 import { Feature } from 'app/enums'
 import { featureEnabled } from 'app/functions'
 import { useActiveWeb3React } from 'app/services/web3'
 import { ReactNode, useMemo } from 'react'
-import { SUSHI_ADDRESS } from 'souvlaswap-core-sdk'
 
 export interface MenuItemLeaf {
   key: string

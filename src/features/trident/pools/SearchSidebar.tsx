@@ -24,7 +24,7 @@ interface SelectionProps {
 
 const Selection: FC<SelectionProps> = ({ title, checked, setter }) => {
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex items-center gap-2">
       <Checkbox checked={checked} set={setter} />
       <span className="text-xs">{title}</span>
     </div>
@@ -64,7 +64,7 @@ export const SearchSidebar: FC = () => {
   const dispatch = useAppDispatch()
 
   return (
-    <div className="hidden lg:flex flex-col gap-6 w-52 pt-2">
+    <div className="flex-col hidden gap-6 pt-2 lg:flex w-52">
       <Section title="TWAP Oracles">
         <Selection
           title="Show oracle pairs only"

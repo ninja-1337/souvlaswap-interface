@@ -1,7 +1,7 @@
+import { Currency, Price, Token } from '@sushiswap/core-sdk'
 import { formatNumber } from 'app/functions'
 import useInterval from 'app/hooks/useInterval'
 import { FC, useState } from 'react'
-import { Currency, Price, Token } from 'souvlaswap-core-sdk'
 
 import { Auction } from '../context/Auction'
 

@@ -1,12 +1,12 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Percent } from '@sushiswap/core-sdk'
 import TransactionConfirmationModal, {
   ConfirmationModalContent,
   TransactionErrorContent,
 } from 'app/modals/TransactionConfirmationModal'
 import { TradeUnion } from 'app/types'
 import React, { FC, useMemo } from 'react'
-import { Percent } from 'souvlaswap-core-sdk'
 
 import SwapModalFooter from './SwapModalFooter'
 import SwapModalHeader from './SwapModalHeader'

@@ -1,5 +1,25 @@
 import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
+import {
+  BAR_ADDRESS,
+  BENTOBOX_ADDRESS,
+  BORING_HELPER_ADDRESS,
+  CHAIN_KEY,
+  ChainId,
+  CHAINLINK_ORACLE_ADDRESS,
+  ENS_REGISTRAR_ADDRESS,
+  FACTORY_ADDRESS,
+  MAKER_ADDRESS,
+  MASTERCHEF_ADDRESS,
+  MASTERCHEF_V2_ADDRESS,
+  MERKLE_DISTRIBUTOR_ADDRESS,
+  MINICHEF_ADDRESS,
+  MULTICALL2_ADDRESS,
+  ROUTER_ADDRESS,
+  SUSHI_ADDRESS,
+  TIMELOCK_ADDRESS,
+  WNATIVE_ADDRESS,
+} from '@sushiswap/core-sdk'
 import { LIMIT_ORDER_HELPER_ADDRESS, STOP_LIMIT_ORDER_ADDRESS } from '@sushiswap/limit-order-sdk'
 import MISO from '@sushiswap/miso/exports/all.json'
 import TRIDENT from '@sushiswap/trident/exports/all.json'
@@ -45,26 +65,6 @@ import ZENKO_ABI from 'app/constants/abis/zenko.json'
 import { getContract } from 'app/functions'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useMemo } from 'react'
-import {
-  BAR_ADDRESS,
-  BENTOBOX_ADDRESS,
-  BORING_HELPER_ADDRESS,
-  CHAIN_KEY,
-  ChainId,
-  CHAINLINK_ORACLE_ADDRESS,
-  ENS_REGISTRAR_ADDRESS,
-  FACTORY_ADDRESS,
-  MAKER_ADDRESS,
-  MASTERCHEF_ADDRESS,
-  MASTERCHEF_V2_ADDRESS,
-  MERKLE_DISTRIBUTOR_ADDRESS,
-  MINICHEF_ADDRESS,
-  MULTICALL2_ADDRESS,
-  ROUTER_ADDRESS,
-  SUSHI_ADDRESS,
-  TIMELOCK_ADDRESS,
-  WNATIVE_ADDRESS,
-} from 'souvlaswap-core-sdk'
 
 const UNI_FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
 

@@ -25,8 +25,8 @@ export const SelectTridentPoolPanel: FC<PanelProps> = ({ migration, source, setF
   )
 
   return (
-    <div className="w-full border border-1 border-dark-700 rounded bg-dark-900">
-      <div className="flex justify-between p-3 items-center rounded-t">
+    <div className="w-full border rounded border-1 border-dark-700 bg-dark-900">
+      <div className="flex items-center justify-between p-3 rounded-t">
         <PoolPanelAssetsLabel pair={migration.v2Pair} />
         <div className="flex">
           <Button color="blue" variant="outlined" size="xs">

@@ -26,7 +26,7 @@ const YieldFarmFilter: FC = () => {
           Yield Farms:
         </Typography>
       </div>
-      <div className="flex flex-row gap-3 items-center" onClick={() => dispatch(setPoolsFarmsOnly(!farmsOnly))}>
+      <div className="flex flex-row items-center gap-3" onClick={() => dispatch(setPoolsFarmsOnly(!farmsOnly))}>
         <Checkbox checked={farmsOnly} />
         <Typography className="text-secondary">Show farms only</Typography>
       </div>
@@ -45,7 +45,7 @@ const TwapOnlyFilter: FC = () => {
           TWAP Oracles:
         </Typography>
       </div>
-      <div className="flex flex-row gap-3 items-center" onClick={() => dispatch(setPoolsTWAPOnly(!showTWAPOnly))}>
+      <div className="flex flex-row items-center gap-3" onClick={() => dispatch(setPoolsTWAPOnly(!showTWAPOnly))}>
         <Checkbox checked={showTWAPOnly} />
         <Typography className="text-secondary">Show oracle pairs only</Typography>
       </div>
@@ -67,7 +67,7 @@ const FeeTierFilter: FC = () => {
       {[Fee.HIGH, Fee.DEFAULT, Fee.MEDIUM, Fee.LOW].map((fee) => (
         <div
           key={fee}
-          className="flex flex-row gap-3 items-center"
+          className="flex flex-row items-center gap-3"
           onClick={() => removeOrAddFeeTier(fee, feeTiers, (feeTiers) => dispatch(setPoolsFeeTiers(feeTiers)))}
         >
           <Checkbox checked={feeTiers.includes(fee)} />
@@ -104,12 +104,12 @@ export const MobileFilter: FC = () => {
           </Button>
         }
       >
-        <div className="bg-dark-700 rounded-t">
+        <div className="rounded-t bg-dark-700">
           {/* To Be Built */}
           {/*<YieldFarmFilter />*/}
-          <div className="bg-dark-800 rounded-t">
+          <div className="rounded-t bg-dark-800">
             <TwapOnlyFilter />
-            <div className="relative bg-dark-900 rounded-t">
+            <div className="relative rounded-t bg-dark-900">
               <FeeTierFilter />
             </div>
           </div>

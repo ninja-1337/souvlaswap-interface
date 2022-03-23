@@ -2,6 +2,7 @@ import { defaultAbiCoder } from '@ethersproject/abi'
 import { AddressZero } from '@ethersproject/constants'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { CHAINLINK_ORACLE_ADDRESS, Currency, KASHI_ADDRESS } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Card from 'app/components/Card'
 import Container from 'app/components/Container'
@@ -19,7 +20,6 @@ import { useTransactionAdder } from 'app/state/transactions/hooks'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
-import { CHAINLINK_ORACLE_ADDRESS, Currency, KASHI_ADDRESS } from 'souvlaswap-core-sdk'
 
 export type ChainlinkToken = {
   symbol: string

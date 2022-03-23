@@ -50,10 +50,10 @@ const ClassicMarket: FC = () => {
           <ListPanel
             header={
               isDesktop ? (
-                <div className="grid grid-cols-3 h-14 items-center pl-5 pr-4">
+                <div className="grid items-center grid-cols-3 pl-5 pr-4 h-14">
                   <Typography className="text-high-emphesis">{i18n._(t`Token`)}</Typography>
-                  <Typography className="text-high-emphesis text-right">{i18n._(t`Amount`)}</Typography>
-                  <Typography className="text-high-emphesis text-right">{i18n._(t`Value`)}</Typography>
+                  <Typography className="text-right text-high-emphesis">{i18n._(t`Amount`)}</Typography>
+                  <Typography className="text-right text-high-emphesis">{i18n._(t`Value`)}</Typography>
                 </div>
               ) : (
                 <ListPanel.Header

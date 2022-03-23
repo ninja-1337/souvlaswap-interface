@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { NATIVE, WNATIVE } from '@sushiswap/core-sdk'
 import Alert from 'app/components/Alert'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
 import Divider from 'app/components/Divider'
@@ -17,7 +18,6 @@ import { useUSDCValue } from 'app/hooks/useUSDCPrice'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import React, { useMemo } from 'react'
-import { NATIVE, WNATIVE } from 'souvlaswap-core-sdk'
 
 import TransactionDetails from './TransactionDetails'
 

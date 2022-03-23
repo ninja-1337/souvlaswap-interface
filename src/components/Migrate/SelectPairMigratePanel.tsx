@@ -1,10 +1,10 @@
+import { Pair } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Checkbox from 'app/components/Checkbox'
 import { PoolPanelAssetsLabel } from 'app/components/Migrate/PoolPanelAssetsLabel'
 import { PoolValueEstimation } from 'app/components/Migrate/PoolValueEstimation'
 import { MigrationSource, v2Migration } from 'app/features/trident/migrate/context/migrateSlice'
 import React, { FC } from 'react'
-import { Pair } from 'souvlaswap-core-sdk'
 
 interface PanelProps {
   pair: Pair

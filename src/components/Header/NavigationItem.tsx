@@ -44,7 +44,7 @@ export const NavigationItem: FC<NavigationItem> = ({ node }) => {
   }
 
   return (
-    <Popover key={node.key} className="flex relative">
+    <Popover key={node.key} className="relative flex">
       {({ open }) => (
         <div
           {...(!touchDevice && {
@@ -90,7 +90,7 @@ export const NavigationItem: FC<NavigationItem> = ({ node }) => {
                       onClick={() => {
                         router.push(leaf.link).then(() => buttonRef?.current?.click())
                       }}
-                      className="relative px-3 py-2 hover:cursor-pointer hover:text-white m-1 rounded-lg hover:bg-white/10"
+                      className="relative px-3 py-2 m-1 rounded-lg hover:cursor-pointer hover:text-white hover:bg-white/10"
                     >
                       {leaf.title}
                     </Typography>

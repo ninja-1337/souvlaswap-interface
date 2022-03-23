@@ -1,6 +1,7 @@
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { Currency } from '@sushiswap/core-sdk'
 import selectCoinAnimation from 'app/animation/select-coin.json'
 import Button from 'app/components/Button'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
@@ -14,7 +15,6 @@ import { useBentoBalanceV2 } from 'app/state/bentobox/hooks'
 import { useTokenBalance } from 'app/state/wallet/hooks'
 import Lottie from 'lottie-react'
 import React, { FC, ReactNode, useState } from 'react'
-import { Currency } from 'souvlaswap-core-sdk'
 
 interface AssetSelectProps {
   title?: string

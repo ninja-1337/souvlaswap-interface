@@ -46,10 +46,10 @@ const AuctionHeader: FC = () => {
             {auction.auctionToken.symbol}
           </Typography>
         </div>
-        <Typography variant="h2" weight={700} className="text-high-emphesis truncate">
+        <Typography variant="h2" weight={700} className="truncate text-high-emphesis">
           {auction.auctionToken.name}
           {auction.auctionDocuments.website && (
-            <ExternalLinkIcon width={20} className="inline-flex text-high-emphesis ml-1 relative" />
+            <ExternalLinkIcon width={20} className="relative inline-flex ml-1 text-high-emphesis" />
           )}
         </Typography>
       </div>
@@ -57,7 +57,7 @@ const AuctionHeader: FC = () => {
   )
 
   return (
-    <div className="grid lg:grid-cols-3 grid-cols-1 items-end gap-8 lg:gap-0">
+    <div className="grid items-end grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-0">
       {auction.auctionDocuments.website ? (
         <a href={auction.auctionDocuments.website} target="_blank" rel="noreferrer">
           {link}
@@ -65,7 +65,7 @@ const AuctionHeader: FC = () => {
       ) : (
         link
       )}
-      <div className="flex col-span-1 lg:col-span-1 order-3 lg:order-3 justify-center">
+      <div className="flex justify-center order-3 col-span-1 lg:col-span-1 lg:order-3">
         <AuctionTimer auction={auction}>
           {({ days, hours, minutes, seconds }) => {
             return (
@@ -89,40 +89,40 @@ const AuctionHeader: FC = () => {
                       : i18n._(t`SALE FINISHED`)}
                   </Typography>
                 </div>
-                <Typography variant="h3" weight={700} className="text-mono text-white text-center">
+                <Typography variant="h3" weight={700} className="text-center text-white text-mono">
                   {days}
                 </Typography>
-                <Typography variant="lg" className="text-mono text-low-emphesis text-center">
+                <Typography variant="lg" className="text-center text-mono text-low-emphesis">
                   :
                 </Typography>
-                <Typography variant="h3" weight={700} className="text-mono text-white text-center">
+                <Typography variant="h3" weight={700} className="text-center text-white text-mono">
                   {hours}
                 </Typography>
-                <Typography variant="lg" className="text-mono text-low-emphesis text-center">
+                <Typography variant="lg" className="text-center text-mono text-low-emphesis">
                   :
                 </Typography>
-                <Typography variant="h3" weight={700} className="text-mono text-white text-center">
+                <Typography variant="h3" weight={700} className="text-center text-white text-mono">
                   {minutes}
                 </Typography>
-                <Typography variant="lg" className="text-mono text-low-emphesis text-center">
+                <Typography variant="lg" className="text-center text-mono text-low-emphesis">
                   :
                 </Typography>
-                <Typography variant="h3" weight={700} className="text-mono text-white text-center">
+                <Typography variant="h3" weight={700} className="text-center text-white text-mono">
                   {seconds}
                 </Typography>
-                <Typography variant="xs" weight={700} className="text-mono text-center mt-1">
+                <Typography variant="xs" weight={700} className="mt-1 text-center text-mono">
                   {i18n._(t`Days`)}
                 </Typography>
                 <div />
-                <Typography variant="xs" weight={700} className="text-mono text-center mt-1">
+                <Typography variant="xs" weight={700} className="mt-1 text-center text-mono">
                   {i18n._(t`Hours`)}
                 </Typography>
                 <div />
-                <Typography variant="xs" weight={700} className="text-mono text-center mt-1">
+                <Typography variant="xs" weight={700} className="mt-1 text-center text-mono">
                   {i18n._(t`Minutes`)}
                 </Typography>
                 <div />
-                <Typography variant="xs" weight={700} className="text-mono text-center mt-1">
+                <Typography variant="xs" weight={700} className="mt-1 text-center text-mono">
                   {i18n._(t`Seconds`)}
                 </Typography>
               </div>
@@ -130,10 +130,10 @@ const AuctionHeader: FC = () => {
           }}
         </AuctionTimer>
       </div>
-      <div className="flex gap-5 justify-center lg:justify-end order-2 lg:order-3">
+      <div className="flex justify-center order-2 gap-5 lg:justify-end lg:order-3">
         <div className="flex flex-col gap-1">
           <div className="flex items-center justify-center lg:justify-end">
-            <Typography weight={700} variant="sm" className="text-secondary text-right">
+            <Typography weight={700} variant="sm" className="text-right text-secondary">
               {auction.template === AuctionTemplate.DUTCH_AUCTION
                 ? i18n._(t`Auction Price`)
                 : i18n._(t`Current Token Price`)}
@@ -149,14 +149,14 @@ const AuctionHeader: FC = () => {
             />
           </div>
 
-          <div className="flex justify-end items-baseline w-full gap-1">
+          <div className="flex items-baseline justify-end w-full gap-1">
             {auction.template === AuctionTemplate.DUTCH_AUCTION ? (
               <AuctionCardPrice auction={auction}>
                 {/*@ts-ignore TYPE NEEDS FIXING*/}
                 {({ price }) => {
                   return (
                     <>
-                      <Typography variant="h2" weight={700} className="text-high-emphesis text-right">
+                      <Typography variant="h2" weight={700} className="text-right text-high-emphesis">
                         {price?.toFixed(6)}
                       </Typography>
                       <Typography variant="lg" weight={700} className="text-right">
@@ -168,7 +168,7 @@ const AuctionHeader: FC = () => {
               </AuctionCardPrice>
             ) : (
               <>
-                <Typography variant="h2" weight={700} className="text-high-emphesis text-right">
+                <Typography variant="h2" weight={700} className="text-right text-high-emphesis">
                   {auction.tokenPrice?.toSignificant(6)}
                 </Typography>
                 <Typography variant="lg" weight={700} className="text-right">

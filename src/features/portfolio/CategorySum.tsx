@@ -1,9 +1,9 @@
+import { Currency, CurrencyAmount } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import SumUSDCValues from 'app/features/trident/SumUSDCValues'
 import { currencyFormatter } from 'app/functions'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { Currency, CurrencyAmount } from 'souvlaswap-core-sdk'
 
 interface CategorySumProps {
   title: string

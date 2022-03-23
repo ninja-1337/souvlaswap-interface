@@ -20,7 +20,7 @@ const AuctionEditHeader: FC<AuctionEditHeaderProps> = ({ auction }) => {
   if (!auction?.isOwner) return <></>
 
   return (
-    <div className="flex justify-between rounded gap-2">
+    <div className="flex justify-between gap-2 rounded">
       <div>
         <Link passHref={true} href="/miso">
           <a>
