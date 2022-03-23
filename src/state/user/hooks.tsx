@@ -2,7 +2,7 @@ import { defaultAbiCoder } from '@ethersproject/abi'
 import { getCreate2Address } from '@ethersproject/address'
 import { AddressZero } from '@ethersproject/constants'
 import { keccak256 } from '@ethersproject/solidity'
-import { BENTOBOX_ADDRESS, CHAINLINK_ORACLE_ADDRESS, Currency, KASHI_ADDRESS } from '@sushiswap/core-sdk'
+import { BENTOBOX_ADDRESS, CHAINLINK_ORACLE_ADDRESS, Currency, KASHI_ADDRESS, Pair } from '@sushiswap/core-sdk'
 import { CHAINLINK_PRICE_FEED_MAP } from 'app/config/oracles/chainlink'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from 'app/config/routing'
 import { e10 } from 'app/functions'
@@ -14,7 +14,7 @@ import flatMap from 'lodash/flatMap'
 import { useCallback, useMemo } from 'react'
 import ReactGA from 'react-ga'
 import { useSelector } from 'react-redux'
-import { ChainId, computePairAddress, FACTORY_ADDRESS, Pair, Token } from 'souvlaswap-core-sdk'
+import { ChainId, computePairAddress, FACTORY_ADDRESS, Token } from 'souvlaswap-core-sdk'
 
 import {
   addSerializedPair,
