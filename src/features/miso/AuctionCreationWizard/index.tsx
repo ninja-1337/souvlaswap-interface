@@ -2,7 +2,7 @@ import { AddressZero } from '@ethersproject/constants'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, NATIVE, Price, Token } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Price } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Form from 'app/components/Form'
 import AuctionCreationWizardReviewModal from 'app/features/miso/AuctionCreationWizard/AuctionCreationWizardReviewModal'
@@ -18,8 +18,8 @@ import { useToken } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { NATIVE, Token } from 'souvlaswap-core-sdk'
 import * as yup from 'yup'
-
 export interface AuctionCreationWizardInput {
   paymentCurrencyAddress: string
   startDate: string

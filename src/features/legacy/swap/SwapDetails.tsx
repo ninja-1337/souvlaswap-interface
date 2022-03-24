@@ -2,7 +2,8 @@ import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Route, TradeVersion } from '@sushiswap/core-sdk'
+import { Currency, TradeVersion } from '@sushiswap/core-sdk'
+import { Route } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import TradePrice from 'app/features/legacy/swap/TradePrice'
 import { classNames, computeRealizedLPFeePercent, shortenAddress } from 'app/functions'
@@ -11,7 +12,6 @@ import useSwapSlippageTolerance from 'app/hooks/useSwapSlippageTollerence'
 import { TradeUnion } from 'app/types'
 import React, { FC, Fragment, useState } from 'react'
 import { isAddress } from 'web3-utils'
-
 interface SwapDetailsContent {
   trade?: TradeUnion
   recipient?: string

@@ -1,6 +1,5 @@
 import { splitSignature } from '@ethersproject/bytes'
 import { AddressZero, HashZero } from '@ethersproject/constants'
-import { KASHI_ADDRESS } from '@sushiswap/core-sdk'
 import KashiCooker, { signMasterContractApproval } from 'app/entities/KashiCooker'
 import { useActiveWeb3React } from 'app/services/web3'
 import { USER_REJECTED_TX } from 'app/services/web3/WalletError'
@@ -10,6 +9,7 @@ import { useBentoMasterContractAllowed } from 'app/state/bentobox/hooks'
 import { useTransactionAdder } from 'app/state/transactions/hooks'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { KASHI_ADDRESS } from 'souvlaswap-core-sdk'
 
 import { useBentoBoxContract } from './useContract'
 

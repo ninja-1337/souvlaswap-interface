@@ -1,10 +1,11 @@
 import { AddressZero } from '@ethersproject/constants'
 import { parseUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount, JSBI, Percent, Price, Token } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Price } from '@sushiswap/core-sdk'
 import {
   AuctionCreationFormInputFormatted,
   AuctionCreationFormInputValidated,
 } from 'app/features/miso/AuctionCreationForm/index'
+import { JSBI, Percent, Token } from 'souvlaswap-core-sdk'
 
 export const getPriceEntity = (price: string, auctionToken: Token, paymentToken: Currency) => {
   const base = CurrencyAmount.fromRawAmount(

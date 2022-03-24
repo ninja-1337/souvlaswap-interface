@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, NATIVE, Percent, Price, Token } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Price } from '@sushiswap/core-sdk'
 import Form from 'app/components/Form'
 import FormFieldHelperText from 'app/components/Form/FormFieldHelperText'
 import Typography from 'app/components/Typography'
@@ -10,7 +10,7 @@ import { useToken } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
 import React, { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
-
+import { NATIVE, Percent, Token } from 'souvlaswap-core-sdk'
 interface AuctionCreationFormCrowdsaleProps {}
 
 const AuctionCreationFormCrowdsale: FC<AuctionCreationFormCrowdsaleProps> = ({}) => {
