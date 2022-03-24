@@ -1,7 +1,7 @@
-import { Percent } from '@sushiswap/core-sdk'
 import Typography from 'app/components/Typography'
 import { warningSeverity } from 'app/functions/prices'
 import React, { FC } from 'react'
+import { Percent } from 'souvlaswap-core-sdk'
 
 const SEVERITY = {
   0: '',

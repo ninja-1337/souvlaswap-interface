@@ -1,9 +1,9 @@
-import { ChainId, Currency, NATIVE, SUSHI } from '@sushiswap/core-sdk'
 import { Fee } from '@sushiswap/trident-sdk'
 import { useCurrency } from 'app/hooks/Tokens'
 import { useActiveWeb3React } from 'app/services/web3'
 import { useRouter } from 'next/router'
 import { useCallback, useMemo } from 'react'
+import { ChainId, Currency, NATIVE, SUSHI } from 'souvlaswap-core-sdk'
 
 const useCurrenciesFromURL = (): {
   currencies: (Currency | undefined)[]

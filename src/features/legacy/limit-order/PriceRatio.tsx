@@ -1,5 +1,5 @@
-import { Currency, Price } from '@sushiswap/core-sdk'
 import { FC, useState } from 'react'
+import { Currency, Price } from 'souvlaswap-core-sdk'
 
 interface PriceRatio {
   price?: Price<Currency, Currency>

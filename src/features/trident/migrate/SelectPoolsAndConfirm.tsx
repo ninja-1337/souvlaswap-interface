@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Dots from 'app/components/Dots'
 import { LoadingSpinner } from 'app/components/LoadingSpinner'
@@ -24,6 +23,7 @@ import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { useTokenBalances } from 'app/state/wallet/hooks'
 import { useRouter } from 'next/router'
 import React, { FC } from 'react'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 import Typography from '../../../components/Typography'
 
