@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Pair } from '@sushiswap/core-sdk'
+import { Currency } from '@sushiswap/core-sdk'
 import selectCoinAnimation from 'app/animation/select-coin.json'
 import { classNames, formatCurrencyAmount } from 'app/functions'
 import CurrencySearchModal from 'app/modals/SearchModal/CurrencySearchModal'
@@ -10,13 +10,13 @@ import { useCurrencyBalance } from 'app/state/wallet/hooks'
 import Lottie from 'lottie-react'
 import React, { ReactNode, useCallback, useState } from 'react'
 import { CurrencyAmount, Percent, Token } from 'souvlaswap-core-sdk'
+import { Pair } from 'souvlaswap-core-sdk'
 
 import Button from '../Button'
 import { CurrencyLogo } from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
 import Input from '../Input'
 import { FiatValue } from './FiatValue'
-
 interface CurrencyInputPanelProps {
   value?: string
   onUserInput?: (value: string) => void

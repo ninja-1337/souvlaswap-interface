@@ -1,4 +1,3 @@
-import { ChainId } from '@sushiswap/core-sdk'
 import { GRAPH_HOST } from 'app/services/graph/constants'
 import { getTokenSubset } from 'app/services/graph/fetchers/exchange'
 import {
@@ -12,6 +11,7 @@ import {
   poolsV2Query,
 } from 'app/services/graph/queries'
 import { request } from 'graphql-request'
+import { ChainId } from 'souvlaswap-core-sdk'
 
 export const MINICHEF = {
   [ChainId.MATIC]: 'sushiswap/matic-minichef',

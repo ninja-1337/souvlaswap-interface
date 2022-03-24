@@ -1,5 +1,4 @@
 import { Interface } from '@ethersproject/abi'
-import { Currency, CurrencyAmount, Token } from '@sushiswap/core-sdk'
 import { default as constantProductPoolArtifact } from '@sushiswap/trident/artifacts/contracts/pool/constant-product/ConstantProductPool.sol/ConstantProductPool.json'
 import { computeConstantProductPoolAddress, ConstantProductPool, Fee, PoolState } from '@sushiswap/trident-sdk'
 import { enumToArray } from 'app/functions/array/enumToArray'
@@ -7,6 +6,7 @@ import { useConstantProductPoolFactory } from 'app/hooks/useContract'
 import { PoolWithState } from 'app/types'
 import combinate from 'combinate'
 import { useMemo } from 'react'
+import { Currency, CurrencyAmount, Token } from 'souvlaswap-core-sdk'
 
 import { useMultipleContractSingleData, useSingleContractMultipleData } from '../state/multicall/hooks'
 

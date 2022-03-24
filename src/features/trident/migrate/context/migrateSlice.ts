@@ -1,9 +1,9 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Pair } from '@sushiswap/core-sdk'
 import { AvailablePoolConfig } from 'app/components/Migrate/migrate-utils'
 import { StandardSignatureData } from 'app/hooks/useERC20Permit'
 import { TridentPool } from 'app/services/graph'
 import { AppState } from 'app/state'
+import { Pair } from 'souvlaswap-core-sdk'
 
 export enum MigrationSource {
   SUSHI_V2 = 'Sushi v2',
