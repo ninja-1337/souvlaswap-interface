@@ -2,7 +2,6 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, currencyEquals, WNATIVE } from '@sushiswap/core-sdk'
 import Alert from 'app/components/Alert'
 import Button from 'app/components/Button'
 import { AutoColumn } from 'app/components/Column'
@@ -43,6 +42,7 @@ import { useRouter } from 'next/router'
 import React, { useCallback, useState } from 'react'
 import { Plus } from 'react-feather'
 import ReactGA from 'react-ga'
+import { Currency, CurrencyAmount, currencyEquals, WNATIVE } from 'souvlaswap-core-sdk'
 
 export default function Add() {
   const { i18n } = useLingui()
