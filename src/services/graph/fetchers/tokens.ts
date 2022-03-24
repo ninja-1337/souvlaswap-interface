@@ -1,8 +1,8 @@
-import { ChainId, Currency, CurrencyAmount } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount } from '@sushiswap/core-sdk'
 import { STABLECOIN_AMOUNT_OUT } from 'app/hooks/useUSDCPrice'
 import { fetcher } from 'app/services/graph'
 import { getTridentTokenPriceQuery, getTridentTokenPricesQuery } from 'app/services/graph/queries'
-
+import { ChainId } from 'souvlaswap-core-sdk'
 const formatCurrencyAmounts = (chainId: ChainId, tokenPrices: TokenPrice[]) => {
   return tokenPrices.map(({ derivedUSD }) => {
     const decimals = STABLECOIN_AMOUNT_OUT[chainId].currency.decimals

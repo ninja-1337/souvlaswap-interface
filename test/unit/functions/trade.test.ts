@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
-import { ChainId, CurrencyAmount, Percent, Token } from '@sushiswap/core-sdk'
+import { CurrencyAmount } from '@sushiswap/core-sdk'
 import { calculateGasMargin, calculateSlippageAmount } from 'app/functions/trade'
-
+import { ChainId, Percent, Token } from 'souvlaswap-core-sdk'
 describe('#calculateSlippageAmount', () => {
   it('bounds are correct', () => {
     const tokenAmount = CurrencyAmount.fromRawAmount(new Token(ChainId.ETHEREUM, AddressZero, 0), '100')

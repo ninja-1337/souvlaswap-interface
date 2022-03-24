@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token, ZERO } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Pair } from '@sushiswap/core-sdk'
 import { tryParseAmount } from 'app/functions/parse'
 import { useTotalSupply } from 'app/hooks/useTotalSupply'
 import { useV2Pair } from 'app/hooks/useV2Pairs'
@@ -9,6 +9,7 @@ import { AppState } from 'app/state'
 import { useAppDispatch, useAppSelector } from 'app/state/hooks'
 import { useTokenBalances } from 'app/state/wallet/hooks'
 import { useCallback } from 'react'
+import { JSBI, Percent, Token, ZERO } from 'souvlaswap-core-sdk'
 
 import { Field, typeInput } from './actions'
 
