@@ -1,7 +1,8 @@
-import { Currency, CurrencyAmount, ZERO } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount } from '@sushiswap/core-sdk'
 import { classNames } from 'app/functions'
 import { useUSDCValue } from 'app/hooks/useUSDCPrice'
 import React, { FC, ReactNode } from 'react'
+import { ZERO } from 'souvlaswap-core-sdk'
 
 import Chip from '../Chip'
 import { CurrencyLogo } from '../CurrencyLogo'
