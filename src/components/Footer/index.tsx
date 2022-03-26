@@ -25,12 +25,12 @@ const Footer = () => {
                 <Image
                   src="https://raw.githubusercontent.com/ninja-1337/souvlaswap-interface/master/public/images/logo.svg"
                   alt="SouvlaSwap logo"
-                  width="28px"
-                  height="28px"
+                  width="32px"
+                  height="32px"
                 />
               </div>
               <Typography variant="h2" weight={700} className="tracking-[0.02em] scale-y-90 hover:text-high-emphesis">
-                Sushi
+                SouvlaSwap
               </Typography>
             </div>
             <Typography variant="xs" className="text-low-emphesis">
