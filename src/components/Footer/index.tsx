@@ -22,7 +22,12 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-start gap-2">
               <div className="">
-                <Image src="/public/images/logo.svg" alt="SouvlaSwap logo" width="28px" height="28px" />
+                <Image
+                  src="https://raw.githubusercontent.com/ninja-1337/souvlaswap-interface/master/public/images/logo.svg"
+                  alt="SouvlaSwap logo"
+                  width="28px"
+                  height="28px"
+                />
               </div>
               <Typography variant="h2" weight={700} className="tracking-[0.02em] scale-y-90 hover:text-high-emphesis">
                 Sushi

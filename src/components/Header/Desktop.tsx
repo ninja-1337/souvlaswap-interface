@@ -30,7 +30,12 @@ const Desktop: FC = () => {
             <div className="flex items-center justify-between gap-4 px-6">
               <div className="flex gap-4">
                 <div className="flex items-center w-6 mr-4">
-                  <Image src="http://localhost:3000/images/logo.svg" alt="Sushi logo" width="24px" height="24px" />
+                  <Image
+                    src="https://raw.githubusercontent.com/ninja-1337/souvlaswap-interface/master/public/images/logo.svg"
+                    alt="SouvlaSwap logo"
+                    width="24px"
+                    height="24px"
+                  />
                 </div>
                 {menu.map((node) => {
                   return <NavigationItem node={node} key={node.key} />
