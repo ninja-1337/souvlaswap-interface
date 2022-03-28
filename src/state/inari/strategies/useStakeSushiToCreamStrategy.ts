@@ -35,7 +35,7 @@ export const tokenDefinitions: StrategyTokenDefinitions = {
   },
   outputToken: {
     chainId: ChainId.ETHEREUM,
-    address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
+    address: '0x1132b1e57C99d03A947F1f3fc8e37De80144E6CC',
     decimals: 18,
     symbol: 'XSUSHI',
   },

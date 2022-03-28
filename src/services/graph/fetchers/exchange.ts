@@ -175,7 +175,7 @@ export const getMphPrice = async (variables = {}) => {
 export const getSushiPrice = async (variables = {}) => {
   // console.log('getSushiPrice')
   return getTokenPrice(ChainId.ETHEREUM, tokenPriceQuery, {
-    id: '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2',
+    id: '0xFD7faC133cb7B55138991B32916a6Bb796c521F5',
     ...variables,
   })
 }

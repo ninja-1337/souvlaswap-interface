@@ -2,7 +2,7 @@ import { request } from 'graphql-request'
 import useSWR from 'swr'
 
 const QUERY = `{
-    bar(id: "0x8798249c2e607446efb7ad49ec89dd1865ff4272") {
+    bar(id: "0x1132b1e57C99d03A947F1f3fc8e37De80144E6CC") {
       ratio
     }
 }`

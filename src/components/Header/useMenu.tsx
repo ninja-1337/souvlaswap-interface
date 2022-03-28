@@ -97,26 +97,26 @@ const useMenu: UseMenu = () => {
     if (featureEnabled(Feature.VESTING, chainId)) {
       exploreMenu.push({
         key: 'stake',
-        title: i18n._(t`xSUSHI`),
+        title: i18n._(t`xSOUVLA`),
         link: '/stake',
       })
     }
 
-    if (featureEnabled(Feature.MEOWSHI, chainId)) {
-      exploreMenu.push({
-        key: 'meowshi',
-        title: i18n._(t`Meowshi`),
-        link: '/tools/meowshi',
-      })
-    }
+    // if (featureEnabled(Feature.MEOWSHI, chainId)) {
+    //   exploreMenu.push({
+    //     key: 'meowshi',
+    //     title: i18n._(t`Meowshi`),
+    //     link: '/tools/meowshi',
+    //   })
+    // }
 
-    if (featureEnabled(Feature.MEOWSHI, chainId)) {
-      exploreMenu.push({
-        key: 'yield',
-        title: i18n._(t`Yield Strategies`),
-        link: '/tools/inari',
-      })
-    }
+    // if (featureEnabled(Feature.MEOWSHI, chainId)) {
+    //   exploreMenu.push({
+    //     key: 'yield',
+    //     title: i18n._(t`Yield Strategies`),
+    //     link: '/tools/inari',
+    //   })
+    // }
 
     const mainItems: Menu = [tradeMenu]
 
@@ -157,25 +157,25 @@ const useMenu: UseMenu = () => {
       mainItems.push(farmItems)
     }
 
-    if (featureEnabled(Feature.KASHI, chainId)) {
-      mainItems.push({
-        key: 'lending',
-        title: i18n._(t`Lending`),
-        icon: <SwitchVerticalIcon width={20} className="rotate-90 filter" />,
-        items: [
-          {
-            key: 'lend',
-            title: i18n._(t`Lend`),
-            link: '/lend',
-          },
-          {
-            key: 'borrow',
-            title: i18n._(t`Borrow`),
-            link: '/borrow',
-          },
-        ],
-      })
-    }
+    // if (featureEnabled(Feature.KASHI, chainId)) {
+    //   mainItems.push({
+    //     key: 'lending',
+    //     title: i18n._(t`Lending`),
+    //     icon: <SwitchVerticalIcon width={20} className="rotate-90 filter" />,
+    //     items: [
+    //       {
+    //         key: 'lend',
+    //         title: i18n._(t`Lend`),
+    //         link: '/lend',
+    //       },
+    //       {
+    //         key: 'borrow',
+    //         title: i18n._(t`Borrow`),
+    //         link: '/borrow',
+    //       },
+    //     ],
+    //   })
+    // }
 
     if (featureEnabled(Feature.MISO, chainId)) {
       mainItems.push({
