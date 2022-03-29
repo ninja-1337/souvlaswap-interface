@@ -1,5 +1,5 @@
 import { getAddress } from '@ethersproject/address'
-import { ARBITRUM_TOKENS, MATIC_TOKENS, XDAI_TOKENS } from 'app/config/tokens'
+import { ARBITRUM_TOKENS, KOVAN_TOKENS, MATIC_TOKENS, XDAI_TOKENS } from 'app/config/tokens'
 import { Feature } from 'app/enums'
 import { Chef, PairType } from 'app/features/onsen/enum'
 import { usePositions } from 'app/features/onsen/hooks'
@@ -300,6 +300,14 @@ export default function useFarmRewards() {
             rewardPerBlock,
             rewardPerDay,
             rewardPrice: ohmPrice,
+          }
+        }
+        if (chainId === ChainId.KOVAN && ['12'].includes(pool.id)) {
+          rewards[0] = {
+            currency: KOVAN_TOKENS.XSUSHI,
+            rewardPerBlock,
+            rewardPerDay,
+            rewardPrice: sushiPrice,
           }
         }
         if (chainId === ChainId.ARBITRUM && ['13'].includes(pool.id)) {

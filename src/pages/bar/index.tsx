@@ -452,7 +452,7 @@ export default function Stake() {
                                 text-sm font-bold cursor-pointer
                             `}
                     >
-                      {i18n._(t`Your SushiBar Stats`)}
+                      {i18n._(t`Your SouvlaBar Stats`)}
                     </a>
                   )}
                 </div>

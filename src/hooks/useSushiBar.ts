@@ -13,7 +13,7 @@ const useSushiBar = () => {
       if (amount?.quotient) {
         try {
           const tx = await barContract?.enter(amount?.quotient.toString())
-          return addTransaction(tx, { summary: 'Enter SushiBar' })
+          return addTransaction(tx, { summary: 'Enter SouvlaBar' })
         } catch (e) {
           return e
         }
@@ -27,7 +27,7 @@ const useSushiBar = () => {
       if (amount?.quotient) {
         try {
           const tx = await barContract?.leave(amount?.quotient.toString())
-          return addTransaction(tx, { summary: 'Leave SushiBar' })
+          return addTransaction(tx, { summary: 'Leave SouvlaBar' })
         } catch (e) {
           return e
         }

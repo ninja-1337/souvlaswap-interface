@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Token } from '@sushiswap/core-sdk'
 import Button from 'app/components/Button'
 import Chip from 'app/components/Chip'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'
@@ -13,6 +12,7 @@ import { useActiveWeb3React } from 'app/services/web3'
 import { WrappedTokenInfo } from 'app/state/lists/wrappedTokenInfo'
 import { useAddUserToken } from 'app/state/user/hooks'
 import React, { FC } from 'react'
+import { Token } from 'souvlaswap-core-sdk'
 
 interface ImportProps {
   tokens: Token[]

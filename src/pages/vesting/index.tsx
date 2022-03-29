@@ -225,7 +225,7 @@ const ProtocolVesting = () => {
       <div className="relative w-full h-full overflow-hidden rounded bg-dark-900">
         <div className="flex flex-col gap-3 p-4">
           <div className="flex flex-row justify-between">
-            <div className="font-bold text-white">{i18n._(t`Claimable SUSHI from Protocols`)}</div>
+            <div className="font-bold text-white">{i18n._(t`Claimable SOUVLA from Protocols`)}</div>
             <QuestionHelper text="If you participated in staking progammes from Alpha Homora, Cream, DefiDollar, Dracula, Harvest, Pickle, Yam, or Badger you can claim your vested SUSHI directly here" />
           </div>
           {/* <div style={{ display: 'flex', alignItems: 'baseline' }}> */}
@@ -236,7 +236,7 @@ const ProtocolVesting = () => {
             {account ? (
               <div className="text-sm text-secondary">
                 {totalLocked ? (
-                  i18n._(t`Historical Total Locked: ${formatNumber(totalLocked)} SUSHI`)
+                  i18n._(t`Historical Total Locked: ${formatNumber(totalLocked)} SOUVLA`)
                 ) : (
                   <Dots>{i18n._(t`Historical Total Locked: Fetching Total`)}</Dots>
                 )}

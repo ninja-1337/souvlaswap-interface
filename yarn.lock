@@ -15807,10 +15807,10 @@
   "resolved" "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
   "version" "1.4.8"
 
-"souvlaswap-core-sdk@^1.1.8":
-  "integrity" "sha512-MSJIZkam2BT+p97LHFto2Oz849AOy30zol2BJJpDpws/UsC4RL+dxRWWReqfGi2/opI9NwcGAM5gexru4n3zgA=="
-  "resolved" "https://registry.npmjs.org/souvlaswap-core-sdk/-/souvlaswap-core-sdk-1.1.8.tgz"
-  "version" "1.1.8"
+"souvlaswap-core-sdk@^2.2.8":
+  "integrity" "sha512-z0zgce52hEsAQ7SVo/18DN4mBDkp8dl+ijYBS3y+XdCvNJUJ7j7kSauL/iYrtRB/IH+iEbf6yYwGtPv2rfeX6Q=="
+  "resolved" "https://registry.npmjs.org/souvlaswap-core-sdk/-/souvlaswap-core-sdk-2.2.8.tgz"
+  "version" "2.2.8"
   dependencies:
     "@ethersproject/address" "^5.4.0"
     "@ethersproject/bignumber" "^5.4.0"
