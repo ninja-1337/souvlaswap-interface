@@ -219,7 +219,7 @@ export default function Stake() {
           </div>
           <div className="hidden px-8 ml-6 md:block w-72">
             <Image
-              src="https://app.sushi.com/images/xsushi-sign.png"
+              src="https://raw.githubusercontent.com/ninja-1337/souvlaswap-interface/4bf5c4bab246964655e6b89af052e14be90b6165/public/images/xsushi-sign.png"
               alt="xSUSHI sign"
               width="100%"
               height="100%"
