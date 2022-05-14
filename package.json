@@ -1,10 +1,10 @@
 {
   "name": "sushiswap-interface",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "analyze": "ANALYZE=true yarn build && serve .next -n",
-    "dev": "cross-env NODE_OPTIONS='--inspect' next dev -p 80",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "inspect": "NODE_OPTIONS='--inspect' next dev",
     "build": "yarn lingui && next build",
     "start": "next start",
@@ -75,6 +75,7 @@
     "@sushiswap/bentobox-sdk": "1.0.0-canary.60",
     "@sushiswap/chainlink-whitelist": "0.2.8",
     "@sushiswap/core": "^2.0.0-canary.1",
+    "@sushiswap/core-sdk": "1.0.0-canary.75",
     "@sushiswap/default-token-list": "24.23.0",
     "@sushiswap/kashi-sdk": "1.0.0-canary.51",
     "@sushiswap/limit-order-pair-list": "0.2.15",
@@ -187,7 +188,6 @@
     "redux-persist": "^6.0.0",
     "serve": "^12.0.0",
     "sharp": "^0.29.0",
-    "souvlaswap-core-sdk": "^2.2.8",
     "start-server-and-test": "1.14.0",
     "swr": "^1.1.2",
     "tailwindcss": "^3.0.1",
@@ -211,8 +211,5 @@
     "not ie 11",
     "not dead",
     "not op_mini all"
-  ],
-  "dependencies": {
-    "gtgsdk": "github:ninja-1337/sdk#canary"
-  }
+  ]
 }

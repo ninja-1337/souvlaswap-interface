@@ -1,60 +1,66 @@
-import { Transition } from '@headlessui/react'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
-import Button from 'app/components/Button'
-import { classNames } from 'app/functions'
-import { useActiveWeb3React } from 'app/services/web3'
-import React, { useCallback, useState } from 'react'
-import { FC } from 'react'
-import { ChainId } from 'souvlaswap-core-sdk'
+import { Transition } from "@headlessui/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import { ChainId } from "@souvlaswap/core-sdk";
+import Button from "app/components/Button";
+import { classNames } from "app/functions";
+import { useActiveWeb3React } from "app/services/web3";
+import React, { useCallback, useState } from "react";
+import { FC } from "react";
 
-import { getStrapiMedia } from '../../lib/media'
+import { getStrapiMedia } from "../../lib/media";
 
 interface BannerProps {
   banners: {
     attributes: {
-      name: string
-      url: string
+      name: string;
+      url: string;
       image: {
         data: {
           attributes: {
-            url: string
-          }
-        }
-      }
-      startDate: string
-      endDate: string
-    }
-  }[]
+            url: string;
+          };
+        };
+      };
+      startDate: string;
+      endDate: string;
+    };
+  }[];
 }
 
 const Banner: FC<BannerProps> = ({ banners }) => {
-  const { chainId } = useActiveWeb3React()
-  const [slideIndex, setSlideIndex] = useState<number>(Math.floor(Math.random() * banners.length))
+  const { chainId } = useActiveWeb3React();
+  const [slideIndex, setSlideIndex] = useState<number>(
+    Math.floor(Math.random() * banners.length)
+  );
 
   const nextSlide = useCallback(() => {
-    setSlideIndex((prevState) => (prevState + 1) % banners.length)
-  }, [banners.length])
+    setSlideIndex((prevState) => (prevState + 1) % banners.length);
+  }, [banners.length]);
 
   const prevSlide = useCallback(() => {
-    setSlideIndex((prevState) => (prevState - 1 + banners.length) % banners.length)
-  }, [banners.length])
+    setSlideIndex(
+      (prevState) => (prevState - 1 + banners.length) % banners.length
+    );
+  }, [banners.length]);
 
-  if (chainId !== ChainId.ETHEREUM || banners.length === 0) return <></>
+  if (chainId !== ChainId.ETHEREUM || banners.length === 0) return <></>;
 
-  const filteredSlides = banners.filter(({ attributes: { startDate, endDate } }) => {
-    const now = new Date().getTime()
-    const startEpoch = new Date(startDate).getTime()
-    const endEpoch = new Date(endDate).getTime()
-    return now > startEpoch && now < endEpoch
-  })
+  const filteredSlides = banners.filter(
+    ({ attributes: { startDate, endDate } }) => {
+      const now = new Date().getTime();
+      const startEpoch = new Date(startDate).getTime();
+      const endEpoch = new Date(endDate).getTime();
+      return now > startEpoch && now < endEpoch;
+    }
+  );
 
   const slides = filteredSlides.map(({ attributes: { image, url } }, index) => {
     return (
       <div
         key={index}
         className={classNames(
-          index === slideIndex ? 'block' : 'hidden',
-          'h-[96px] absolute inset-0 flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform slide'
+          index === slideIndex ? "block" : "hidden",
+          "h-[96px] absolute inset-0 flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform slide"
         )}
       >
         <Transition
@@ -73,18 +79,20 @@ const Banner: FC<BannerProps> = ({ banners }) => {
             target="_blank"
             className="hidden w-full py-12 rounded cursor-pointer sm:block"
             style={{
-              backgroundImage: `url(${getStrapiMedia(image.data.attributes.url)})`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
+              backgroundImage: `url(${getStrapiMedia(
+                image.data.attributes.url
+              )})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
             }}
           >
             <div className="flex items-center justify-between gap-6 pl-5 pr-8" />
           </a>
         </Transition>
       </div>
-    )
-  })
+    );
+  });
 
   return (
     <div className="flex flex-col justify-center">
@@ -93,16 +101,22 @@ const Banner: FC<BannerProps> = ({ banners }) => {
         {slides.length > 1 && (
           <div className="flex items-center justify-between w-full h-full">
             <Button onClick={prevSlide} className="flex items-center -ml-12">
-              <ChevronLeftIcon width={24} className="hover:text-white text-low-emphesis" />
+              <ChevronLeftIcon
+                width={24}
+                className="hover:text-white text-low-emphesis"
+              />
             </Button>
             <Button onClick={nextSlide} className="flex items-center -mr-12">
-              <ChevronRightIcon width={24} className="hover:text-white text-low-emphesis" />
+              <ChevronRightIcon
+                width={24}
+                className="hover:text-white text-low-emphesis"
+              />
             </Button>
           </div>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;
