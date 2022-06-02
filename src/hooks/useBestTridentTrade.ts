@@ -1,6 +1,11 @@
-import { BigNumber } from '@ethersproject/bignumber'
-import { Currency, CurrencyAmount, Trade as LegacyTrade, TradeType } from '@sushiswap/core-sdk'
-import { MultiRoute, RouteStatus } from '@sushiswap/tines'
+import { BigNumber } from "@ethersproject/bignumber";
+import {
+  Currency,
+  CurrencyAmount,
+  Trade as LegacyTrade,
+  TradeType,
+} from "@sushiswap/core-sdk";
+import { MultiRoute, RouteStatus } from "@sushiswap/tines";
 import {
   ConstantProductPool,
   convertTinesSingleRouteToLegacyRoute,
@@ -9,64 +14,79 @@ import {
   findSingleRouteExactIn,
   findSingleRouteExactOut,
   PoolState,
+  Pair,
   Trade,
-} from '@sushiswap/trident-sdk'
-import { PoolUnion } from 'app/features/trident/types'
-import { toShareCurrencyAmount } from 'app/functions'
-import { useBentoRebase } from 'app/hooks/useBentoRebases'
-import { PairState, useV2Pairs } from 'app/hooks/useV2Pairs'
-import { useActiveWeb3React } from 'app/services/web3'
-import { useBlockNumber } from 'app/state/application/hooks'
-import { TradeUnion } from 'app/types'
-import { useEffect, useMemo, useState } from 'react'
-import { atom, useSetRecoilState } from 'recoil'
-import { ChainId, Pair, WNATIVE } from 'souvlaswap-core-sdk'
+} from "@sushiswap/trident-sdk";
+import { PoolUnion } from "app/features/trident/types";
+import { toShareCurrencyAmount } from "app/functions";
+import { useBentoRebase } from "app/hooks/useBentoRebases";
+import { PairState, useV2Pairs } from "app/hooks/useV2Pairs";
+import { useActiveWeb3React } from "app/services/web3";
+import { useBlockNumber } from "app/state/application/hooks";
+import { TradeUnion } from "app/types";
+import { useEffect, useMemo, useState } from "react";
+import { atom, useSetRecoilState } from "recoil";
+import { ChainId, WNATIVE } from "souvlaswap-core-sdk";
 
-import { useAllCurrencyCombinations } from './useAllCurrencyCombinations'
-import { useGetAllExistedPools } from './useConstantProductPools'
+import { useAllCurrencyCombinations } from "./useAllCurrencyCombinations";
+import { useGetAllExistedPools } from "./useConstantProductPools";
 
-export function useAllCommonPools(currencyA?: Currency, currencyB?: Currency): (PoolUnion | Pair)[] {
-  const currencyCombinations = useAllCurrencyCombinations(currencyA, currencyB)
-  const constantProductPools = useGetAllExistedPools(currencyCombinations)
+export function useAllCommonPools(
+  currencyA?: Currency,
+  currencyB?: Currency
+): (PoolUnion | Pair)[] {
+  const currencyCombinations = useAllCurrencyCombinations(currencyA, currencyB);
+  const constantProductPools = useGetAllExistedPools(currencyCombinations);
   //const constantProductPools = useConstantProductPoolsPermutations(currencyCombinations)
-  const allPairs = useV2Pairs(currencyCombinations)
-  const pools = useMemo(() => [...constantProductPools, ...allPairs], [allPairs, constantProductPools])
+  const allPairs = useV2Pairs(currencyCombinations);
+  const pools = useMemo(
+    () => [...constantProductPools, ...allPairs],
+    [allPairs, constantProductPools]
+  );
   return useMemo(
     () => [
       ...Object.values(
         pools.reduce<(PoolUnion | Pair)[]>((acc, result) => {
-          if (!Array.isArray(result) && result.state === PoolState.EXISTS && result.pool) {
-            acc.push(result.pool)
+          if (
+            !Array.isArray(result) &&
+            result.state === PoolState.EXISTS &&
+            result.pool
+          ) {
+            acc.push(result.pool);
           }
 
-          if (Array.isArray(result) && result[0] === PairState.EXISTS && result[1]) {
-            acc.push(result[1])
+          if (
+            Array.isArray(result) &&
+            result[0] === PairState.EXISTS &&
+            result[1]
+          ) {
+            acc.push(result[1]);
           }
 
-          return acc
+          return acc;
         }, [])
       ),
     ],
     [pools]
-  )
+  );
 }
 
 export type UseBestTridentTradeOutput = {
-  trade?: TradeUnion
-  priceImpact?: number
-}
+  trade?: TradeUnion;
+  priceImpact?: number;
+};
 
 export type RoutingInfo = {
-  chainId?: ChainId
-  allowedPools?: (PoolUnion | Pair)[]
-  mode?: 'single' | 'multiple'
-  route?: MultiRoute
-}
+  chainId?: ChainId;
+  allowedPools?: (PoolUnion | Pair)[];
+  mode?: "single" | "multiple";
+  route?: MultiRoute;
+};
 
 export const routingInfo = atom<RoutingInfo | undefined>({
-  key: 'routingInfo',
+  key: "routingInfo",
   default: undefined,
-})
+});
 
 /**
  * Returns best trident trade for a desired swap.
@@ -81,29 +101,32 @@ export function useBestTridentTrade(
   mainCurrency?: Currency,
   otherCurrency?: Currency
 ): UseBestTridentTradeOutput {
-  const { chainId, library } = useActiveWeb3React()
-  const blockNumber = useBlockNumber()
-  const setRoutingInfo = useSetRecoilState(routingInfo)
-  const { rebase } = useBentoRebase(amountSpecified?.currency)
-  const [gasPrice, setGasPrice] = useState<number>()
+  const { chainId, library } = useActiveWeb3React();
+  const blockNumber = useBlockNumber();
+  const setRoutingInfo = useSetRecoilState(routingInfo);
+  const { rebase } = useBentoRebase(amountSpecified?.currency);
+  const [gasPrice, setGasPrice] = useState<number>();
   const [currencyIn, currencyOut] = useMemo(
-    () => (tradeType === TradeType.EXACT_INPUT ? [mainCurrency, otherCurrency] : [otherCurrency, mainCurrency]),
+    () =>
+      tradeType === TradeType.EXACT_INPUT
+        ? [mainCurrency, otherCurrency]
+        : [otherCurrency, mainCurrency],
     [tradeType, mainCurrency, otherCurrency]
-  )
-  const allowedPools = useAllCommonPools(currencyIn, currencyOut)
+  );
+  const allowedPools = useAllCommonPools(currencyIn, currencyOut);
 
   useEffect(() => {
-    if (!library) return
+    if (!library) return;
 
     const main = async () => {
-      const gas = await library.getGasPrice()
-      return gas.toNumber()
-    }
+      const gas = await library.getGasPrice();
+      return gas.toNumber();
+    };
 
-    main().then((gasPrice) => setGasPrice(gasPrice))
+    main().then((gasPrice) => setGasPrice(gasPrice));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [blockNumber, library])
+  }, [blockNumber, library]);
 
   return useMemo(() => {
     if (
@@ -119,10 +142,17 @@ export function useBestTridentTrade(
     ) {
       const shareSpecified = CurrencyAmount.fromRawAmount(
         amountSpecified.currency,
-        toShareCurrencyAmount(rebase, amountSpecified.wrapped).quotient.toString()
-      )
-      const tridentPools = allowedPools.filter((pool) => pool instanceof ConstantProductPool) as ConstantProductPool[]
-      const legacyPools = allowedPools.filter((pair) => pair instanceof Pair) as Pair[]
+        toShareCurrencyAmount(
+          rebase,
+          amountSpecified.wrapped
+        ).quotient.toString()
+      );
+      const tridentPools = allowedPools.filter(
+        (pool) => pool instanceof ConstantProductPool
+      ) as ConstantProductPool[];
+      const legacyPools = allowedPools.filter(
+        (pair) => pair instanceof Pair
+      ) as Pair[];
 
       if (tradeType === TradeType.EXACT_INPUT) {
         const tridentRoute = findMultiRouteExactIn(
@@ -132,7 +162,7 @@ export function useBestTridentTrade(
           tridentPools,
           WNATIVE[shareSpecified.currency.chainId],
           gasPrice
-        )
+        );
 
         const legacyRoute = findSingleRouteExactIn(
           currencyIn.wrapped,
@@ -141,28 +171,47 @@ export function useBestTridentTrade(
           legacyPools,
           WNATIVE[amountSpecified.currency.chainId],
           gasPrice
-        )
+        );
 
         if (tridentRoute.amountOutBN.gt(legacyRoute.amountOutBN)) {
           if (tridentRoute.status === RouteStatus.Success) {
-            const priceImpact = tridentRoute.priceImpact
-            setRoutingInfo({ chainId, allowedPools: tridentPools, route: tridentRoute, mode: 'multiple' })
+            const priceImpact = tridentRoute.priceImpact;
+            setRoutingInfo({
+              chainId,
+              allowedPools: tridentPools,
+              route: tridentRoute,
+              mode: "multiple",
+            });
             return {
-              trade: Trade.bestTradeExactIn(tridentRoute, shareSpecified, currencyOut),
+              trade: Trade.bestTradeExactIn(
+                tridentRoute,
+                shareSpecified,
+                currencyOut
+              ),
               priceImpact,
-            }
+            };
           }
         } else {
           if (legacyRoute.status === RouteStatus.Success) {
-            const priceImpact = legacyRoute.priceImpact
-            setRoutingInfo({ chainId, allowedPools: legacyPools, route: legacyRoute, mode: 'single' })
+            const priceImpact = legacyRoute.priceImpact;
+            setRoutingInfo({
+              chainId,
+              allowedPools: legacyPools,
+              route: legacyRoute,
+              mode: "single",
+            });
             return {
               trade: LegacyTrade.exactIn(
-                convertTinesSingleRouteToLegacyRoute(legacyRoute, legacyPools, currencyIn, currencyOut),
+                convertTinesSingleRouteToLegacyRoute(
+                  legacyRoute,
+                  legacyPools,
+                  currencyIn,
+                  currencyOut
+                ),
                 amountSpecified
               ),
               priceImpact,
-            }
+            };
           }
         }
       } else {
@@ -173,7 +222,7 @@ export function useBestTridentTrade(
           tridentPools,
           WNATIVE[shareSpecified.currency.chainId],
           gasPrice
-        )
+        );
 
         const legacyRoute = findSingleRouteExactOut(
           currencyIn.wrapped,
@@ -182,28 +231,47 @@ export function useBestTridentTrade(
           legacyPools,
           WNATIVE[amountSpecified.currency.chainId],
           gasPrice
-        )
+        );
 
         if (tridentRoute.amountInBN.lt(legacyRoute.amountInBN)) {
           if (tridentRoute.status === RouteStatus.Success) {
-            const priceImpact = tridentRoute.priceImpact
-            setRoutingInfo({ chainId, allowedPools: tridentPools, route: tridentRoute, mode: 'multiple' })
+            const priceImpact = tridentRoute.priceImpact;
+            setRoutingInfo({
+              chainId,
+              allowedPools: tridentPools,
+              route: tridentRoute,
+              mode: "multiple",
+            });
             return {
-              trade: Trade.bestTradeExactOut(tridentRoute, currencyIn, shareSpecified),
+              trade: Trade.bestTradeExactOut(
+                tridentRoute,
+                currencyIn,
+                shareSpecified
+              ),
               priceImpact,
-            }
+            };
           }
         } else {
           if (legacyRoute.status === RouteStatus.Success) {
-            const priceImpact = legacyRoute.priceImpact
-            setRoutingInfo({ chainId, allowedPools: legacyPools, route: legacyRoute, mode: 'single' })
+            const priceImpact = legacyRoute.priceImpact;
+            setRoutingInfo({
+              chainId,
+              allowedPools: legacyPools,
+              route: legacyRoute,
+              mode: "single",
+            });
             return {
               trade: LegacyTrade.exactOut(
-                convertTinesSingleRouteToLegacyRoute(legacyRoute, legacyPools, currencyIn, currencyOut),
+                convertTinesSingleRouteToLegacyRoute(
+                  legacyRoute,
+                  legacyPools,
+                  currencyIn,
+                  currencyOut
+                ),
                 amountSpecified
               ),
               priceImpact,
-            }
+            };
           }
         }
       }
@@ -212,7 +280,7 @@ export function useBestTridentTrade(
     return {
       trade: undefined,
       priceImpact: undefined,
-    }
+    };
   }, [
     allowedPools,
     amountSpecified,
@@ -224,5 +292,5 @@ export function useBestTridentTrade(
     rebase,
     setRoutingInfo,
     tradeType,
-  ])
+  ]);
 }
