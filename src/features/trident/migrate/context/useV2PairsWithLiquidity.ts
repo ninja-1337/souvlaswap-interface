@@ -1,13 +1,13 @@
-import { useV2Pairs } from 'app/hooks/useV2Pairs'
-import { useActiveWeb3React } from 'app/services/web3'
-import { toV2LiquidityToken, useTrackedTokenPairs } from 'app/state/user/hooks'
-import { useTokenBalancesWithLoadingIndicator } from 'app/state/wallet/hooks'
-import { useMemo } from 'react'
-import { Pair } from 'souvlaswap-core-sdk'
+import { useV2Pairs } from "app/hooks/useV2Pairs";
+import { useActiveWeb3React } from "app/services/web3";
+import { toV2LiquidityToken, useTrackedTokenPairs } from "app/state/user/hooks";
+import { useTokenBalancesWithLoadingIndicator } from "app/state/wallet/hooks";
+import { useMemo } from "react";
+import { Pair } from "@sushiswap/core-sdk";
 
 interface V2PairsWithLiquidity {
-  loading: boolean
-  pairs: Pair[]
+  loading: boolean;
+  pairs: Pair[];
 }
 
 /**
@@ -15,9 +15,9 @@ interface V2PairsWithLiquidity {
  * @return V2PairsWithLiquidity
  */
 export const useV2PairsWithLiquidity = (): V2PairsWithLiquidity => {
-  const { account } = useActiveWeb3React()
+  const { account } = useActiveWeb3React();
   // fetch the user's balances of all tracked V2 LP tokens
-  const trackedTokenPairs = useTrackedTokenPairs()
+  const trackedTokenPairs = useTrackedTokenPairs();
   const tokenPairsWithLiquidityTokens = useMemo(
     () =>
       trackedTokenPairs.map((tokens) => ({
@@ -25,30 +25,34 @@ export const useV2PairsWithLiquidity = (): V2PairsWithLiquidity => {
         tokens,
       })),
     [trackedTokenPairs]
-  )
+  );
   const liquidityTokens = useMemo(
     () => tokenPairsWithLiquidityTokens.map((tpwlt) => tpwlt.liquidityToken),
     [tokenPairsWithLiquidityTokens]
-  )
-  const { data: v2PairsBalances, loading: fetchingV2PairBalances } = useTokenBalancesWithLoadingIndicator(
-    account ?? undefined,
-    liquidityTokens
-  )
+  );
+  const { data: v2PairsBalances, loading: fetchingV2PairBalances } =
+    useTokenBalancesWithLoadingIndicator(account ?? undefined, liquidityTokens);
 
   // fetch the reserves for all V2 pools in which the user has a balance
   const liquidityTokensWithBalances = useMemo(
     () =>
       tokenPairsWithLiquidityTokens.filter(({ liquidityToken }) =>
-        v2PairsBalances[liquidityToken.address]?.greaterThan('0')
+        v2PairsBalances[liquidityToken.address]?.greaterThan("0")
       ),
     [tokenPairsWithLiquidityTokens, v2PairsBalances]
-  )
+  );
 
-  const v2Pairs = useV2Pairs(liquidityTokensWithBalances.map(({ tokens }) => tokens))
+  const v2Pairs = useV2Pairs(
+    liquidityTokensWithBalances.map(({ tokens }) => tokens)
+  );
   const v2IsLoading =
-    fetchingV2PairBalances || v2Pairs?.length < liquidityTokensWithBalances.length || v2Pairs?.some((V2Pair) => !V2Pair)
+    fetchingV2PairBalances ||
+    v2Pairs?.length < liquidityTokensWithBalances.length ||
+    v2Pairs?.some((V2Pair) => !V2Pair);
 
-  const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
+  const allV2PairsWithLiquidity = v2Pairs
+    .map(([, pair]) => pair)
+    .filter((v2Pair): v2Pair is Pair => Boolean(v2Pair));
 
-  return { loading: v2IsLoading, pairs: allV2PairsWithLiquidity }
-}
+  return { loading: v2IsLoading, pairs: allV2PairsWithLiquidity };
+};
