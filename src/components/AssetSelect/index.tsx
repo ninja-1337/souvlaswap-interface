@@ -1,55 +1,66 @@
-import { ChevronDownIcon } from '@heroicons/react/solid'
-import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
-import { Currency } from 'souvlaswap/core-sdk'
-import selectCoinAnimation from 'app/animation/select-coin.json'
-import Button from 'app/components/Button'
-import { CurrencyLogo } from 'app/components/CurrencyLogo'
-import ListPanel from 'app/components/ListPanel'
-import Typography from 'app/components/Typography'
-import { classNames } from 'app/functions'
-import { useUSDCValue } from 'app/hooks/useUSDCPrice'
-import CurrencySearchModal from 'app/modals/SearchModal/CurrencySearchModal'
-import { useActiveWeb3React } from 'app/services/web3'
-import { useBentoBalanceV2 } from 'app/state/bentobox/hooks'
-import { useTokenBalance } from 'app/state/wallet/hooks'
-import Lottie from 'lottie-react'
-import React, { FC, ReactNode, useState } from 'react'
+import { ChevronDownIcon } from "@heroicons/react/solid";
+import { t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
+import { Currency } from "@sushiswap/core-sdk";
+import selectCoinAnimation from "app/animation/select-coin.json";
+import Button from "app/components/Button";
+import { CurrencyLogo } from "app/components/CurrencyLogo";
+import ListPanel from "app/components/ListPanel";
+import Typography from "app/components/Typography";
+import { classNames } from "app/functions";
+import { useUSDCValue } from "app/hooks/useUSDCPrice";
+import CurrencySearchModal from "app/modals/SearchModal/CurrencySearchModal";
+import { useActiveWeb3React } from "app/services/web3";
+import { useBentoBalanceV2 } from "app/state/bentobox/hooks";
+import { useTokenBalance } from "app/state/wallet/hooks";
+import Lottie from "lottie-react";
+import React, { FC, ReactNode, useState } from "react";
 
 interface AssetSelectProps {
-  title?: string
-  value?: Currency
-  onSelect: (x: Currency) => void
-  header?: ReactNode
-  currencies?: (Currency | undefined)[]
+  title?: string;
+  value?: Currency;
+  onSelect: (x: Currency) => void;
+  header?: ReactNode;
+  currencies?: (Currency | undefined)[];
 }
 
 const AssetSelect = (props: AssetSelectProps) => {
-  const { i18n } = useLingui()
+  const { i18n } = useLingui();
 
   let header = props.header || (
     <Typography variant="h3" weight={700} className="mb-4 text-high-emphesis">
       {props.title ? props.title : i18n._(t`Choose an asset to Receive:`)}
     </Typography>
-  )
+  );
 
   return (
     <div className="relative z-10 flex flex-col mt-4">
       {header}
-      <AssetSelectPanel value={props.value} onSelect={props.onSelect} currencies={props.currencies} />
+      <AssetSelectPanel
+        value={props.value}
+        onSelect={props.onSelect}
+        currencies={props.currencies}
+      />
     </div>
-  )
-}
+  );
+};
 
 interface AssetSelectPanelProps extends AssetSelectProps {}
 
-const AssetSelectPanel: FC<AssetSelectPanelProps> = ({ value, onSelect, currencies }) => {
-  const { i18n } = useLingui()
-  const [open, setOpen] = useState(false)
-  const [balances, setBalances] = useState(false)
+const AssetSelectPanel: FC<AssetSelectPanelProps> = ({
+  value,
+  onSelect,
+  currencies,
+}) => {
+  const { i18n } = useLingui();
+  const [open, setOpen] = useState(false);
+  const [balances, setBalances] = useState(false);
 
   let content = (
-    <div className="flex flex-row items-center gap-1" onClick={() => setOpen(true)}>
+    <div
+      className="flex flex-row items-center gap-1"
+      onClick={() => setOpen(true)}
+    >
       <div className="flex items-center w-12 h-12 rounded-full">
         <Lottie animationData={selectCoinAnimation} autoplay loop />
       </div>
@@ -65,12 +76,15 @@ const AssetSelectPanel: FC<AssetSelectPanelProps> = ({ value, onSelect, currenci
         </Button>
       </div>
     </div>
-  )
+  );
 
   if (value) {
     content = (
       <div className="flex flex-grow gap-0.5 items-center justify-between">
-        <div className="flex flex-row cursor-pointer items-center gap-0.5" onClick={() => setOpen(true)}>
+        <div
+          className="flex flex-row cursor-pointer items-center gap-0.5"
+          onClick={() => setOpen(true)}
+        >
           <div className="w-[38px] h-[38px] rounded-full overflow-hidden mr-2.5">
             <CurrencyLogo currency={value} size={38} />
           </div>
@@ -87,14 +101,14 @@ const AssetSelectPanel: FC<AssetSelectPanelProps> = ({ value, onSelect, currenci
           {balances ? i18n._(t`Hide Balances`) : i18n._(t`Show Balances`)}
         </Typography>
       </div>
-    )
+    );
   }
 
   return (
     <>
       <div
         className={classNames(
-          'border rounded border-dark-700 bg-dark-900 flex flex-col overflow-hidden h-[68px] justify-center pl-2 pr-3'
+          "border rounded border-dark-700 bg-dark-900 flex flex-col overflow-hidden h-[68px] justify-center pl-2 pr-3"
         )}
       >
         {content}
@@ -112,24 +126,33 @@ const AssetSelectPanel: FC<AssetSelectPanelProps> = ({ value, onSelect, currenci
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
 const BalancePanel = ({ currency }: { currency: Currency }) => {
-  const { account } = useActiveWeb3React()
-  const { i18n } = useLingui()
-  const { data: balance } = useBentoBalanceV2(currency?.wrapped.address)
-  const bentoUSDC = useUSDCValue(balance)
-  const wallet = useTokenBalance(account ?? undefined, currency?.wrapped)
-  const walletUSDC = useUSDCValue(wallet)
+  const { account } = useActiveWeb3React();
+  const { i18n } = useLingui();
+  const { data: balance } = useBentoBalanceV2(currency?.wrapped.address);
+  const bentoUSDC = useUSDCValue(balance);
+  const wallet = useTokenBalance(account ?? undefined, currency?.wrapped);
+  const walletUSDC = useUSDCValue(wallet);
 
   return (
     <ListPanel
       items={[
-        <div className="flex grid items-center grid-cols-2 gap-2 px-4 h-11 border-dark-700" key={0}>
+        <div
+          className="flex grid items-center grid-cols-2 gap-2 px-4 h-11 border-dark-700"
+          key={0}
+        >
           <div className="flex flex-row items-center gap-1.5">
             <div className="flex items-center justify-center rounded-full overflow-hidden border border-dark-700 bg-dark-900 p-1.5 shadow-md">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="11"
+                height="9"
+                viewBox="0 0 11 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -141,18 +164,38 @@ const BalancePanel = ({ currency }: { currency: Currency }) => {
             <Typography variant="xs" weight={400} className="text-secondary">
               {i18n._(t`In Wallet:`)}
             </Typography>
-            <Typography variant="sm" weight={700} className="text-high-emphesis">
-              {wallet?.greaterThan('0') ? wallet?.toSignificant(6) : '0.0000'}
+            <Typography
+              variant="sm"
+              weight={700}
+              className="text-high-emphesis"
+            >
+              {wallet?.greaterThan("0") ? wallet?.toSignificant(6) : "0.0000"}
             </Typography>
           </div>
-          <Typography variant="sm" weight={700} className="text-right text-high-emphesis">
-            ≈${walletUSDC?.greaterThan('0') ? walletUSDC.toSignificant(6) : '0.0000'}
+          <Typography
+            variant="sm"
+            weight={700}
+            className="text-right text-high-emphesis"
+          >
+            ≈$
+            {walletUSDC?.greaterThan("0")
+              ? walletUSDC.toSignificant(6)
+              : "0.0000"}
           </Typography>
         </div>,
-        <div className="flex grid items-center grid-cols-2 gap-2 px-4 h-11 border-dark-700" key={1}>
+        <div
+          className="flex grid items-center grid-cols-2 gap-2 px-4 h-11 border-dark-700"
+          key={1}
+        >
           <div className="flex flex-row items-center gap-1.5">
             <div className="flex items-center justify-center rounded-full overflow-hidden border border-dark-700 bg-dark-900 p-1.5 shadow-md">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -164,20 +207,31 @@ const BalancePanel = ({ currency }: { currency: Currency }) => {
             <Typography variant="xs" weight={400} className="text-secondary">
               {i18n._(t`In Bento:`)}
             </Typography>
-            <Typography variant="sm" weight={700} className="text-high-emphesis">
-              {balance?.greaterThan('0') ? balance?.toSignificant(6) : '0.0000'}
+            <Typography
+              variant="sm"
+              weight={700}
+              className="text-high-emphesis"
+            >
+              {balance?.greaterThan("0") ? balance?.toSignificant(6) : "0.0000"}
             </Typography>
           </div>
-          <Typography variant="sm" weight={700} className="text-right text-high-emphesis">
-            ≈${bentoUSDC?.greaterThan('0') ? bentoUSDC.toSignificant(6) : '0.0000'}
+          <Typography
+            variant="sm"
+            weight={700}
+            className="text-right text-high-emphesis"
+          >
+            ≈$
+            {bentoUSDC?.greaterThan("0")
+              ? bentoUSDC.toSignificant(6)
+              : "0.0000"}
           </Typography>
         </div>,
       ]}
     />
-  )
-}
+  );
+};
 
-AssetSelect.Panel = AssetSelectPanel
-AssetSelect.BalancePanel = BalancePanel
+AssetSelect.Panel = AssetSelectPanel;
+AssetSelect.BalancePanel = BalancePanel;
 
-export default AssetSelect
+export default AssetSelect;

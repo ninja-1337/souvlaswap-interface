@@ -2,7 +2,7 @@ import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { Currency, CurrencyAmount, Token } from "souvlaswap/core-sdk";
+import { Currency, CurrencyAmount, Token } from "@sushiswap/core-sdk";
 import selectCoinAnimation from "app/animation/select-coin.json";
 import Button from "app/components/Button";
 import Chip from "app/components/Chip";

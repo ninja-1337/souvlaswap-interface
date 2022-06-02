@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Percent } from "souvlaswap/core-sdk";
+import { Currency, CurrencyAmount, Percent } from "@sushiswap/core-sdk";
 import { warningSeverity } from "app/functions/prices";
 import React, { useMemo } from "react";
 
