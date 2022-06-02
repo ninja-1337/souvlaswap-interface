@@ -1,28 +1,42 @@
-import { FC, useState } from 'react'
-import { Currency, Price } from 'souvlaswap-core-sdk'
-
+import { FC, useState } from "react";
+import { Price } from "souvlaswap-core-sdk";
+import { Currency } from "@sushiswap/core-sdk";
 interface PriceRatio {
-  price?: Price<Currency, Currency>
+  price?: Price<Currency, Currency>;
 }
 
 const PriceRatio: FC<PriceRatio> = ({ price }) => {
-  const [inverted, setInverted] = useState(false)
+  const [inverted, setInverted] = useState(false);
 
   return (
     <div className="flex flex-row text-sm font-bold ">
       <div className="flex border divide-x rounded cursor-pointer divide-dark-800 hover:divide-dark-700 border-dark-800 hover:border-dark-700">
         <div className="px-4 py-2">
           <span className="whitespace-nowrap">
-            1 {inverted ? price?.quoteCurrency.symbol : price?.baseCurrency.symbol} ={' '}
-            {inverted ? price?.invert().toSignificant(6) : price?.toSignificant(6)}{' '}
-            {inverted ? price?.baseCurrency.symbol : price?.quoteCurrency.symbol}
+            1{" "}
+            {inverted
+              ? price?.quoteCurrency.symbol
+              : price?.baseCurrency.symbol}{" "}
+            ={" "}
+            {inverted
+              ? price?.invert().toSignificant(6)
+              : price?.toSignificant(6)}{" "}
+            {inverted
+              ? price?.baseCurrency.symbol
+              : price?.quoteCurrency.symbol}
           </span>
         </div>
         <div
           className="flex items-center justify-center py-2 cursor-pointer w-9 text-secondary"
           onClick={() => setInverted((prevState) => !prevState)}
         >
-          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="12"
+            height="10"
+            viewBox="0 0 12 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -33,7 +47,7 @@ const PriceRatio: FC<PriceRatio> = ({ price }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PriceRatio
+export default PriceRatio;

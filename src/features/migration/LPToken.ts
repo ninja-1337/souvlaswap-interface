@@ -1,15 +1,15 @@
-import { BigNumber } from '@ethersproject/bignumber'
-import { Currency, CurrencyAmount, Token } from 'souvlaswap-core-sdk'
-
+import { BigNumber } from "@ethersproject/bignumber";
+import { CurrencyAmount, Token } from "souvlaswap-core-sdk";
+import { Currency } from "@sushiswap/core-sdk";
 export default interface LPToken {
-  id?: number
-  address: string
-  tokenA: Token
-  tokenB: Token
-  totalSupply: BigNumber
-  balance: CurrencyAmount<Currency>
-  name?: string
-  symbol?: string
-  decimals?: number
-  version?: 'v1' | 'v2'
+  id?: number;
+  address: string;
+  tokenA: Token;
+  tokenB: Token;
+  totalSupply: BigNumber;
+  balance: CurrencyAmount<Currency>;
+  name?: string;
+  symbol?: string;
+  decimals?: number;
+  version?: "v1" | "v2";
 }
