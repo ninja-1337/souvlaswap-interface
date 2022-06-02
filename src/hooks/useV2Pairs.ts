@@ -5,11 +5,10 @@ import { useMemo } from "react";
 import { Pair } from "@sushiswap/core-sdk";
 import {
   computePairAddress,
-  Currency,
   CurrencyAmount,
   FACTORY_ADDRESS,
 } from "souvlaswap-core-sdk";
-
+import { Currency } from "@sushiswap/core-sdk";
 const PAIR_INTERFACE = new Interface(IUniswapV2PairABI);
 
 export enum PairState {
