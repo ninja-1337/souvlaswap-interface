@@ -1,3 +1,4 @@
+// @ts-nocheck
 import useHttpLocations from "app/hooks/useHttpLocations";
 import { WrappedTokenInfo } from "app/state/lists/wrappedTokenInfo";
 import React, { FunctionComponent, useMemo } from "react";
