@@ -2,6 +2,7 @@ import { BigNumber } from "@ethersproject/bignumber";
 import {
   Currency,
   CurrencyAmount,
+  Pair,
   Trade as LegacyTrade,
   TradeType,
 } from "@sushiswap/core-sdk";
@@ -14,7 +15,6 @@ import {
   findSingleRouteExactIn,
   findSingleRouteExactOut,
   PoolState,
-  Pair,
   Trade,
 } from "@sushiswap/trident-sdk";
 import { PoolUnion } from "app/features/trident/types";
