@@ -9,14 +9,8 @@ import { useAppDispatch } from "app/state/hooks";
 import { useCurrencyBalances } from "app/state/wallet/hooks";
 import { useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { Pair, Price } from "@sushiswap/core-sdk";
-import {
-  Currency,
-  CurrencyAmount,
-  JSBI,
-  Percent,
-  Token,
-} from "souvlaswap-core-sdk";
+import { Currency, CurrencyAmount, Pair, Price } from "@sushiswap/core-sdk";
+import { JSBI, Percent, Token } from "souvlaswap-core-sdk";
 
 import { Field, typeInput } from "./actions";
 
