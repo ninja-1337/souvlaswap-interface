@@ -1,8 +1,8 @@
 import useHttpLocations from "app/hooks/useHttpLocations";
 import { WrappedTokenInfo } from "app/state/lists/wrappedTokenInfo";
 import React, { FunctionComponent, useMemo } from "react";
-import { ChainId, WNATIVE } from "souvlaswap-core-sdk";
-import { Currency } from "@sushiswap/core-sdk";
+import {} from "souvlaswap-core-sdk";
+import { ChainId, WNATIVE, Currency } from "@sushiswap/core-sdk";
 import Logo, { UNKNOWN_ICON } from "../Logo";
 
 const BLOCKCHAIN = {
