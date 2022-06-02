@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency } from '@souvlaswap/core-sdk'
+import { Currency } from 'souvlaswap/core-sdk'
 import selectCoinAnimation from 'app/animation/select-coin.json'
 import Button from 'app/components/Button'
 import { CurrencyLogo } from 'app/components/CurrencyLogo'

@@ -1,4 +1,4 @@
-import { Currency } from "@souvlaswap/core-sdk";
+import { Currency } from "souvlaswap/core-sdk";
 import React, { FC } from "react";
 
 import Typography from "../Typography";

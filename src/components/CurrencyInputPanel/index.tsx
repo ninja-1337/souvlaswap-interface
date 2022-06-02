@@ -7,7 +7,7 @@ import {
   Pair,
   Percent,
   Token,
-} from "@souvlaswap/core-sdk";
+} from "souvlaswap/core-sdk";
 import selectCoinAnimation from "app/animation/select-coin.json";
 import { classNames, formatCurrencyAmount } from "app/functions";
 import CurrencySearchModal from "app/modals/SearchModal/CurrencySearchModal";
