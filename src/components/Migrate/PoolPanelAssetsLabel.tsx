@@ -1,6 +1,6 @@
-import { CurrencyLogo } from "app/components/CurrencyLogo";
-import React, { FC } from "react";
-import { Pair } from "@sushiswap/core-sdk";
+import { Pair } from '@sushiswap/core-sdk'
+import { CurrencyLogo } from 'app/components/CurrencyLogo'
+import React, { FC } from 'react'
 
 export const PoolPanelAssetsLabel: FC<{ pair: Pair }> = ({ pair }) => (
   <div className="flex items-center">
@@ -12,4 +12,4 @@ export const PoolPanelAssetsLabel: FC<{ pair: Pair }> = ({ pair }) => (
       {pair.token0.symbol}-{pair.token1.symbol}
     </div>
   </div>
-);
+)
