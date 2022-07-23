@@ -4,10 +4,10 @@ import {
   Trade,
   TradeType,
 } from "@sushiswap/core-sdk";
+import { Pair } from "@sushiswap/core-sdk";
 import { BETTER_TRADE_LESS_HOPS_THRESHOLD } from "app/constants";
 import { isTradeBetter } from "app/functions/trade";
 import { useMemo } from "react";
-import { Pair } from "@sushiswap/core-sdk";
 
 import { useAllCurrencyCombinations } from "./useAllCurrencyCombinations";
 import { PairState, useV2Pairs } from "./useV2Pairs";
@@ -20,6 +20,7 @@ function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
   const allPairs = useV2Pairs(allCurrencyCombinations);
 
   // only pass along valid pairs, non-duplicated pairs
+
   return useMemo(
     () =>
       Object.values(

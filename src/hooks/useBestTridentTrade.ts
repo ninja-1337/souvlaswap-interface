@@ -60,6 +60,7 @@ export function useAllCommonPools(
             result[0] === PairState.EXISTS &&
             result[1]
           ) {
+            // @ts-ignore
             acc.push(result[1]);
           }
 
