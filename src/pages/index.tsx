@@ -14,7 +14,7 @@ export default function Dashboard() {
         <meta
           key="twitter:description"
           name="twitter:description"
-          content="Sushi"
+          content="Souvla"
         />
         <meta key="og:description" property="og:description" content="Souvla" />
       </Head>
